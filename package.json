@@ -1,5 +1,5 @@
 {
-  "name": "obsidian",
+  "name": "unitedex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "dependencies": {
     "jsdom": "26.0.0",
     "playwright": "1.49.1"
