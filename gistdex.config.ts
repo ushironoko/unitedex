@@ -5,7 +5,7 @@ export default defineGistdexConfig({
     provider: "sqlite",
     options: {
       path: "./gistdex.db",
-      dimension: 768
-    }
-  }
+      dimension: 768,
+    },
+  },
 });
