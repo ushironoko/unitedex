@@ -8,7 +8,7 @@ async function scrapeUniteData(pokemonName, url) {
   try {
     const context = await browser.newContext();
     const page = await context.newPage();
-    
+
     console.log(`Accessing ${pokemonName} page...`);
     await page.goto(url, {
       waitUntil: "domcontentloaded",
@@ -30,12 +30,16 @@ async function scrapeUniteData(pokemonName, url) {
         fullText: "",
       };
 
-      const nameElement = document.querySelector("h1, .pokemon-name, [class*='name']");
+      const nameElement = document.querySelector(
+        "h1, .pokemon-name, [class*='name']",
+      );
       if (nameElement) {
         result.name = nameElement.textContent.trim();
       }
 
-      const roleElement = document.querySelector("[class*='role'], [class*='type']");
+      const roleElement = document.querySelector(
+        "[class*='role'], [class*='type']",
+      );
       if (roleElement) {
         result.role = roleElement.textContent.trim();
       }
@@ -45,18 +49,22 @@ async function scrapeUniteData(pokemonName, url) {
         result.difficulty = difficultyElement.textContent.trim();
       }
 
-      const statContainers = document.querySelectorAll("[class*='stat'], [class*='Stat']");
+      const statContainers = document.querySelectorAll(
+        "[class*='stat'], [class*='Stat']",
+      );
       statContainers.forEach((container) => {
         const text = container.textContent.trim();
         if (text && text.includes(":")) {
-          const [key, value] = text.split(":").map(s => s.trim());
+          const [key, value] = text.split(":").map((s) => s.trim());
           if (key && value) {
             result.stats[key] = value;
           }
         }
       });
 
-      const moveContainers = document.querySelectorAll("[class*='move'], [class*='Move'], [class*='skill'], [class*='Skill']");
+      const moveContainers = document.querySelectorAll(
+        "[class*='move'], [class*='Move'], [class*='skill'], [class*='Skill']",
+      );
       moveContainers.forEach((container) => {
         const text = container.textContent.trim();
         if (text && text.length > 1 && !text.includes("Loading")) {
@@ -64,7 +72,9 @@ async function scrapeUniteData(pokemonName, url) {
         }
       });
 
-      const itemContainers = document.querySelectorAll("[class*='item'], [class*='Item'], [class*='build'], [class*='Build']");
+      const itemContainers = document.querySelectorAll(
+        "[class*='item'], [class*='Item'], [class*='build'], [class*='Build']",
+      );
       itemContainers.forEach((container) => {
         const text = container.textContent.trim();
         if (text && text.length > 1 && !text.includes("Loading")) {
@@ -72,7 +82,9 @@ async function scrapeUniteData(pokemonName, url) {
         }
       });
 
-      const allTextElements = document.querySelectorAll("p, span, div, h1, h2, h3, h4, h5, h6, td, th, li");
+      const allTextElements = document.querySelectorAll(
+        "p, span, div, h1, h2, h3, h4, h5, h6, td, th, li",
+      );
       const textSet = new Set();
       allTextElements.forEach((el) => {
         const text = el.textContent.trim();
@@ -95,7 +107,7 @@ async function scrapeUniteData(pokemonName, url) {
     if (data.difficulty) {
       console.log("Difficulty:", data.difficulty);
     }
-    
+
     if (Object.keys(data.stats).length > 0) {
       console.log("\n=== Stats ===");
       Object.entries(data.stats).forEach(([key, value]) => {
@@ -113,14 +125,13 @@ async function scrapeUniteData(pokemonName, url) {
 
     console.log("\n=== Full Page Text ===");
     const lines = data.fullText.split("\n");
-    lines.forEach(line => {
+    lines.forEach((line) => {
       if (line.trim()) {
         console.log(line);
       }
     });
 
     return data;
-
   } catch (error) {
     console.error("Error occurred:", error);
     throw error;
@@ -132,13 +143,15 @@ async function scrapeUniteData(pokemonName, url) {
 // Command line usage
 if (require.main === module) {
   const args = process.argv.slice(2);
-  
+
   if (args.length < 2) {
     console.log("Usage: node scrape-unite.js <pokemon-name> <url>");
-    console.log("Example: node scrape-unite.js Garchomp https://unite-db.com/pokemon/garchomp");
+    console.log(
+      "Example: node scrape-unite.js Garchomp https://unite-db.com/pokemon/garchomp",
+    );
     process.exit(1);
   }
-  
+
   const [pokemonName, url] = args;
   scrapeUniteData(pokemonName, url).catch(console.error);
 }

@@ -3,19 +3,23 @@
 Pokémon Uniteの最新パッチノートと過去のアップデート情報をまとめています。
 
 ## Patch 1.19.2.11 - U Impact Part 3
+
 **リリース日**: 2025年8月19日
 
 ### アイテム調整
 
 #### レスキューフード
+
 - シールドと回復量増加: 8%/11%/14% → **11%/14%/17%**
 
 #### いやしのかんむり
+
 - ライフスティール: 7%/10%/13% → **9%/12%/15%**
 
 ### ポケモン調整
 
 #### マホイップ (Alcremie) [NERFED]
+
 - **マジカルシャイン**
   - ダメージ:
     - Ratio: 164% SpAtk → 151% SpAtk
@@ -37,6 +41,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
     - Base: 392 → 345
 
 #### キュワワー (Comfey) [BUFFED]
+
 - **ステータス強化**
   - HP (Lv1-15): 3000-5500 → **3000-5900**
   - 防御 (Lv1-15): 40-190 → **40-250**
@@ -51,12 +56,14 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
   - 移動速度増加: 40% → **50%**
 
 #### ホウオウ (Ho-Oh) [NERFED]
+
 - **せいなるほのお**
   - 射程: 8.5m → **7m**
   - 火球範囲半径: 3m → **2.5m**
   - 飛行時間: 8秒 → **6秒**
 
 #### ラティアス (Latias) [BUFFED]
+
 - **ミストボール**
   - 発射体ダメージ:
     - Ratio: 20% SpAtk → **60% SpAtk**
@@ -79,6 +86,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
   - 移動速度減少: 30% → **40%**
 
 #### ラティオス (Latios) [BUFFED]
+
 - **テレキネシス**
   - ダメージ:
     - Ratio: 75% SpAtk → **98% SpAtk**
@@ -101,6 +109,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
     - Base: 150 → **128**
 
 #### ミライドン (Miraidon) [BUFFED]
+
 - **ステータス強化** (レベル別詳細)
   - HP (Lv15): 7000 → **7300**
   - 防御 (Lv15): 280 → **320**
@@ -114,6 +123,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
     - Base: 87 → **92**
 
 #### アローラライチュウ (Alolan Raichu) [BUFFED]
+
 - **エレキボール**
   - ダメージ:
     - Ratio: 176% SpAtk → **193% SpAtk**
@@ -129,6 +139,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
   - 麻痺持続時間: 1秒 → **2秒**
 
 #### スイクン (Suicune) [NERFED]
+
 - **ゆきなだれ**
   - 降雪ダメージ:
     - Base: 160 → **120**
@@ -136,6 +147,7 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
     - Base: 240 → **180**
 
 #### ウーラオス (Urshifu) [BUFFED]
+
 - **すいりゅうれんだ**
   - クールダウン: 11秒 → **10秒**
 - **アクアブレイク**
@@ -152,18 +164,22 @@ Pokémon Uniteの最新パッチノートと過去のアップデート情報を
 ## 過去のパッチ履歴
 
 ### Patch 1.19.2.8 - U Impact Part 2
+
 **リリース日**: 2025年7月31日
 
 ### Patch 1.19.2.6 - U Impact Part 1
+
 **リリース日**: 2025年7月18日
 
 ### Patch 1.19.1.4 - Full Force Burst Part 2
+
 **リリース日**: 2025年6月27日
 
 ### Patch 1.19.1.2 - Full Force Burst
+
 **リリース日**: 2025年6月5日
 
 ---
 
-*データソース: [unite-db.com](https://unite-db.com/patch-notes)*
-*Special thanks to Mathcord Discord server contributors*
+_データソース: [unite-db.com](https://unite-db.com/patch-notes)_
+_Special thanks to Mathcord Discord server contributors_

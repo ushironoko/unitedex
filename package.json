@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "playwright": "1.49.1"
   },
   "devDependencies": {
-    "@ushironoko/gistdex": "^1.1.1"
+    "@ushironoko/gistdex": "^1.1.1",
+    "prettier": "^3.6.2"
   }
 }
