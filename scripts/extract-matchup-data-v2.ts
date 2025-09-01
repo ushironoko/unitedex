@@ -121,7 +121,6 @@ function extractRole(content: string): Role {
   return "メイジ";
 }
 
-
 interface MatchupWithMove {
   pokemon: string;
   move?: string;
@@ -263,167 +262,155 @@ async function extractMatchupData(): Promise<PokemonData> {
 
   const nodes: PokemonNode[] = [];
   const edges: PokemonEdge[] = [];
-  const pokemonSet = new Set<string>();
+  const edgeSet = new Set<string>(); // For deduplication
   
-  // Map to track which Pokemon have move variations
-  const pokemonWithMoves = new Map<string, Set<string>>();
-
-  // Process each pokemon file
+  // First pass: collect all Pokemon and their move variations
+  const pokemonVariations = new Map<string, { 
+    baseName: string;
+    variations: Set<string>;
+    role: Role;
+  }>();
+  
   for (const file of pokemonFiles) {
     const filePath = path.join(uniteDir, file);
     const content = fs.readFileSync(filePath, "utf-8");
-
+    
     const pokemonName = file.replace(".md", "");
     const normalizedName = normalizePokemonName(pokemonName);
     const role = extractRole(content);
     const { advantages, disadvantages } = extractDetailedMatchups(content);
-
-    console.log(
-      `Processing ${pokemonName} (${normalizedName}) - Role: ${role}`,
-    );
     
-    // Create nodes for each move variation if necessary
-    const moveVariations = new Set<string>();
+    const variations = new Set<string>();
     
     // Collect unique move variations
     advantages.forEach(adv => {
-      if (adv.move) moveVariations.add(adv.move);
+      if (adv.move) variations.add(adv.move);
     });
     disadvantages.forEach(dis => {
-      if (dis.move) moveVariations.add(dis.move);
+      if (dis.move) variations.add(dis.move);
     });
     
-    if (moveVariations.size > 0) {
-      // If there are move variations, create separate nodes for each
-      moveVariations.forEach(move => {
+    pokemonVariations.set(normalizedName, {
+      baseName: pokemonName,
+      variations,
+      role
+    });
+  }
+  
+  // Second pass: create nodes
+  for (const [normalizedName, info] of pokemonVariations) {
+    if (info.variations.size > 0) {
+      // Create nodes for each move variation
+      for (const move of info.variations) {
         const nodeId = `${normalizedName}_${move.replace(/\s+/g, "_").toLowerCase()}`;
         nodes.push({
           id: nodeId,
-          label: `${pokemonName} (${move})`,
-          role: role,
+          label: `${info.baseName} (${move})`,
+          role: info.role,
         });
-        pokemonSet.add(nodeId);
-        
-        // Add edges for this specific move variation (deduplicated)
-        const moveAdvantages = new Map<string, boolean>();
-        advantages
-          .filter(adv => adv.move === move)
-          .forEach(adv => {
-            const targetNormalized = normalizePokemonName(adv.pokemon);
-            const edgeKey = `${nodeId}-${targetNormalized}-advantage`;
-            if (!moveAdvantages.has(edgeKey)) {
-              moveAdvantages.set(edgeKey, true);
-              edges.push({
-                from: nodeId,
-                to: targetNormalized,
-                type: "advantage",
-              });
-            }
-          });
-        
-        const moveDisadvantages = new Map<string, boolean>();
-        disadvantages
-          .filter(dis => dis.move === move)
-          .forEach(dis => {
-            const targetNormalized = normalizePokemonName(dis.pokemon);
-            const edgeKey = `${nodeId}-${targetNormalized}-disadvantage`;
-            if (!moveDisadvantages.has(edgeKey)) {
-              moveDisadvantages.set(edgeKey, true);
-              edges.push({
-                from: nodeId,
-                to: targetNormalized,
-                type: "disadvantage",
-              });
-            }
-          });
-      });
-      
-      // Only add base node if there are matchups without move specifications
-      const hasBaseMatchups = advantages.some(adv => !adv.move) || disadvantages.some(dis => !dis.move);
-      
-      if (hasBaseMatchups) {
-        // Add a base node without move specification
-        nodes.push({
-          id: normalizedName,
-          label: pokemonName,
-          role: role,
-        });
-        pokemonSet.add(normalizedName);
-        
-        // Add edges for matchups without specific move variations (deduplicated)
-        const baseAdvantages = new Map<string, boolean>();
-        advantages
-          .filter(adv => !adv.move)
-          .forEach(adv => {
-            const targetNormalized = normalizePokemonName(adv.pokemon);
-            const edgeKey = `${normalizedName}-${targetNormalized}-advantage`;
-            if (!baseAdvantages.has(edgeKey)) {
-              baseAdvantages.set(edgeKey, true);
-              edges.push({
-                from: normalizedName,
-                to: targetNormalized,
-                type: "advantage",
-              });
-            }
-          });
-        
-        const baseDisadvantages = new Map<string, boolean>();
-        disadvantages
-          .filter(dis => !dis.move)
-          .forEach(dis => {
-            const targetNormalized = normalizePokemonName(dis.pokemon);
-            const edgeKey = `${normalizedName}-${targetNormalized}-disadvantage`;
-            if (!baseDisadvantages.has(edgeKey)) {
-              baseDisadvantages.set(edgeKey, true);
-              edges.push({
-                from: normalizedName,
-                to: targetNormalized,
-                type: "disadvantage",
-              });
-            }
-          });
       }
     } else {
-      // No move variations, process normally
+      // Create single node for Pokemon without move variations
       nodes.push({
         id: normalizedName,
-        label: pokemonName,
-        role: role,
+        label: info.baseName,
+        role: info.role,
       });
-      pokemonSet.add(normalizedName);
+    }
+  }
+  
+  // Third pass: create edges
+  for (const file of pokemonFiles) {
+    const filePath = path.join(uniteDir, file);
+    const content = fs.readFileSync(filePath, "utf-8");
+    
+    const pokemonName = file.replace(".md", "");
+    const normalizedName = normalizePokemonName(pokemonName);
+    const { advantages, disadvantages } = extractDetailedMatchups(content);
+    
+    const sourceInfo = pokemonVariations.get(normalizedName)!;
+    
+    // Process advantages
+    advantages.forEach(adv => {
+      const targetNormalized = normalizePokemonName(adv.pokemon);
+      const targetInfo = pokemonVariations.get(targetNormalized);
       
-      // Add edges without move specifications (deduplicated)
-      const simpleAdvantages = new Map<string, boolean>();
-      advantages.forEach(adv => {
-        const targetNormalized = normalizePokemonName(adv.pokemon);
-        const edgeKey = `${normalizedName}-${targetNormalized}-advantage`;
-        if (!simpleAdvantages.has(edgeKey)) {
-          simpleAdvantages.set(edgeKey, true);
+      if (!targetInfo) return; // Skip if target Pokemon not found
+      
+      // Determine source node ID
+      let sourceNodeId: string;
+      if (sourceInfo.variations.size > 0 && adv.move) {
+        sourceNodeId = `${normalizedName}_${adv.move.replace(/\s+/g, "_").toLowerCase()}`;
+      } else {
+        sourceNodeId = normalizedName;
+      }
+      
+      // Determine target node IDs (if target has variations, create edge to all)
+      let targetNodeIds: string[] = [];
+      if (targetInfo.variations.size > 0) {
+        // Target has variations, connect to all of them
+        for (const targetMove of targetInfo.variations) {
+          targetNodeIds.push(`${targetNormalized}_${targetMove.replace(/\s+/g, "_").toLowerCase()}`);
+        }
+      } else {
+        // Target has no variations
+        targetNodeIds = [targetNormalized];
+      }
+      
+      // Create edges
+      for (const targetNodeId of targetNodeIds) {
+        const edgeKey = `${sourceNodeId}-${targetNodeId}-advantage`;
+        if (!edgeSet.has(edgeKey)) {
+          edgeSet.add(edgeKey);
           edges.push({
-            from: normalizedName,
-            to: targetNormalized,
+            from: sourceNodeId,
+            to: targetNodeId,
             type: "advantage",
           });
         }
-      });
+      }
+    });
+    
+    // Process disadvantages
+    disadvantages.forEach(dis => {
+      const targetNormalized = normalizePokemonName(dis.pokemon);
+      const targetInfo = pokemonVariations.get(targetNormalized);
       
-      const simpleDisadvantages = new Map<string, boolean>();
-      disadvantages.forEach(dis => {
-        const targetNormalized = normalizePokemonName(dis.pokemon);
-        const edgeKey = `${normalizedName}-${targetNormalized}-disadvantage`;
-        if (!simpleDisadvantages.has(edgeKey)) {
-          simpleDisadvantages.set(edgeKey, true);
+      if (!targetInfo) return; // Skip if target Pokemon not found
+      
+      // Determine source node ID
+      let sourceNodeId: string;
+      if (sourceInfo.variations.size > 0 && dis.move) {
+        sourceNodeId = `${normalizedName}_${dis.move.replace(/\s+/g, "_").toLowerCase()}`;
+      } else {
+        sourceNodeId = normalizedName;
+      }
+      
+      // Determine target node IDs (if target has variations, create edge to all)
+      let targetNodeIds: string[] = [];
+      if (targetInfo.variations.size > 0) {
+        // Target has variations, connect to all of them
+        for (const targetMove of targetInfo.variations) {
+          targetNodeIds.push(`${targetNormalized}_${targetMove.replace(/\s+/g, "_").toLowerCase()}`);
+        }
+      } else {
+        // Target has no variations
+        targetNodeIds = [targetNormalized];
+      }
+      
+      // Create edges
+      for (const targetNodeId of targetNodeIds) {
+        const edgeKey = `${sourceNodeId}-${targetNodeId}-disadvantage`;
+        if (!edgeSet.has(edgeKey)) {
+          edgeSet.add(edgeKey);
           edges.push({
-            from: normalizedName,
-            to: targetNormalized,
+            from: sourceNodeId,
+            to: targetNodeId,
             type: "disadvantage",
           });
         }
-      });
-    }
-    
-    console.log(`  Advantages: ${advantages.map(a => a.move ? `${a.pokemon}(${a.move})` : a.pokemon).join(", ")}`);
-    console.log(`  Disadvantages: ${disadvantages.map(d => d.move ? `${d.pokemon}(${d.move})` : d.pokemon).join(", ")}`);
+      }
+    });
   }
 
   // Create the final data structure

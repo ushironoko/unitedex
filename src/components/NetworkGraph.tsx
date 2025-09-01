@@ -10,6 +10,7 @@ interface NetworkGraphProps {
   selectedPokemon: string[];
   edgeFilter: "all" | "advantage" | "disadvantage";
   roleFilter: Role[];
+  showDirectConnectionsOnly: boolean;
 }
 
 interface NodeData {
@@ -58,6 +59,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
   selectedPokemon,
   edgeFilter,
   roleFilter,
+  showDirectConnectionsOnly,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const networkRef = useRef<Network | null>(null);
@@ -268,22 +270,40 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
 
     // Find matching nodes
     const matchingNodes = selectedPokemon
-      .map((searchTerm) => {
+      .flatMap((searchTerm) => {
         // Handle both Japanese and English search terms
         const trimmedSearch = searchTerm.trim();
 
-        return data.nodes.find((n) => {
-          // Check ID (English, lowercase)
+        // Find all nodes that match (including move variations)
+        return data.nodes.filter((n) => {
+          // First, check for exact match (including move variations)
+          if (n.label === trimmedSearch) return true;
           if (n.id.toLowerCase() === trimmedSearch.toLowerCase()) return true;
 
+          // Check if search includes parentheses (searching for specific move)
+          if (trimmedSearch.includes("(") || trimmedSearch.includes("（")) {
+            // For move-specific searches, only match if label includes the search term
+            return n.label.includes(trimmedSearch);
+          }
+
+          // For base pokemon searches (no parentheses)
+          // Check ID (English, lowercase) - also handle move variations
+          const baseId = n.id.split("_")[0]; // Get base pokemon ID without move suffix
+          if (baseId.toLowerCase() === trimmedSearch.toLowerCase()) return true;
+
           // Check label (Japanese, exact or partial match)
-          if (n.label === trimmedSearch) return true;
+          const baseLabel = n.label.split("(")[0].trim(); // Get base pokemon name without move
+          if (baseLabel === trimmedSearch) return true;
           if (n.label.includes(trimmedSearch)) return true;
 
           return false;
         });
       })
-      .filter(Boolean);
+      .filter(
+        (node, index, self) =>
+          // Remove duplicates
+          self.findIndex((n) => n.id === node.id) === index,
+      );
 
     // If no nodes match, don't proceed
     if (matchingNodes.length === 0) {
@@ -339,27 +359,64 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
     const connectedNodeIds = new Set(matchingNodeIds);
     const connectedEdgeIds = new Set<string>();
 
-    for (const edge of data.edges) {
-      if (matchingNodeIds.has(edge.from)) {
-        connectedNodeIds.add(edge.to);
-        connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+    if (showDirectConnectionsOnly) {
+      // Only show nodes directly connected to selected nodes
+      for (const edge of data.edges) {
+        if (matchingNodeIds.has(edge.from)) {
+          connectedNodeIds.add(edge.to);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
+        if (matchingNodeIds.has(edge.to)) {
+          connectedNodeIds.add(edge.from);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
       }
-      if (matchingNodeIds.has(edge.to)) {
-        connectedNodeIds.add(edge.from);
-        connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+    } else {
+      // Show all connections (current behavior - includes secondary connections)
+      for (const edge of data.edges) {
+        if (matchingNodeIds.has(edge.from)) {
+          connectedNodeIds.add(edge.to);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
+        if (matchingNodeIds.has(edge.to)) {
+          connectedNodeIds.add(edge.from);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
+      }
+
+      // Find secondary connections (nodes connected to the directly connected nodes)
+      const firstLevelConnected = new Set(connectedNodeIds);
+      for (const edge of data.edges) {
+        if (
+          firstLevelConnected.has(edge.from) &&
+          !matchingNodeIds.has(edge.from)
+        ) {
+          connectedNodeIds.add(edge.to);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
+        if (firstLevelConnected.has(edge.to) && !matchingNodeIds.has(edge.to)) {
+          connectedNodeIds.add(edge.from);
+          connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
+        }
       }
     }
 
-    // Update node appearance
+    // Update node appearance with role filter consideration
     nodesDatasetRef.current.update(
       data.nodes.map((node) => {
         const isSelected = matchingNodeIds.has(node.id);
         const isConnected = connectedNodeIds.has(node.id);
         const isDimmed = !isSelected && !isConnected;
 
+        // Apply role filter - hide nodes that don't match the role filter
+        const isRoleFiltered =
+          roleFilter.length > 0 &&
+          roleFilter.length < 5 &&
+          !roleFilter.includes(node.role);
+
         return {
           id: node.id,
-          hidden: false,
+          hidden: isRoleFiltered,
           opacity: isDimmed ? 0.1 : 1,
           color: {
             background: isDimmed
@@ -393,15 +450,26 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
       }),
     );
 
-    // Update edge appearance
+    // Update edge appearance with role filter consideration
     edgesDatasetRef.current.update(
       data.edges.map((edge) => {
         const edgeId = `${edge.from}-${edge.to}-${edge.type}`;
         const isConnected = connectedEdgeIds.has(edgeId);
 
+        // Find the nodes to check their roles
+        const fromNode = data.nodes.find((n) => n.id === edge.from);
+        const toNode = data.nodes.find((n) => n.id === edge.to);
+
+        // Hide edge if either node is role-filtered
+        const isRoleFiltered =
+          roleFilter.length > 0 &&
+          roleFilter.length < 5 &&
+          ((fromNode && !roleFilter.includes(fromNode.role)) ||
+            (toNode && !roleFilter.includes(toNode.role)));
+
         return {
           id: edgeId,
-          hidden: false,
+          hidden: isRoleFiltered,
           color: {
             color: isConnected
               ? EDGE_COLORS[edge.type]
@@ -461,7 +529,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
         console.error("Error selecting nodes:", error);
       }
     }
-  }, [selectedPokemon, data]);
+  }, [selectedPokemon, data, showDirectConnectionsOnly, roleFilter]);
 
   // Handle edge filtering combined with search selection
   useEffect(() => {
@@ -478,18 +546,39 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
     // If there are selected Pokemon, determine which edges to highlight
     const connectedEdgeIds = new Set<string>();
     if (selectedPokemon.length > 0) {
-      // Find matching nodes
+      // Find matching nodes (including move variations)
       const matchingNodes = selectedPokemon
-        .map((searchTerm) => {
+        .flatMap((searchTerm) => {
           const trimmedSearch = searchTerm.trim();
-          return data.nodes.find((n) => {
-            if (n.id.toLowerCase() === trimmedSearch.toLowerCase()) return true;
+          return data.nodes.filter((n) => {
+            // First, check for exact match (including move variations)
             if (n.label === trimmedSearch) return true;
+            if (n.id.toLowerCase() === trimmedSearch.toLowerCase()) return true;
+
+            // Check if search includes parentheses (searching for specific move)
+            if (trimmedSearch.includes("(") || trimmedSearch.includes("（")) {
+              // For move-specific searches, only match if label includes the search term
+              return n.label.includes(trimmedSearch);
+            }
+
+            // For base pokemon searches (no parentheses)
+            // Check ID (English, lowercase) - also handle move variations
+            const baseId = n.id.split("_")[0];
+            if (baseId.toLowerCase() === trimmedSearch.toLowerCase())
+              return true;
+
+            // Check label (Japanese, exact or partial match)
+            const baseLabel = n.label.split("(")[0].trim();
+            if (baseLabel === trimmedSearch) return true;
             if (n.label.includes(trimmedSearch)) return true;
             return false;
           });
         })
-        .filter(Boolean);
+        .filter(
+          (node, index, self) =>
+            // Remove duplicates
+            self.findIndex((n) => n.id === node.id) === index,
+        );
 
       const matchingNodeIds = new Set(
         matchingNodes.map((n) => n?.id).filter(Boolean) as string[],
@@ -535,9 +624,16 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
     );
   }, [edgeFilter, data, selectedPokemon]);
 
-  // Handle role filtering (only when no search is active)
+  // Handle role filtering
   useEffect(() => {
-    if (!nodesDatasetRef.current || selectedPokemon.length > 0) return;
+    if (!nodesDatasetRef.current) return;
+
+    // If search is active, role filter should be applied within search results
+    // If no search, role filter applies to all nodes
+    if (selectedPokemon.length > 0) {
+      // Role filtering is handled within search effect, skip here
+      return;
+    }
 
     const allNodes = data.nodes;
     let visibleNodeIds: string[];
