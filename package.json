@@ -1,22 +1,46 @@
 {
   "name": "unitedex",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write ."
+    "format": "biome format --write ./src",
+    "lint": "biome lint ./src",
+    "tsc": "tsgo --noEmit",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "extract-data": "tsx scripts/extract-matchup-data.ts",
+    "extract-types": "tsx scripts/extract-types.ts",
+    "check-stats": "tsx scripts/check-json-stats.ts",
+    "scrape": "tsx scripts/scrape-unite.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
+    "@vitejs/plugin-react": "5.0.2",
     "jsdom": "26.0.0",
-    "playwright": "1.49.1"
+    "playwright": "1.49.1",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "vis-data": "8.0.1",
+    "vis-network": "10.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "24.3.0",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "@types/vis": "4.21.27",
+    "@typescript/native-preview": "7.0.0-dev.20250831.1",
     "@ushironoko/gistdex": "^1.1.1",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "tsx": "4.19.2",
+    "typescript": "5.9.2",
+    "vite": "5.4.13"
   }
 }

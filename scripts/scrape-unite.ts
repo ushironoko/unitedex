@@ -1,13 +1,27 @@
-const { chromium } = require("playwright");
+import { chromium, Browser, Page } from "playwright";
 
-async function scrapeUniteData(pokemonName, url) {
-  const browser = await chromium.launch({
+interface PokemonData {
+  name: string;
+  role: string;
+  difficulty: string;
+  stats: Record<string, string>;
+  abilities: string[];
+  moves: string[];
+  items: string[];
+  fullText: string;
+}
+
+async function scrapeUniteData(
+  pokemonName: string,
+  url: string
+): Promise<PokemonData> {
+  const browser: Browser = await chromium.launch({
     headless: true,
   });
 
   try {
     const context = await browser.newContext();
-    const page = await context.newPage();
+    const page: Page = await context.newPage();
 
     console.log(`Accessing ${pokemonName} page...`);
     await page.goto(url, {
@@ -18,8 +32,8 @@ async function scrapeUniteData(pokemonName, url) {
     console.log("Waiting for content to load...");
     await page.waitForTimeout(5000);
 
-    const data = await page.evaluate(() => {
-      const result = {
+    const data = await page.evaluate((): PokemonData => {
+      const result: PokemonData = {
         name: "",
         role: "",
         difficulty: "",
@@ -31,29 +45,29 @@ async function scrapeUniteData(pokemonName, url) {
       };
 
       const nameElement = document.querySelector(
-        "h1, .pokemon-name, [class*='name']",
+        "h1, .pokemon-name, [class*='name']"
       );
       if (nameElement) {
-        result.name = nameElement.textContent.trim();
+        result.name = nameElement.textContent?.trim() || "";
       }
 
       const roleElement = document.querySelector(
-        "[class*='role'], [class*='type']",
+        "[class*='role'], [class*='type']"
       );
       if (roleElement) {
-        result.role = roleElement.textContent.trim();
+        result.role = roleElement.textContent?.trim() || "";
       }
 
       const difficultyElement = document.querySelector("[class*='difficulty']");
       if (difficultyElement) {
-        result.difficulty = difficultyElement.textContent.trim();
+        result.difficulty = difficultyElement.textContent?.trim() || "";
       }
 
       const statContainers = document.querySelectorAll(
-        "[class*='stat'], [class*='Stat']",
+        "[class*='stat'], [class*='Stat']"
       );
       statContainers.forEach((container) => {
-        const text = container.textContent.trim();
+        const text = container.textContent?.trim() || "";
         if (text && text.includes(":")) {
           const [key, value] = text.split(":").map((s) => s.trim());
           if (key && value) {
@@ -63,31 +77,31 @@ async function scrapeUniteData(pokemonName, url) {
       });
 
       const moveContainers = document.querySelectorAll(
-        "[class*='move'], [class*='Move'], [class*='skill'], [class*='Skill']",
+        "[class*='move'], [class*='Move'], [class*='skill'], [class*='Skill']"
       );
       moveContainers.forEach((container) => {
-        const text = container.textContent.trim();
+        const text = container.textContent?.trim() || "";
         if (text && text.length > 1 && !text.includes("Loading")) {
           result.moves.push(text);
         }
       });
 
       const itemContainers = document.querySelectorAll(
-        "[class*='item'], [class*='Item'], [class*='build'], [class*='Build']",
+        "[class*='item'], [class*='Item'], [class*='build'], [class*='Build']"
       );
       itemContainers.forEach((container) => {
-        const text = container.textContent.trim();
+        const text = container.textContent?.trim() || "";
         if (text && text.length > 1 && !text.includes("Loading")) {
           result.items.push(text);
         }
       });
 
       const allTextElements = document.querySelectorAll(
-        "p, span, div, h1, h2, h3, h4, h5, h6, td, th, li",
+        "p, span, div, h1, h2, h3, h4, h5, h6, td, th, li"
       );
-      const textSet = new Set();
+      const textSet = new Set<string>();
       allTextElements.forEach((el) => {
-        const text = el.textContent.trim();
+        const text = el.textContent?.trim() || "";
         if (text && text.length > 0) {
           textSet.add(text);
         }
@@ -141,13 +155,13 @@ async function scrapeUniteData(pokemonName, url) {
 }
 
 // Command line usage
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
 
   if (args.length < 2) {
-    console.log("Usage: node scrape-unite.js <pokemon-name> <url>");
+    console.log("Usage: tsx scrape-unite.ts <pokemon-name> <url>");
     console.log(
-      "Example: node scrape-unite.js Garchomp https://unite-db.com/pokemon/garchomp",
+      "Example: tsx scrape-unite.ts Garchomp https://unite-db.com/pokemon/garchomp"
     );
     process.exit(1);
   }
@@ -156,4 +170,4 @@ if (require.main === module) {
   scrapeUniteData(pokemonName, url).catch(console.error);
 }
 
-module.exports = { scrapeUniteData };
+export { scrapeUniteData };
