@@ -1,14 +1,3 @@
 onlyBuiltDependencies:
-  - tree-sitter
-  - tree-sitter-bash
-  - tree-sitter-c
-  - tree-sitter-cpp
-  - tree-sitter-css
-  - tree-sitter-go
-  - tree-sitter-html
-  - tree-sitter-java
-  - tree-sitter-javascript
-  - tree-sitter-python
-  - tree-sitter-ruby
-  - tree-sitter-rust
-  - tree-sitter-typescript
+  - "@biomejs/biome"
+  - esbuild
