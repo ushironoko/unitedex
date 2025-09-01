@@ -1,7113 +1,5508 @@
-import type { PokemonData } from "../types";
+import type { PokemonData } from '../types';
 
 export const pokemonMatchupData: PokemonData = {
-  nodes: [
+  "nodes": [
     {
-      id: "absol_サイコカッター",
-      label: "アブソル (サイコカッター)",
-      role: "アサシン",
+      "id": "absol_サイコカッター",
+      "label": "アブソル (サイコカッター)",
+      "role": "アサシン"
     },
     {
-      id: "absol_ふいうち",
-      label: "アブソル (ふいうち)",
-      role: "アサシン",
+      "id": "absol_ふいうち",
+      "label": "アブソル (ふいうち)",
+      "role": "アサシン"
     },
     {
-      id: "tsareena_トリプルアクセル",
-      label: "アマージョ (トリプルアクセル)",
-      role: "ファイター",
+      "id": "tsareena_トリプルアクセル",
+      "label": "アマージョ (トリプルアクセル)",
+      "role": "ファイター"
     },
     {
-      id: "tsareena_ふみつけ",
-      label: "アマージョ (ふみつけ)",
-      role: "ファイター",
+      "id": "tsareena_ふみつけ",
+      "label": "アマージョ (ふみつけ)",
+      "role": "ファイター"
     },
     {
-      id: "alolan_ninetales_ふぶき",
-      label: "アローラキュウコン (ふぶき)",
-      role: "メイジ",
+      "id": "alolan_ninetales_ふぶき",
+      "label": "アローラキュウコン (ふぶき)",
+      "role": "メイジ"
     },
     {
-      id: "alolan_raichu_エレキボール",
-      label: "アローラライチュウ (エレキボール)",
-      role: "メイジ",
+      "id": "alolan_raichu_エレキボール",
+      "label": "アローラライチュウ (エレキボール)",
+      "role": "メイジ"
     },
     {
-      id: "alolan_raichu_アシストパワー",
-      label: "アローラライチュウ (アシストパワー)",
-      role: "メイジ",
+      "id": "alolan_raichu_アシストパワー",
+      "label": "アローラライチュウ (アシストパワー)",
+      "role": "メイジ"
     },
     {
-      id: "crustle_シザークロス",
-      label: "イワパレス (シザークロス)",
-      role: "タンク",
+      "id": "crustle_シザークロス",
+      "label": "イワパレス (シザークロス)",
+      "role": "タンク"
     },
     {
-      id: "urshifu_すいりゅうれんだ",
-      label: "ウーラオス (すいりゅうれんだ)",
-      role: "ファイター",
+      "id": "urshifu_すいりゅうれんだ",
+      "label": "ウーラオス (すいりゅうれんだ)",
+      "role": "ファイター"
     },
     {
-      id: "cinderace_ブレイズキック",
-      label: "エースバーン (ブレイズキック)",
-      role: "メイジ",
+      "id": "cinderace_ブレイズキック",
+      "label": "エースバーン (ブレイズキック)",
+      "role": "メイジ"
     },
     {
-      id: "cinderace_かえんボール",
-      label: "エースバーン (かえんボール)",
-      role: "メイジ",
+      "id": "cinderace_かえんボール",
+      "label": "エースバーン (かえんボール)",
+      "role": "メイジ"
     },
     {
-      id: "espeon_サイコショック",
-      label: "エーフィ (サイコショック)",
-      role: "メイジ",
+      "id": "espeon_サイコショック",
+      "label": "エーフィ (サイコショック)",
+      "role": "メイジ"
     },
     {
-      id: "espeon_アシストパワー",
-      label: "エーフィ (アシストパワー)",
-      role: "メイジ",
+      "id": "trevenant_呪い",
+      "label": "オーロット (呪い)",
+      "role": "タンク"
     },
     {
-      id: "trevenant_呪い",
-      label: "オーロット (呪い)",
-      role: "タンク",
+      "id": "trevenant_ウッドハンマー",
+      "label": "オーロット (ウッドハンマー)",
+      "role": "タンク"
     },
     {
-      id: "trevenant_ウッドハンマー",
-      label: "オーロット (ウッドハンマー)",
-      role: "タンク",
+      "id": "machamp_地獄車",
+      "label": "カイリキー (地獄車)",
+      "role": "ファイター"
     },
     {
-      id: "machamp_地獄車",
-      label: "カイリキー (地獄車)",
-      role: "ファイター",
+      "id": "machamp_ばくれつパンチ",
+      "label": "カイリキー (ばくれつパンチ)",
+      "role": "ファイター"
     },
     {
-      id: "machamp_ばくれつパンチ",
-      label: "カイリキー (ばくれつパンチ)",
-      role: "ファイター",
+      "id": "dragonite",
+      "label": "カイリュー",
+      "role": "ファイター"
     },
     {
-      id: "dragonite_はかいこうせん",
-      label: "カイリュー (はかいこうせん)",
-      role: "ファイター",
+      "id": "snorlax",
+      "label": "カビゴン",
+      "role": "タンク"
     },
     {
-      id: "dragonite_げきりん",
-      label: "カイリュー (げきりん)",
-      role: "ファイター",
+      "id": "blastoise_こうそくスピン",
+      "label": "カメックス (こうそくスピン)",
+      "role": "タンク"
     },
     {
-      id: "snorlax_ヘビーボンバー",
-      label: "カビゴン (ヘビーボンバー)",
-      role: "タンク",
+      "id": "garchomp_ドラゴンクロー",
+      "label": "ガブリアス (ドラゴンクロー)",
+      "role": "ファイター"
     },
     {
-      id: "snorlax_じたばた",
-      label: "カビゴン (じたばた)",
-      role: "タンク",
+      "id": "galarian_rapidash_マジカルシャイン",
+      "label": "ガラルギャロップ (マジカルシャイン)",
+      "role": "アサシン"
     },
     {
-      id: "blastoise_こうそくスピン",
-      label: "カメックス (こうそくスピン)",
-      role: "タンク",
+      "id": "comfey",
+      "label": "キュワワー",
+      "role": "サポート"
     },
     {
-      id: "blastoise_波乗り",
-      label: "カメックス (波乗り)",
-      role: "タンク",
+      "id": "gyarados_滝登り",
+      "label": "ギャラドス (滝登り)",
+      "role": "ファイター"
     },
     {
-      id: "garchomp_ドラゴンクロー",
-      label: "ガブリアス (ドラゴンクロー)",
-      role: "ファイター",
+      "id": "gyarados_飛び跳ねる",
+      "label": "ギャラドス (飛び跳ねる)",
+      "role": "ファイター"
     },
     {
-      id: "garchomp_地震",
-      label: "ガブリアス (地震)",
-      role: "ファイター",
+      "id": "aegislash_聖なる剣",
+      "label": "ギルガルド (聖なる剣)",
+      "role": "ファイター"
     },
     {
-      id: "galarian_rapidash_マジカルシャイン",
-      label: "ガラルギャロップ (マジカルシャイン)",
-      role: "アサシン",
+      "id": "glaceon_つららばり",
+      "label": "グレイシア (つららばり)",
+      "role": "メイジ"
     },
     {
-      id: "galarian_rapidash_ようせいのかぜ",
-      label: "ガラルギャロップ (ようせいのかぜ)",
-      role: "アサシン",
+      "id": "glaceon_こごえるかぜ",
+      "label": "グレイシア (こごえるかぜ)",
+      "role": "メイジ"
     },
     {
-      id: "comfey_フラワーヒール",
-      label: "キュワワー (フラワーヒール)",
-      role: "サポート",
+      "id": "armarouge_ほのおのうず",
+      "label": "グレンアルマ (ほのおのうず)",
+      "role": "メイジ"
     },
     {
-      id: "comfey_てんしのキッス",
-      label: "キュワワー (てんしのキッス)",
-      role: "サポート",
+      "id": "greninja_水手裏剣",
+      "label": "ゲッコウガ (水手裏剣)",
+      "role": "メイジ"
     },
     {
-      id: "gyarados_滝登り",
-      label: "ギャラドス (滝登り)",
-      role: "ファイター",
+      "id": "greninja_なみのり",
+      "label": "ゲッコウガ (なみのり)",
+      "role": "メイジ"
     },
     {
-      id: "gyarados_飛び跳ねる",
-      label: "ギャラドス (飛び跳ねる)",
-      role: "ファイター",
+      "id": "gengar_ゆめくい",
+      "label": "ゲンガー (ゆめくい)",
+      "role": "アサシン"
     },
     {
-      id: "aegislash_聖なる剣",
-      label: "ギルガルド (聖なる剣)",
-      role: "ファイター",
+      "id": "gengar_たたりめ",
+      "label": "ゲンガー (たたりめ)",
+      "role": "アサシン"
     },
     {
-      id: "aegislash_シャドークロー",
-      label: "ギルガルド (シャドークロー)",
-      role: "ファイター",
+      "id": "psyduck",
+      "label": "コダック",
+      "role": "サポート"
     },
     {
-      id: "glaceon_つららばり",
-      label: "グレイシア (つららばり)",
-      role: "メイジ",
+      "id": "gardevoir_サイコショック",
+      "label": "サーナイト (サイコショック)",
+      "role": "メイジ"
     },
     {
-      id: "glaceon_こごえるかぜ",
-      label: "グレイシア (こごえるかぜ)",
-      role: "メイジ",
+      "id": "gardevoir_みらいよち",
+      "label": "サーナイト (みらいよち)",
+      "role": "メイジ"
     },
     {
-      id: "armarouge_ほのおのうず",
-      label: "グレンアルマ (ほのおのうず)",
-      role: "メイジ",
+      "id": "zacian_メタルクロー",
+      "label": "ザシアン (メタルクロー)",
+      "role": "ファイター"
     },
     {
-      id: "armarouge_アーマーキャノン",
-      label: "グレンアルマ (アーマーキャノン)",
-      role: "メイジ",
+      "id": "zacian_聖なる剣",
+      "label": "ザシアン (聖なる剣)",
+      "role": "ファイター"
     },
     {
-      id: "greninja_水手裏剣",
-      label: "ゲッコウガ (水手裏剣)",
-      role: "メイジ",
+      "id": "decidueye_かげぬい",
+      "label": "ジュナイパー (かげぬい)",
+      "role": "メイジ"
     },
     {
-      id: "greninja_なみのり",
-      label: "ゲッコウガ (なみのり)",
-      role: "メイジ",
+      "id": "suicune_うずしお",
+      "label": "スイクン (うずしお)",
+      "role": "ファイター"
     },
     {
-      id: "gengar_ゆめくい",
-      label: "ゲンガー (ゆめくい)",
-      role: "アサシン",
+      "id": "scyther_剣の舞",
+      "label": "ストライク (剣の舞)",
+      "role": "ファイター"
     },
     {
-      id: "gengar_たたりめ",
-      label: "ゲンガー (たたりめ)",
-      role: "アサシン",
+      "id": "zeraora",
+      "label": "ゼラオラ",
+      "role": "アサシン"
     },
     {
-      id: "psyduck_なみのり",
-      label: "コダック (なみのり)",
-      role: "サポート",
+      "id": "ceruledge_ゴーストダイブ",
+      "label": "ソウブレイズ (ゴーストダイブ)",
+      "role": "ファイター"
     },
     {
-      id: "psyduck_バブルこうせん",
-      label: "コダック (バブルこうせん)",
-      role: "サポート",
+      "id": "ceruledge_ニトロチャージ",
+      "label": "ソウブレイズ (ニトロチャージ)",
+      "role": "ファイター"
     },
     {
-      id: "gardevoir_サイコショック",
-      label: "サーナイト (サイコショック)",
-      role: "メイジ",
+      "id": "zoroark_だましうち",
+      "label": "ゾロアーク (だましうち)",
+      "role": "アサシン"
     },
     {
-      id: "gardevoir_みらいよち",
-      label: "サーナイト (みらいよち)",
-      role: "メイジ",
+      "id": "falinks_アイアンヘッド",
+      "label": "タイレーツ (アイアンヘッド)",
+      "role": "ファイター"
     },
     {
-      id: "zacian_メタルクロー",
-      label: "ザシアン (メタルクロー)",
-      role: "ファイター",
+      "id": "falinks_メガホーン",
+      "label": "タイレーツ (メガホーン)",
+      "role": "ファイター"
     },
     {
-      id: "zacian_聖なる剣",
-      label: "ザシアン (聖なる剣)",
-      role: "ファイター",
+      "id": "darkrai_悪だくみ",
+      "label": "ダークライ (悪だくみ)",
+      "role": "アサシン"
     },
     {
-      id: "decidueye_かげぬい",
-      label: "ジュナイパー (かげぬい)",
-      role: "メイジ",
+      "id": "tinkaton_デカハンマー",
+      "label": "デカヌチャン (デカハンマー)",
+      "role": "ファイター"
     },
     {
-      id: "decidueye_はっぱカッター",
-      label: "ジュナイパー (はっぱカッター)",
-      role: "メイジ",
+      "id": "dodrio_トライアタック",
+      "label": "ドードリオ (トライアタック)",
+      "role": "アサシン"
     },
     {
-      id: "suicune_うずしお",
-      label: "スイクン (うずしお)",
-      role: "ファイター",
+      "id": "sylveon_ハイパーボイス",
+      "label": "ニンフィア (ハイパーボイス)",
+      "role": "メイジ"
     },
     {
-      id: "suicune_なみのり",
-      label: "スイクン (なみのり)",
-      role: "ファイター",
+      "id": "sylveon_マジカルフレイム",
+      "label": "ニンフィア (マジカルフレイム)",
+      "role": "メイジ"
     },
     {
-      id: "scyther_ダブルアタック",
-      label: "ストライク (ダブルアタック)",
-      role: "ファイター",
+      "id": "blissey_しんぴのまもり",
+      "label": "ハピナス (しんぴのまもり)",
+      "role": "サポート"
     },
     {
-      id: "scyther_剣の舞",
-      label: "ストライク (剣の舞)",
-      role: "ファイター",
+      "id": "blissey_たまごうみ",
+      "label": "ハピナス (たまごうみ)",
+      "role": "サポート"
     },
     {
-      id: "zeraora_ワイルドボルト",
-      label: "ゼラオラ (ワイルドボルト)",
-      role: "アサシン",
+      "id": "blaziken",
+      "label": "バシャーモ",
+      "role": "ファイター"
     },
     {
-      id: "zeraora_ほうでん",
-      label: "ゼラオラ (ほうでん)",
-      role: "アサシン",
+      "id": "pikachu_ボルテッカー",
+      "label": "ピカチュウ (ボルテッカー)",
+      "role": "メイジ"
     },
     {
-      id: "ceruledge_ゴーストダイブ",
-      label: "ソウブレイズ (ゴーストダイブ)",
-      role: "ファイター",
+      "id": "pikachu_10_万ボルト",
+      "label": "ピカチュウ (10 万ボルト)",
+      "role": "メイジ"
     },
     {
-      id: "ceruledge_ニトロチャージ",
-      label: "ソウブレイズ (ニトロチャージ)",
-      role: "ファイター",
+      "id": "clefable_重力",
+      "label": "ピクシー (重力)",
+      "role": "サポート"
     },
     {
-      id: "zoroark_だましうち",
-      label: "ゾロアーク (だましうち)",
-      role: "アサシン",
+      "id": "clefable_このゆびとまれ",
+      "label": "ピクシー (このゆびとまれ)",
+      "role": "サポート"
     },
     {
-      id: "zoroark_辻斬り",
-      label: "ゾロアーク (辻斬り)",
-      role: "アサシン",
+      "id": "talonflame_ブレイブバード",
+      "label": "ファイアロー (ブレイブバード)",
+      "role": "アサシン"
     },
     {
-      id: "falinks_アイアンヘッド",
-      label: "タイレーツ (アイアンヘッド)",
-      role: "ファイター",
+      "id": "talonflame_そらをとぶ",
+      "label": "ファイアロー (そらをとぶ)",
+      "role": "アサシン"
     },
     {
-      id: "falinks_メガホーン",
-      label: "タイレーツ (メガホーン)",
-      role: "ファイター",
+      "id": "hoopa",
+      "label": "フーパ",
+      "role": "サポート"
     },
     {
-      id: "darkrai_悪だくみ",
-      label: "ダークライ (悪だくみ)",
-      role: "アサシン",
+      "id": "umbreon_イカサマ",
+      "label": "ブラッキー (イカサマ)",
+      "role": "タンク"
     },
     {
-      id: "darkrai_あくのはどう",
-      label: "ダークライ (あくのはどう)",
-      role: "アサシン",
+      "id": "umbreon_くろいまなざし",
+      "label": "ブラッキー (くろいまなざし)",
+      "role": "タンク"
     },
     {
-      id: "tinkaton_デカハンマー",
-      label: "デカヌチャン (デカハンマー)",
-      role: "ファイター",
+      "id": "wigglytuff",
+      "label": "プクリン",
+      "role": "サポート"
     },
     {
-      id: "dodrio_トライアタック",
-      label: "ドードリオ (トライアタック)",
-      role: "アサシン",
+      "id": "ho_oh",
+      "label": "ホウオウ",
+      "role": "タンク"
     },
     {
-      id: "dodrio_ドリルくちばし",
-      label: "ドードリオ (ドリルくちばし)",
-      role: "アサシン",
+      "id": "meowscarada_トリックフラワー",
+      "label": "マスカーニャ (トリックフラワー)",
+      "role": "アサシン"
     },
     {
-      id: "sylveon_ハイパーボイス",
-      label: "ニンフィア (ハイパーボイス)",
-      role: "メイジ",
+      "id": "buzzwole_ばかぢから",
+      "label": "マッシブーン (ばかぢから)",
+      "role": "ファイター"
     },
     {
-      id: "sylveon_マジカルフレイム",
-      label: "ニンフィア (マジカルフレイム)",
-      role: "メイジ",
+      "id": "delphox_ほのおのうず",
+      "label": "マフォクシー (ほのおのうず)",
+      "role": "メイジ"
     },
     {
-      id: "blissey_たまごうみ",
-      label: "ハピナス (たまごうみ)",
-      role: "サポート",
+      "id": "delphox_ニトロチャージ",
+      "label": "マフォクシー (ニトロチャージ)",
+      "role": "メイジ"
     },
     {
-      id: "blissey_しんぴのまもり",
-      label: "ハピナス (しんぴのまもり)",
-      role: "サポート",
+      "id": "alcremie",
+      "label": "マホイップ",
+      "role": "サポート"
     },
     {
-      id: "blaziken",
-      label: "バシャーモ",
-      role: "ファイター",
+      "id": "azumarill_アクアテール",
+      "label": "マリルリ (アクアテール)",
+      "role": "ファイター"
     },
     {
-      id: "pikachu_ボルテッカー",
-      label: "ピカチュウ (ボルテッカー)",
-      role: "メイジ",
+      "id": "mamoswine",
+      "label": "マンムー",
+      "role": "タンク"
     },
     {
-      id: "pikachu_10_万ボルト",
-      label: "ピカチュウ (10 万ボルト)",
-      role: "メイジ",
+      "id": "mimikyu_トリックルーム",
+      "label": "ミミッキュ (トリックルーム)",
+      "role": "ファイター"
     },
     {
-      id: "clefable_重力",
-      label: "ピクシー (重力)",
-      role: "サポート",
+      "id": "mimikyu_かげうち",
+      "label": "ミミッキュ (かげうち)",
+      "role": "ファイター"
     },
     {
-      id: "clefable_このゆびとまれ",
-      label: "ピクシー (このゆびとまれ)",
-      role: "サポート",
+      "id": "mew",
+      "label": "ミュウ",
+      "role": "メイジ"
     },
     {
-      id: "talonflame_ブレイブバード",
-      label: "ファイアロー (ブレイブバード)",
-      role: "アサシン",
+      "id": "mewtwo_y_サイコブレイク",
+      "label": "ミュウツーY (サイコブレイク)",
+      "role": "メイジ"
     },
     {
-      id: "talonflame_そらをとぶ",
-      label: "ファイアロー (そらをとぶ)",
-      role: "アサシン",
+      "id": "mewtwo_y_みらいよち",
+      "label": "ミュウツーY (みらいよち)",
+      "role": "メイジ"
     },
     {
-      id: "hoopa_トリック",
-      label: "フーパ (トリック)",
-      role: "サポート",
+      "id": "miraidon_チャージビーム",
+      "label": "ミライドン (チャージビーム)",
+      "role": "メイジ"
     },
     {
-      id: "hoopa_いじげんホール",
-      label: "フーパ (いじげんホール)",
-      role: "サポート",
+      "id": "miraidon_イナズマドライブ",
+      "label": "ミライドン (イナズマドライブ)",
+      "role": "メイジ"
     },
     {
-      id: "umbreon_イカサマ",
-      label: "ブラッキー (イカサマ)",
-      role: "タンク",
+      "id": "metagross_ジャイロボール",
+      "label": "メタグロス (ジャイロボール)",
+      "role": "ファイター"
     },
     {
-      id: "umbreon_くろいまなざし",
-      label: "ブラッキー (くろいまなざし)",
-      role: "タンク",
+      "id": "metagross_コメットパンチ",
+      "label": "メタグロス (コメットパンチ)",
+      "role": "ファイター"
     },
     {
-      id: "wigglytuff_ころがる",
-      label: "プクリン (ころがる)",
-      role: "サポート",
+      "id": "slowbro_ねっとう",
+      "label": "ヤドラン (ねっとう)",
+      "role": "タンク"
     },
     {
-      id: "wigglytuff_うたう",
-      label: "プクリン (うたう)",
-      role: "サポート",
+      "id": "slowbro_なみのり",
+      "label": "ヤドラン (なみのり)",
+      "role": "タンク"
     },
     {
-      id: "ho_oh_聖なる炎）",
-      label: "ホウオウ (聖なる炎）)",
-      role: "タンク",
+      "id": "sableye",
+      "label": "ヤミラミ",
+      "role": "サポート"
     },
     {
-      id: "ho_oh_ほのおのうず",
-      label: "ホウオウ (ほのおのうず)",
-      role: "タンク",
+      "id": "latias",
+      "label": "ラティアス",
+      "role": "サポート"
     },
     {
-      id: "meowscarada_トリックフラワー",
-      label: "マスカーニャ (トリックフラワー)",
-      role: "アサシン",
+      "id": "latios",
+      "label": "ラティオス",
+      "role": "メイジ"
     },
     {
-      id: "meowscarada_辻斬り",
-      label: "マスカーニャ (辻斬り)",
-      role: "アサシン",
+      "id": "charizard_フレアドライブ",
+      "label": "リザードン (フレアドライブ)",
+      "role": "ファイター"
     },
     {
-      id: "buzzwole_ばかぢから",
-      label: "マッシブーン (ばかぢから)",
-      role: "ファイター",
+      "id": "charizard_大文字",
+      "label": "リザードン (大文字)",
+      "role": "ファイター"
     },
     {
-      id: "buzzwole_きゅうけつ",
-      label: "マッシブーン (きゅうけつ)",
-      role: "ファイター",
+      "id": "leafeon_はっぱカッター",
+      "label": "リーフィア (はっぱカッター)",
+      "role": "アサシン"
     },
     {
-      id: "delphox_ほのおのうず",
-      label: "マフォクシー (ほのおのうず)",
-      role: "メイジ",
+      "id": "lucario_神速",
+      "label": "ルカリオ (神速)",
+      "role": "ファイター"
     },
     {
-      id: "delphox_ニトロチャージ",
-      label: "マフォクシー (ニトロチャージ)",
-      role: "メイジ",
+      "id": "lucario_グロウパンチ_ボーンラッシュ",
+      "label": "ルカリオ (グロウパンチ+ボーンラッシュ)",
+      "role": "ファイター"
     },
     {
-      id: "alcremie_じこさいせい",
-      label: "マホイップ (じこさいせい)",
-      role: "サポート",
-    },
-    {
-      id: "alcremie_デコレーション",
-      label: "マホイップ (デコレーション)",
-      role: "サポート",
-    },
-    {
-      id: "azumarill_アクアテール",
-      label: "マリルリ (アクアテール)",
-      role: "ファイター",
-    },
-    {
-      id: "azumarill_うずしお",
-      label: "マリルリ (うずしお)",
-      role: "ファイター",
-    },
-    {
-      id: "mamoswine_こおりのきば",
-      label: "マンムー (こおりのきば)",
-      role: "タンク",
-    },
-    {
-      id: "mamoswine_つららおとし",
-      label: "マンムー (つららおとし)",
-      role: "タンク",
-    },
-    {
-      id: "mimikyu_トリックルーム",
-      label: "ミミッキュ (トリックルーム)",
-      role: "ファイター",
-    },
-    {
-      id: "mimikyu_かげうち",
-      label: "ミミッキュ (かげうち)",
-      role: "ファイター",
-    },
-    {
-      id: "mew",
-      label: "ミュウ",
-      role: "メイジ",
-    },
-    {
-      id: "mewtwo_y_サイコブレイク",
-      label: "ミュウツーY (サイコブレイク)",
-      role: "メイジ",
-    },
-    {
-      id: "mewtwo_y_みらいよち",
-      label: "ミュウツーY (みらいよち)",
-      role: "メイジ",
-    },
-    {
-      id: "miraidon_チャージビーム",
-      label: "ミライドン (チャージビーム)",
-      role: "メイジ",
-    },
-    {
-      id: "miraidon_イナズマドライブ",
-      label: "ミライドン (イナズマドライブ)",
-      role: "メイジ",
-    },
-    {
-      id: "metagross_ジャイロボール",
-      label: "メタグロス (ジャイロボール)",
-      role: "ファイター",
-    },
-    {
-      id: "metagross_コメットパンチ",
-      label: "メタグロス (コメットパンチ)",
-      role: "ファイター",
-    },
-    {
-      id: "slowbro_ねっとう",
-      label: "ヤドラン (ねっとう)",
-      role: "タンク",
-    },
-    {
-      id: "slowbro_なみのり",
-      label: "ヤドラン (なみのり)",
-      role: "タンク",
-    },
-    {
-      id: "sableye_はたきおとす",
-      label: "ヤミラミ (はたきおとす)",
-      role: "サポート",
-    },
-    {
-      id: "sableye_かげうち",
-      label: "ヤミラミ (かげうち)",
-      role: "サポート",
-    },
-    {
-      id: "latias_りゅうのはどう",
-      label: "ラティアス (りゅうのはどう)",
-      role: "サポート",
-    },
-    {
-      id: "latias_りゅうのいぶき",
-      label: "ラティアス (りゅうのいぶき)",
-      role: "サポート",
-    },
-    {
-      id: "latios_りゅうのはどう",
-      label: "ラティオス (りゅうのはどう)",
-      role: "メイジ",
-    },
-    {
-      id: "latios_りゅうせいぐん",
-      label: "ラティオス (りゅうせいぐん)",
-      role: "メイジ",
-    },
-    {
-      id: "charizard_フレアドライブ",
-      label: "リザードン (フレアドライブ)",
-      role: "ファイター",
-    },
-    {
-      id: "charizard_大文字",
-      label: "リザードン (大文字)",
-      role: "ファイター",
-    },
-    {
-      id: "leafeon_はっぱカッター",
-      label: "リーフィア (はっぱカッター)",
-      role: "アサシン",
-    },
-    {
-      id: "leafeon_ソーラーブレード",
-      label: "リーフィア (ソーラーブレード)",
-      role: "アサシン",
-    },
-    {
-      id: "lucario_神速",
-      label: "ルカリオ (神速)",
-      role: "ファイター",
-    },
-    {
-      id: "lucario_グロウパンチ_ボーンラッシュ",
-      label: "ルカリオ (グロウパンチ+ボーンラッシュ)",
-      role: "ファイター",
-    },
-    {
-      id: "lucario_グロウパンチ_インファイト",
-      label: "ルカリオ (グロウパンチ+インファイト)",
-      role: "ファイター",
-    },
+      "id": "lucario_グロウパンチ_インファイト",
+      "label": "ルカリオ (グロウパンチ+インファイト)",
+      "role": "ファイター"
+    }
   ],
-  edges: [
+  "edges": [
     {
-      from: "absol_サイコカッター",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "talonflame_ブレイブバード",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "talonflame_そらをとぶ",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "talonflame_ブレイブバード",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "talonflame_そらをとぶ",
-      type: "advantage",
+      "from": "absol_ふいうち",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "absol_ふいうち",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "absol_ふいうち",
+      "to": "talonflame_ブレイブバード",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "absol_ふいうち",
+      "to": "talonflame_そらをとぶ",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "absol_ふいうち",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "talonflame_ブレイブバード",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "talonflame_そらをとぶ",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "absol_サイコカッター",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "absol_サイコカッター",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "absol_サイコカッター",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "absol_サイコカッター",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "absol_ふいうち",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "absol_ふいうち",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "tsareena_トリプルアクセル",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "tsareena_ふみつけ",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "tsareena_ふみつけ",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "tsareena_ふみつけ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "clefable_重力",
-      type: "disadvantage",
+      "from": "tsareena_ふみつけ",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
+      "from": "tsareena_ふみつけ",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "tsareena_トリプルアクセル",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "clefable_重力",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "alolan_ninetales_ふぶき",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "tsareena_ふみつけ",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "espeon_サイコショック",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "tinkaton_デカハンマー",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "cinderace_ブレイズキック",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "cinderace_かえんボール",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "alolan_ninetales_ふぶき",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "espeon_サイコショック",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "espeon_アシストパワー",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "tinkaton_デカハンマー",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "suicune_うずしお",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "suicune_なみのり",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "cinderace_ブレイズキック",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "cinderace_かえんボール",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "alolan_raichu_エレキボール",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "ceruledge_ゴーストダイブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "ceruledge_ニトロチャージ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "alolan_raichu_アシストパワー",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "blaziken",
-      type: "advantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "falinks_アイアンヘッド",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "falinks_メガホーン",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "zoroark_だましうち",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "garchomp_ドラゴンクロー",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "garchomp_地震",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "glaceon_つららばり",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "glaceon_こごえるかぜ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "scyther_剣の舞",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_エレキボール",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "urshifu_すいりゅうれんだ",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "ceruledge_ゴーストダイブ",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "ceruledge_ニトロチャージ",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "alolan_raichu_アシストパワー",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "cinderace_ブレイズキック",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "falinks_アイアンヘッド",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "falinks_メガホーン",
-      type: "disadvantage",
+      "from": "cinderace_かえんボール",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "zoroark_だましうち",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "zoroark_辻斬り",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "espeon_サイコショック",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "espeon_サイコショック",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "espeon_サイコショック",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "espeon_サイコショック",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "glaceon_つららばり",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "trevenant_呪い",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "scyther_ダブルアタック",
-      type: "disadvantage",
+      "from": "trevenant_呪い",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "scyther_剣の舞",
-      type: "disadvantage",
+      "from": "trevenant_呪い",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "trevenant_呪い",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "trevenant_ウッドハンマー",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "trevenant_ウッドハンマー",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "urshifu_すいりゅうれんだ",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "trevenant_ウッドハンマー",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "blaziken",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
+      "from": "machamp_ばくれつパンチ",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "machamp_ばくれつパンチ",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
+      "from": "machamp_地獄車",
+      "to": "scyther_剣の舞",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_ブレイズキック",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "blastoise_こうそくスピン",
+      "to": "buzzwole_ばかぢから",
+      "type": "disadvantage"
     },
     {
-      from: "cinderace_かえんボール",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "scyther_剣の舞",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "espeon_サイコショック",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "garchomp_ドラゴンクロー",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "talonflame_ブレイブバード",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "talonflame_そらをとぶ",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "trevenant_呪い",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "trevenant_ウッドハンマー",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_ウッドハンマー",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_ウッドハンマー",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "trevenant_ウッドハンマー",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "scyther_剣の舞",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "umbreon_イカサマ",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "galarian_rapidash_マジカルシャイン",
+      "to": "umbreon_くろいまなざし",
+      "type": "disadvantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "machamp_ばくれつパンチ",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "machamp_ばくれつパンチ",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "gyarados_滝登り",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "gyarados_滝登り",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "scyther_ダブルアタック",
-      type: "disadvantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "machamp_地獄車",
-      to: "scyther_剣の舞",
-      type: "disadvantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "buzzwole_ばかぢから",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "gyarados_滝登り",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "buzzwole_ばかぢから",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "gyarados_飛び跳ねる",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "buzzwole_ばかぢから",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "blastoise_こうそくスピン",
-      to: "buzzwole_きゅうけつ",
-      type: "disadvantage",
+      "from": "aegislash_聖なる剣",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "aegislash_聖なる剣",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "aegislash_聖なる剣",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "aegislash_聖なる剣",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "aegislash_聖なる剣",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "glaceon_つららばり",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "glaceon_つららばり",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "scyther_ダブルアタック",
-      type: "advantage",
+      "from": "glaceon_つららばり",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "scyther_剣の舞",
-      type: "advantage",
+      "from": "glaceon_つららばり",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "glaceon_こごえるかぜ",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "glaceon_つららばり",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "glaceon_こごえるかぜ",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "scyther_剣の舞",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "armarouge_ほのおのうず",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "greninja_水手裏剣",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "greninja_水手裏剣",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "garchomp_ドラゴンクロー",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "greninja_水手裏剣",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "greninja_水手裏剣",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "talonflame_ブレイブバード",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "talonflame_そらをとぶ",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "blaziken",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "greninja_なみのり",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "gengar_たたりめ",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "gengar_たたりめ",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "gengar_たたりめ",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "gengar_たたりめ",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "gengar_たたりめ",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "scyther_ダブルアタック",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "scyther_剣の舞",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "umbreon_イカサマ",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "umbreon_くろいまなざし",
-      type: "disadvantage",
+      "from": "gengar_ゆめくい",
+      "to": "blissey_しんぴのまもり",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "gengar_ゆめくい",
+      "to": "blissey_たまごうみ",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "zoroark_だましうち",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "blissey_しんぴのまもり",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "blissey_たまごうみ",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "gengar_たたりめ",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "gardevoir_サイコショック",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "gardevoir_サイコショック",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "buzzwole_ばかぢから",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "buzzwole_きゅうけつ",
-      type: "disadvantage",
+      "from": "zacian_聖なる剣",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "zacian_聖なる剣",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "gyarados_滝登り",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "zacian_聖なる剣",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "zacian_聖なる剣",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "zacian_聖なる剣",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "buzzwole_ばかぢから",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "buzzwole_ばかぢから",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "buzzwole_きゅうけつ",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "gyarados_飛び跳ねる",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "zacian_メタルクロー",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "gyarados_滝登り",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "zacian_メタルクロー",
+      "to": "gyarados_飛び跳ねる",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "zacian_聖なる剣",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "zacian_聖なる剣",
+      "to": "ho_oh",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "decidueye_かげぬい",
+      "to": "espeon_サイコショック",
+      "type": "advantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
+      "from": "decidueye_かげぬい",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
+      "from": "decidueye_かげぬい",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "decidueye_かげぬい",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "decidueye_かげぬい",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "decidueye_かげぬい",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "suicune_うずしお",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "aegislash_聖なる剣",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "suicune_うずしお",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "glaceon_つららばり",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "glaceon_つららばり",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "glaceon_つららばり",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "glaceon_つららばり",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "glaceon_つららばり",
-      to: "blaziken",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "glaceon_こごえるかぜ",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "gyarados_滝登り",
+      "type": "disadvantage"
     },
     {
-      from: "glaceon_こごえるかぜ",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "gyarados_飛び跳ねる",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "ceruledge_ゴーストダイブ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "ceruledge_ニトロチャージ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "glaceon_つららばり",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
+      "from": "suicune_うずしお",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "scyther_ダブルアタック",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "scyther_剣の舞",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "armarouge_ほのおのうず",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "scyther_剣の舞",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_水手裏剣",
-      to: "blaziken",
-      type: "advantage",
+      "from": "scyther_剣の舞",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_水手裏剣",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "scyther_剣の舞",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_水手裏剣",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "scyther_剣の舞",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_水手裏剣",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "scyther_剣の舞",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_水手裏剣",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "scyther_剣の舞",
+      "to": "psyduck",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "blaziken",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "glaceon_つららばり",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "glaceon_こごえるかぜ",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "greninja_なみのり",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "ceruledge_ゴーストダイブ",
+      "to": "wigglytuff",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "ceruledge_ニトロチャージ",
+      "to": "wigglytuff",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "zoroark_だましうち",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "suicune_うずしお",
-      type: "advantage",
+      "from": "zoroark_だましうち",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "suicune_なみのり",
-      type: "advantage",
+      "from": "zoroark_だましうち",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "zoroark_だましうち",
+      "to": "mew",
+      "type": "advantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "zoroark_だましうち",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
+      "from": "zoroark_だましうち",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_ゆめくい",
-      to: "blissey_しんぴのまもり",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "zoroark_だましうち",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "zoroark_辻斬り",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "metagross_ジャイロボール",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "metagross_コメットパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
+      "from": "falinks_アイアンヘッド",
+      "to": "mew",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "blissey_しんぴのまもり",
-      type: "disadvantage",
+      "from": "falinks_メガホーン",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "falinks_メガホーン",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "gengar_たたりめ",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "falinks_メガホーン",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "gardevoir_サイコショック",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "gardevoir_サイコショック",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "metagross_ジャイロボール",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "metagross_コメットパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "falinks_メガホーン",
+      "to": "mew",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "falinks_アイアンヘッド",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "falinks_メガホーン",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "buzzwole_ばかぢから",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "buzzwole_きゅうけつ",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "gyarados_滝登り",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_メタルクロー",
-      to: "gyarados_飛び跳ねる",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "ho_oh_聖なる炎）",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "gyarados_滝登り",
+      "type": "disadvantage"
     },
     {
-      from: "zacian_聖なる剣",
-      to: "ho_oh_ほのおのうず",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "gyarados_飛び跳ねる",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "espeon_サイコショック",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "espeon_アシストパワー",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "blaziken",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "scyther_剣の舞",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "darkrai_悪だくみ",
+      "to": "blissey_しんぴのまもり",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
+      "from": "darkrai_悪だくみ",
+      "to": "blissey_たまごうみ",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "gyarados_滝登り",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "gyarados_飛び跳ねる",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "decidueye_かげぬい",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "tinkaton_デカハンマー",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "gyarados_滝登り",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "gyarados_飛び跳ねる",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "ceruledge_ゴーストダイブ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "ceruledge_ニトロチャージ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "meowscarada_トリックフラワー",
+      "type": "advantage"
     },
     {
-      from: "suicune_うずしお",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "blaziken",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "meowscarada_トリックフラワー",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "zoroark_だましうち",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "suicune_うずしお",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "pikachu_ボルテッカー",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "suicune_なみのり",
-      type: "advantage",
+      "from": "dodrio_トライアタック",
+      "to": "pikachu_10_万ボルト",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "garchomp_ドラゴンクロー",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "garchomp_地震",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "glaceon_つららばり",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "glaceon_こごえるかぜ",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "sylveon_ハイパーボイス",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "sylveon_マジカルフレイム",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "alolan_ninetales_ふぶき",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "dodrio_トライアタック",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "psyduck_なみのり",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "scyther_剣の舞",
-      to: "psyduck_バブルこうせん",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "glaceon_つららばり",
-      type: "advantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "absol_サイコカッター",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "absol_ふいうち",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "gyarados_滝登り",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "blaziken",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "gyarados_飛び跳ねる",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "machamp_地獄車",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "machamp_ばくれつパンチ",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "wigglytuff_ころがる",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ゴーストダイブ",
-      to: "wigglytuff_うたう",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "sylveon_ハイパーボイス",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "wigglytuff_ころがる",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "ceruledge_ニトロチャージ",
-      to: "wigglytuff_うたう",
-      type: "disadvantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "blaziken",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "ceruledge_ゴーストダイブ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "ceruledge_ニトロチャージ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "mew",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "sylveon_マジカルフレイム",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "blissey_しんぴのまもり",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "blissey_しんぴのまもり",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "blissey_しんぴのまもり",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "blissey_たまごうみ",
+      "to": "umbreon_イカサマ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "blissey_たまごうみ",
+      "to": "umbreon_くろいまなざし",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
+      "from": "blissey_しんぴのまもり",
+      "to": "umbreon_イカサマ",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
+      "from": "blissey_しんぴのまもり",
+      "to": "umbreon_くろいまなざし",
+      "type": "disadvantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "clefable_重力",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "espeon_サイコショック",
+      "type": "advantage"
     },
     {
-      from: "zoroark_だましうち",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "tinkaton_デカハンマー",
+      "type": "advantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "falinks_アイアンヘッド",
+      "type": "advantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "falinks_メガホーン",
+      "type": "advantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "metagross_ジャイロボール",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "metagross_コメットパンチ",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "blaziken",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "falinks_アイアンヘッド",
-      to: "mew",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "greninja_水手裏剣",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "greninja_なみのり",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "metagross_ジャイロボール",
-      type: "disadvantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "metagross_コメットパンチ",
-      type: "disadvantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "falinks_メガホーン",
-      to: "mew",
-      type: "disadvantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "glaceon_つららばり",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "glaceon_こごえるかぜ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "falinks_アイアンヘッド",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "falinks_メガホーン",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "pikachu_ボルテッカー",
+      "to": "mew",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "pikachu_10_万ボルト",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "meowscarada_トリックフラワー",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "gyarados_滝登り",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "gyarados_飛び跳ねる",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "glaceon_つららばり",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "glaceon_こごえるかぜ",
+      "type": "advantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "scyther_ダブルアタック",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "scyther_剣の舞",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "glaceon_つららばり",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "glaceon_こごえるかぜ",
+      "type": "disadvantage"
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "blissey_しんぴのまもり",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "gardevoir_サイコショック",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "gardevoir_みらいよち",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "gyarados_滝登り",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "gyarados_飛び跳ねる",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "psyduck",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "mimikyu_かげうち",
-      type: "advantage",
+      "from": "clefable_重力",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "armarouge_ほのおのうず",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "clefable_重力",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "tinkaton_デカハンマー",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "blaziken",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "psyduck",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "suicune_うずしお",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "urshifu_すいりゅうれんだ",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "armarouge_ほのおのうず",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "gardevoir_サイコショック",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "clefable_このゆびとまれ",
+      "to": "gardevoir_みらいよち",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "meowscarada_トリックフラワー",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "meowscarada_辻斬り",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
+      "from": "talonflame_ブレイブバード",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "meowscarada_トリックフラワー",
-      type: "disadvantage",
+      "from": "talonflame_そらをとぶ",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "meowscarada_辻斬り",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "alcremie",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "zoroark_だましうち",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "snorlax",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "zoroark_辻斬り",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "crustle_シザークロス",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
+      "from": "umbreon_イカサマ",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "alcremie",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "pikachu_ボルテッカー",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "snorlax",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "pikachu_10_万ボルト",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "crustle_シザークロス",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "glaceon_つららばり",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "glaceon_こごえるかぜ",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "sylveon_ハイパーボイス",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "sylveon_マジカルフレイム",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "alolan_ninetales_ふぶき",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "dodrio_トライアタック",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "ceruledge_ゴーストダイブ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "ceruledge_ニトロチャージ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "umbreon_くろいまなざし",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "dragonite",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "machamp_地獄車",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "machamp_ばくれつパンチ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "zacian_メタルクロー",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "gyarados_滝登り",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "zacian_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "gyarados_飛び跳ねる",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "zeraora",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "machamp_地獄車",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "machamp_ばくれつパンチ",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "dodrio_トライアタック",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "zoroark_だましうち",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "garchomp_ドラゴンクロー",
-      type: "disadvantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "garchomp_地震",
-      type: "disadvantage",
+      "from": "meowscarada_トリックフラワー",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "zeraora",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "blastoise_こうそくスピン",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "lucario_神速",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_ハイパーボイス",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "buzzwole_ばかぢから",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "suicune_うずしお",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "blaziken",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "ceruledge_ゴーストダイブ",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "ceruledge_ニトロチャージ",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "crustle_シザークロス",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "ho_oh",
+      "type": "advantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "sylveon_マジカルフレイム",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "delphox_ほのおのうず",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_たまごうみ",
-      to: "umbreon_イカサマ",
-      type: "disadvantage",
+      "from": "delphox_ニトロチャージ",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "blissey_たまごうみ",
-      to: "umbreon_くろいまなざし",
-      type: "disadvantage",
+      "from": "azumarill_アクアテール",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "umbreon_イカサマ",
-      type: "disadvantage",
+      "from": "azumarill_アクアテール",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "blissey_しんぴのまもり",
-      to: "umbreon_くろいまなざし",
-      type: "disadvantage",
+      "from": "azumarill_アクアテール",
+      "to": "mimikyu_トリックルーム",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "mimikyu_かげうち",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "leafeon_はっぱカッター",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "espeon_サイコショック",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "espeon_アシストパワー",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "tinkaton_デカハンマー",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "falinks_アイアンヘッド",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "falinks_メガホーン",
-      type: "advantage",
+      "from": "azumarill_アクアテール",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "blaziken",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "absol_サイコカッター",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "absol_ふいうち",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "mew",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "charizard_大文字",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "miraidon_チャージビーム",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "miraidon_イナズマドライブ",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "mimikyu_かげうち",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
+      "from": "mimikyu_かげうち",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "blaziken",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
+      "from": "mimikyu_かげうち",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "alolan_ninetales_ふぶき",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "greninja_水手裏剣",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "greninja_なみのり",
-      type: "advantage",
+      "from": "mimikyu_トリックルーム",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "blaziken",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "clefable_重力",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "glaceon_つららばり",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "meowscarada_トリックフラワー",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "mimikyu_かげうち",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "mew",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "zoroark_だましうち",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_ボルテッカー",
-      to: "mew",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "mew",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "mewtwo_y_サイコブレイク",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "mewtwo_y_サイコブレイク",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "pikachu_10_万ボルト",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "mewtwo_y_サイコブレイク",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "mewtwo_y_みらいよち",
+      "to": "tsareena_トリプルアクセル",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "mewtwo_y_みらいよち",
+      "to": "tsareena_ふみつけ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "mewtwo_y_サイコブレイク",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "mewtwo_y_サイコブレイク",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "mewtwo_y_みらいよち",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "mewtwo_y_みらいよち",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "espeon_サイコショック",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "meowscarada_トリックフラワー",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "meowscarada_辻斬り",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "miraidon_チャージビーム",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "machamp_地獄車",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "machamp_ばくれつパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "urshifu_すいりゅうれんだ",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "glaceon_つららばり",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "glaceon_つららばり",
-      type: "disadvantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "glaceon_こごえるかぜ",
-      type: "disadvantage",
+      "from": "miraidon_イナズマドライブ",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "gardevoir_サイコショック",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "lucario_神速",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "gardevoir_みらいよち",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "clefable_重力",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "psyduck_なみのり",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "clefable_このゆびとまれ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "psyduck_バブルこうせん",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "falinks_アイアンヘッド",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "falinks_メガホーン",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "darkrai_悪だくみ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "armarouge_ほのおのうず",
-      type: "disadvantage",
+      "from": "metagross_ジャイロボール",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_重力",
-      to: "armarouge_アーマーキャノン",
-      type: "disadvantage",
+      "from": "slowbro_ねっとう",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "slowbro_ねっとう",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "slowbro_なみのり",
+      "to": "charizard_フレアドライブ",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "slowbro_なみのり",
+      "to": "charizard_大文字",
+      "type": "advantage"
     },
     {
-      from: "clefable_重力",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "machamp_地獄車",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "zoroark_だましうち",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "psyduck_なみのり",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "psyduck_バブルこうせん",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "suicune_うずしお",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "suicune_なみのり",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "urshifu_すいりゅうれんだ",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "espeon_サイコショック",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "armarouge_ほのおのうず",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "metagross_ジャイロボール",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "armarouge_アーマーキャノン",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "metagross_コメットパンチ",
+      "type": "advantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "mew",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "gardevoir_サイコショック",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "clefable_このゆびとまれ",
-      to: "gardevoir_みらいよち",
-      type: "disadvantage",
+      "from": "charizard_フレアドライブ",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "suicune_うずしお",
-      type: "advantage",
+      "from": "charizard_フレアドライブ",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "suicune_なみのり",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "mew",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "suicune_うずしお",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "suicune_なみのり",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "gengar_ゆめくい",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "gengar_たたりめ",
-      type: "advantage",
+      "from": "charizard_大文字",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "talonflame_ブレイブバード",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "charizard_大文字",
+      "to": "talonflame_そらをとぶ",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "blaziken",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "armarouge_ほのおのうず",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "dodrio_トライアタック",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "darkrai_悪だくみ",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "aegislash_聖なる剣",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "galarian_rapidash_マジカルシャイン",
+      "type": "advantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_ブレイブバード",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "absol_サイコカッター",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "absol_ふいうち",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "absol_ふいうち",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "ceruledge_ゴーストダイブ",
+      "type": "disadvantage"
     },
     {
-      from: "talonflame_そらをとぶ",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "ceruledge_ニトロチャージ",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "alcremie_じこさいせい",
-      type: "advantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "lucario_神速",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "alcremie_デコレーション",
-      type: "advantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "lucario_グロウパンチ_ボーンラッシュ",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "snorlax_ヘビーボンバー",
-      type: "advantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "lucario_グロウパンチ_インファイト",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "snorlax_じたばた",
-      type: "advantage",
+      "from": "leafeon_はっぱカッター",
+      "to": "zeraora",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "crustle_シザークロス",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "gengar_ゆめくい",
+      "type": "advantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "gengar_たたりめ",
+      "type": "advantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "leafeon_はっぱカッター",
+      "type": "advantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "falinks_アイアンヘッド",
+      "type": "advantage"
     },
     {
-      from: "umbreon_イカサマ",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "falinks_メガホーン",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "alcremie_じこさいせい",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "greninja_水手裏剣",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "alcremie_デコレーション",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "greninja_なみのり",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "snorlax_ヘビーボンバー",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "meowscarada_トリックフラワー",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "snorlax_じたばた",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "buzzwole_ばかぢから",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "crustle_シザークロス",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "garchomp_ドラゴンクロー",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "wigglytuff",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "pikachu_ボルテッカー",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "pikachu_10_万ボルト",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "machamp_地獄車",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "machamp_ばくれつパンチ",
+      "type": "advantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "charizard_大文字",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "garchomp_地震",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "zoroark_だましうち",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "zoroark_辻斬り",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "blastoise_波乗り",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "dodrio_トライアタック",
-      type: "advantage",
+      "from": "lucario_神速",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "lucario_神速",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "clefable_重力",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "clefable_このゆびとまれ",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "mimikyu_トリックルーム",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "mimikyu_かげうち",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "ceruledge_ゴーストダイブ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "zacian_メタルクロー",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "ceruledge_ニトロチャージ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "zacian_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "metagross_ジャイロボール",
+      "type": "disadvantage"
     },
     {
-      from: "umbreon_くろいまなざし",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "metagross_コメットパンチ",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "tsareena_トリプルアクセル",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "tsareena_ふみつけ",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "blaziken",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "charizard_フレアドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_ボーンラッシュ",
+      "to": "charizard_大文字",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "blastoise_こうそくスピン",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "dragonite_はかいこうせん",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "cinderace_ブレイズキック",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "dragonite_げきりん",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "cinderace_かえんボール",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "machamp_地獄車",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "gengar_ゆめくい",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "machamp_ばくれつパンチ",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "gengar_たたりめ",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "zacian_メタルクロー",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "miraidon_チャージビーム",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "zacian_聖なる剣",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "miraidon_イナズマドライブ",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "aegislash_聖なる剣",
+      "type": "disadvantage"
     },
     {
-      from: "meowscarada_トリックフラワー",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "absol_サイコカッター",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "zeraora_ワイルドボルト",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "zeraora_ほうでん",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "dodrio_トライアタック",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "dodrio_ドリルくちばし",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "zoroark_だましうち",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "zoroark_辻斬り",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "zoroark_だましうち",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "zoroark_辻斬り",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "zeraora_ワイルドボルト",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "zeraora_ほうでん",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "blastoise_こうそくスピン",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "blastoise_波乗り",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "garchomp_ドラゴンクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "garchomp_地震",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "suicune_うずしお",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "suicune_なみのり",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "clefable_重力",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "crustle_シザークロス",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "ho_oh_聖なる炎）",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "ho_oh_ほのおのうず",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "absol_ふいうち",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "absol_サイコカッター",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "mimikyu_トリックルーム",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "mimikyu_かげうち",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "zoroark_だましうち",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "zoroark_辻斬り",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "leafeon_はっぱカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "leafeon_ソーラーブレード",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "charizard_大文字",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "absol_サイコカッター",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "garchomp_地震",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "mew",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "garchomp_地震",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "charizard_大文字",
-      type: "advantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "alolan_ninetales_ふぶき",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "meowscarada_トリックフラワー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "meowscarada_辻斬り",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_かげうち",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
-    },
-    {
-      from: "mew",
-      to: "charizard_大文字",
-      type: "advantage",
-    },
-    {
-      from: "mew",
-      to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "absol_ふいうち",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "zoroark_だましうち",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "zoroark_辻斬り",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_みらいよち",
-      to: "tsareena_トリプルアクセル",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_みらいよち",
-      to: "tsareena_ふみつけ",
-      type: "advantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_みらいよち",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_みらいよち",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "espeon_サイコショック",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "espeon_アシストパワー",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "clefable_重力",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "clefable_重力",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "clefable_このゆびとまれ",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "falinks_アイアンヘッド",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "falinks_メガホーン",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "darkrai_悪だくみ",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "darkrai_あくのはどう",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "slowbro_ねっとう",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
-    },
-    {
-      from: "slowbro_ねっとう",
-      to: "charizard_大文字",
-      type: "advantage",
-    },
-    {
-      from: "slowbro_なみのり",
-      to: "charizard_フレアドライブ",
-      type: "advantage",
-    },
-    {
-      from: "slowbro_なみのり",
-      to: "charizard_大文字",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "garchomp_地震",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "zoroark_だましうち",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "zoroark_辻斬り",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "garchomp_地震",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "espeon_サイコショック",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "espeon_アシストパワー",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "metagross_ジャイロボール",
-      type: "advantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "mew",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "mew",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "talonflame_そらをとぶ",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "blaziken",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "armarouge_ほのおのうず",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "armarouge_アーマーキャノン",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "dodrio_ドリルくちばし",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "darkrai_悪だくみ",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "darkrai_あくのはどう",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "aegislash_聖なる剣",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "aegislash_シャドークロー",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "galarian_rapidash_マジカルシャイン",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "galarian_rapidash_ようせいのかぜ",
-      type: "advantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "absol_ふいうち",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "ceruledge_ゴーストダイブ",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "ceruledge_ニトロチャージ",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "zeraora_ワイルドボルト",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "zeraora_ほうでん",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "gengar_ゆめくい",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "gengar_たたりめ",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "leafeon_はっぱカッター",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "leafeon_ソーラーブレード",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "falinks_アイアンヘッド",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "falinks_メガホーン",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "greninja_水手裏剣",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "greninja_なみのり",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "meowscarada_トリックフラワー",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "meowscarada_辻斬り",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "buzzwole_ばかぢから",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "buzzwole_きゅうけつ",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "garchomp_地震",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "wigglytuff_ころがる",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "wigglytuff_うたう",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "pikachu_ボルテッカー",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "pikachu_10_万ボルト",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "machamp_地獄車",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "machamp_ばくれつパンチ",
-      type: "advantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "metagross_ジャイロボール",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "metagross_コメットパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "charizard_大文字",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "blastoise_波乗り",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "cinderace_ブレイズキック",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "aegislash_シャドークロー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "meowscarada_トリックフラワー",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "meowscarada_辻斬り",
-      type: "disadvantage",
-    },
-  ],
+      "from": "lucario_グロウパンチ_インファイト",
+      "to": "meowscarada_トリックフラワー",
+      "type": "disadvantage"
+    }
+  ]
 };

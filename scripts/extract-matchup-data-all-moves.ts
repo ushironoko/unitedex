@@ -1,7 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import type { PokemonNode, PokemonEdge, PokemonData, Role } from "../src/types/index.js";
+import type {
+  PokemonNode,
+  PokemonEdge,
+  PokemonData,
+  Role,
+} from "../src/types/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -96,23 +101,9 @@ function extractRole(content: string): Role {
     if (typeText.includes("Speedster")) return "アサシン";
     if (typeText.includes("All-Rounder")) return "ファイター";
     if (typeText.includes("Defender")) return "タンク";
-    if (typeText.includes("Supporter") || typeText.includes("Support")) return "サポート";
+    if (typeText.includes("Supporter")) return "サポート";
     if (typeText.includes("Attacker")) return "メイジ";
   }
-
-  // Fallback to ロール field if タイプ is not found
-  const roleMatch = content.match(/\*\*ロール\*\*:\s*([^（\n]+)/);
-  if (roleMatch) {
-    const roleText = roleMatch[1].trim();
-    if (roleText.includes("Speedster")) return "アサシン";
-    if (roleText.includes("All-Rounder")) return "ファイター";
-    if (roleText.includes("Defender")) return "タンク";
-    if (roleText.includes("Support")) return "サポート";
-    // For Attacker, determine by Physical vs Special
-    if (roleText.includes("Physical Attacker")) return "アサシン";
-    if (roleText.includes("Special Attacker") || roleText.includes("Attacker")) return "メイジ";
-  }
-
   // Default fallback
   return "メイジ";
 }
@@ -130,41 +121,50 @@ function extractMatchupsWithAutoMoves(content: string): {
   const generalAdvantages: string[] = [];
   const generalDisadvantages: string[] = [];
   const detectedMoves = new Set<string>();
-  
+
   // Find the advantages section
   const advSectionMatch = content.match(
     /##[^#]*このポケモンが有利をとれる相手[^#]*?\n([\s\S]*?)(?=##[^#]*このポケモンが苦手な相手|##[^#]*適正レーン|##[^#]*パワースパイク|##[^#]*時間ごとのパワー|$)/,
   );
-  
+
   if (advSectionMatch) {
     const advText = advSectionMatch[1];
     let currentSection: string | null = null;
     const lines = advText.split("\n");
-    
+
     for (const line of lines) {
       const trimmedLine = line.trim();
-      
+
       // Check for section headers (these are move names)
-      if (trimmedLine.startsWith("##") && !trimmedLine.includes("このポケモン")) {
-        const sectionName = trimmedLine.replace(/^##\s*/, "").replace(/^#\s*/, "").trim();
+      if (
+        trimmedLine.startsWith("##") &&
+        !trimmedLine.includes("このポケモン")
+      ) {
+        const sectionName = trimmedLine
+          .replace(/^##\s*/, "")
+          .replace(/^#\s*/, "")
+          .trim();
         // Filter out generic section names that aren't moves
-        if (sectionName && 
-            !sectionName.includes("適正レーン") && 
-            !sectionName.includes("パワースパイク") &&
-            !sectionName.includes("時間ごと") &&
-            sectionName.length > 0) {
+        if (
+          sectionName &&
+          !sectionName.includes("適正レーン") &&
+          !sectionName.includes("パワースパイク") &&
+          !sectionName.includes("時間ごと") &&
+          !sectionName.includes("シナジー") &&
+          sectionName.length > 0
+        ) {
           currentSection = sectionName;
           detectedMoves.add(sectionName);
           moveAdvantages.set(sectionName, []);
         }
       } else if (trimmedLine.startsWith("-") || trimmedLine.startsWith("*")) {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
-        
+
         // Extract just the pokemon name, ignoring any move in parentheses
         const match = pokemonWithNote.match(/^([^（(]+)/);
         if (match) {
           const targetPokemon = match[1].trim();
-          
+
           // Filter out role names and English descriptions
           if (
             targetPokemon &&
@@ -195,41 +195,49 @@ function extractMatchupsWithAutoMoves(content: string): {
       }
     }
   }
-  
+
   // Find the disadvantages section
   const disadvSectionMatch = content.match(
     /##[^#]*このポケモンが苦手な相手[^#]*?\n([\s\S]*?)(?=##[^#]*適正レーン|##[^#]*パワースパイク|##[^#]*時間ごとのパワー|$)/,
   );
-  
+
   if (disadvSectionMatch) {
     const disadvText = disadvSectionMatch[1];
     let currentSection: string | null = null;
     const lines = disadvText.split("\n");
-    
+
     for (const line of lines) {
       const trimmedLine = line.trim();
-      
+
       // Check for section headers (these are move names)
-      if (trimmedLine.startsWith("##") && !trimmedLine.includes("このポケモン")) {
-        const sectionName = trimmedLine.replace(/^##\s*/, "").replace(/^#\s*/, "").trim();
+      if (
+        trimmedLine.startsWith("##") &&
+        !trimmedLine.includes("このポケモン")
+      ) {
+        const sectionName = trimmedLine
+          .replace(/^##\s*/, "")
+          .replace(/^#\s*/, "")
+          .trim();
         // Filter out generic section names that aren't moves
-        if (sectionName && 
-            !sectionName.includes("適正レーン") && 
-            !sectionName.includes("パワースパイク") &&
-            !sectionName.includes("時間ごと") &&
-            sectionName.length > 0) {
+        if (
+          sectionName &&
+          !sectionName.includes("適正レーン") &&
+          !sectionName.includes("パワースパイク") &&
+          !sectionName.includes("時間ごと") &&
+          sectionName.length > 0
+        ) {
           currentSection = sectionName;
           detectedMoves.add(sectionName);
           moveDisadvantages.set(sectionName, []);
         }
       } else if (trimmedLine.startsWith("-") || trimmedLine.startsWith("*")) {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
-        
+
         // Extract just the pokemon name, ignoring any move in parentheses
         const match = pokemonWithNote.match(/^([^（(]+)/);
         if (match) {
           const targetPokemon = match[1].trim();
-          
+
           // Filter out role names and English descriptions
           if (
             targetPokemon &&
@@ -259,8 +267,14 @@ function extractMatchupsWithAutoMoves(content: string): {
       }
     }
   }
-  
-  return { moveAdvantages, moveDisadvantages, generalAdvantages, generalDisadvantages, detectedMoves };
+
+  return {
+    moveAdvantages,
+    moveDisadvantages,
+    generalAdvantages,
+    generalDisadvantages,
+    detectedMoves,
+  };
 }
 
 // Main extraction function
@@ -288,35 +302,40 @@ async function extractMatchupData(): Promise<PokemonData> {
   const nodes: PokemonNode[] = [];
   const edges: PokemonEdge[] = [];
   const edgeSet = new Set<string>(); // For deduplication
-  
+
   // Store Pokemon info for creating nodes
-  const pokemonInfo = new Map<string, { 
-    baseName: string;
-    normalizedName: string;
-    role: Role;
-    moves: Set<string>;
-  }>();
-  
+  const pokemonInfo = new Map<
+    string,
+    {
+      baseName: string;
+      normalizedName: string;
+      role: Role;
+      moves: Set<string>;
+    }
+  >();
+
   // First pass: collect all Pokemon and their move variations
   for (const file of pokemonFiles) {
     const filePath = path.join(uniteDir, file);
     const content = fs.readFileSync(filePath, "utf-8");
-    
+
     const pokemonName = file.replace(".md", "");
     const normalizedName = normalizePokemonName(pokemonName);
     const role = extractRole(content);
     const { detectedMoves } = extractMatchupsWithAutoMoves(content);
-    
+
     pokemonInfo.set(pokemonName, {
       baseName: pokemonName,
       normalizedName,
       role,
       moves: detectedMoves,
     });
-    
-    console.log(`Detected moves for ${pokemonName}: ${Array.from(detectedMoves).join(", ") || "none"}`);
+
+    console.log(
+      `Detected moves for ${pokemonName}: ${Array.from(detectedMoves).join(", ") || "none"}`,
+    );
   }
-  
+
   // Second pass: create nodes
   for (const [pokemonName, info] of pokemonInfo) {
     if (info.moves.size > 0) {
@@ -338,33 +357,38 @@ async function extractMatchupData(): Promise<PokemonData> {
       });
     }
   }
-  
+
   console.log(`\nCreated ${nodes.length} nodes\n`);
-  
+
   // Third pass: create edges
   for (const file of pokemonFiles) {
     const filePath = path.join(uniteDir, file);
     const content = fs.readFileSync(filePath, "utf-8");
-    
+
     const pokemonName = file.replace(".md", "");
     const sourceInfo = pokemonInfo.get(pokemonName)!;
-    const { moveAdvantages, moveDisadvantages, generalAdvantages, generalDisadvantages } = 
-      extractMatchupsWithAutoMoves(content);
-    
+    const {
+      moveAdvantages,
+      moveDisadvantages,
+      generalAdvantages,
+      generalDisadvantages,
+    } = extractMatchupsWithAutoMoves(content);
+
     // Process move-specific matchups
     for (const [move, targets] of moveAdvantages) {
       const sourceNodeId = `${sourceInfo.normalizedName}_${move.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
-      
+
       for (const target of targets) {
         const targetInfo = pokemonInfo.get(target);
         if (!targetInfo) continue; // Skip if target Pokemon not found
-        
+
         // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(n => 
-          n.id === targetInfo.normalizedName || 
-          n.id.startsWith(`${targetInfo.normalizedName}_`)
+        const targetNodes = nodes.filter(
+          (n) =>
+            n.id === targetInfo.normalizedName ||
+            n.id.startsWith(`${targetInfo.normalizedName}_`),
         );
-        
+
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNodeId}-${targetNode.id}-advantage`;
           if (!edgeSet.has(edgeKey)) {
@@ -378,20 +402,21 @@ async function extractMatchupData(): Promise<PokemonData> {
         }
       }
     }
-    
+
     for (const [move, targets] of moveDisadvantages) {
       const sourceNodeId = `${sourceInfo.normalizedName}_${move.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
-      
+
       for (const target of targets) {
         const targetInfo = pokemonInfo.get(target);
         if (!targetInfo) continue; // Skip if target Pokemon not found
-        
+
         // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(n => 
-          n.id === targetInfo.normalizedName || 
-          n.id.startsWith(`${targetInfo.normalizedName}_`)
+        const targetNodes = nodes.filter(
+          (n) =>
+            n.id === targetInfo.normalizedName ||
+            n.id.startsWith(`${targetInfo.normalizedName}_`),
         );
-        
+
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNodeId}-${targetNode.id}-disadvantage`;
           if (!edgeSet.has(edgeKey)) {
@@ -405,25 +430,27 @@ async function extractMatchupData(): Promise<PokemonData> {
         }
       }
     }
-    
+
     // Process general matchups (apply to all variations if any)
-    const sourceNodes = nodes.filter(n => 
-      n.id === sourceInfo.normalizedName || 
-      n.id.startsWith(`${sourceInfo.normalizedName}_`)
+    const sourceNodes = nodes.filter(
+      (n) =>
+        n.id === sourceInfo.normalizedName ||
+        n.id.startsWith(`${sourceInfo.normalizedName}_`),
     );
-    
+
     for (const sourceNode of sourceNodes) {
       // General advantages
       for (const target of generalAdvantages) {
         const targetInfo = pokemonInfo.get(target);
         if (!targetInfo) continue; // Skip if target Pokemon not found
-        
+
         // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(n => 
-          n.id === targetInfo.normalizedName || 
-          n.id.startsWith(`${targetInfo.normalizedName}_`)
+        const targetNodes = nodes.filter(
+          (n) =>
+            n.id === targetInfo.normalizedName ||
+            n.id.startsWith(`${targetInfo.normalizedName}_`),
         );
-        
+
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNode.id}-${targetNode.id}-advantage`;
           if (!edgeSet.has(edgeKey)) {
@@ -436,18 +463,19 @@ async function extractMatchupData(): Promise<PokemonData> {
           }
         }
       }
-      
+
       // General disadvantages
       for (const target of generalDisadvantages) {
         const targetInfo = pokemonInfo.get(target);
         if (!targetInfo) continue; // Skip if target Pokemon not found
-        
+
         // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(n => 
-          n.id === targetInfo.normalizedName || 
-          n.id.startsWith(`${targetInfo.normalizedName}_`)
+        const targetNodes = nodes.filter(
+          (n) =>
+            n.id === targetInfo.normalizedName ||
+            n.id.startsWith(`${targetInfo.normalizedName}_`),
         );
-        
+
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNode.id}-${targetNode.id}-disadvantage`;
           if (!edgeSet.has(edgeKey)) {
@@ -461,8 +489,10 @@ async function extractMatchupData(): Promise<PokemonData> {
         }
       }
     }
-    
-    console.log(`Processed ${pokemonName} - ${edges.filter(e => e.from.startsWith(sourceInfo.normalizedName)).length} edges`);
+
+    console.log(
+      `Processed ${pokemonName} - ${edges.filter((e) => e.from.startsWith(sourceInfo.normalizedName)).length} edges`,
+    );
   }
 
   // Create the final data structure
@@ -496,7 +526,7 @@ export const pokemonMatchupData: PokemonData = ${JSON.stringify(
 
   // Print role distribution
   const roleCount = new Map<Role, number>();
-  nodes.forEach(node => {
+  nodes.forEach((node) => {
     roleCount.set(node.role, (roleCount.get(node.role) || 0) + 1);
   });
   console.log("\nRole distribution:");
