@@ -10,6 +10,8 @@ interface ControlPanelProps {
   onEdgeFilterChange: (filter: "all" | "advantage" | "disadvantage") => void;
   roleFilter: Role[];
   onRoleFilterChange: (roles: Role[]) => void;
+  showDirectConnectionsOnly: boolean;
+  onShowDirectConnectionsOnlyChange: (value: boolean) => void;
 }
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -19,6 +21,8 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   onEdgeFilterChange,
   roleFilter,
   onRoleFilterChange,
+  showDirectConnectionsOnly,
+  onShowDirectConnectionsOnlyChange,
 }) => {
   const roles = Object.keys(ROLE_COLORS) as Role[];
 
@@ -83,6 +87,23 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             不利のみ
           </button>
         </div>
+      </div>
+
+      <div style={styles.section}>
+        <h3 style={styles.sectionTitle}>表示オプション</h3>
+        <label style={styles.checkboxLabel}>
+          <input
+            type="checkbox"
+            checked={showDirectConnectionsOnly}
+            onChange={(e) =>
+              onShowDirectConnectionsOnlyChange(e.target.checked)
+            }
+            style={styles.checkbox}
+          />
+          <span style={styles.checkboxText}>
+            直接接続のみ表示（孫ノードを非表示）
+          </span>
+        </label>
       </div>
 
       <div style={styles.section}>
@@ -169,6 +190,21 @@ const styles: Record<string, CSSProperties> = {
     cursor: "pointer",
     transition: "all 0.3s",
     fontWeight: "bold",
+  },
+  checkboxLabel: {
+    display: "flex",
+    alignItems: "center",
+    cursor: "pointer",
+    fontSize: "14px",
+  },
+  checkbox: {
+    marginRight: "8px",
+    width: "16px",
+    height: "16px",
+    cursor: "pointer",
+  },
+  checkboxText: {
+    color: "#333",
   },
 };
 

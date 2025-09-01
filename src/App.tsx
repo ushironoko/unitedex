@@ -15,6 +15,8 @@ function App() {
   const [roleFilter, setRoleFilter] = useState<Role[]>(
     Object.keys(ROLE_COLORS) as Role[],
   );
+  const [showDirectConnectionsOnly, setShowDirectConnectionsOnly] =
+    useState(false);
 
   // Handle search
   useEffect(() => {
@@ -46,6 +48,8 @@ function App() {
           onEdgeFilterChange={setEdgeFilter}
           roleFilter={roleFilter}
           onRoleFilterChange={setRoleFilter}
+          showDirectConnectionsOnly={showDirectConnectionsOnly}
+          onShowDirectConnectionsOnlyChange={setShowDirectConnectionsOnly}
         />
 
         <div style={styles.graphContainer}>
@@ -54,6 +58,7 @@ function App() {
             selectedPokemon={selectedPokemon}
             edgeFilter={edgeFilter}
             roleFilter={roleFilter}
+            showDirectConnectionsOnly={showDirectConnectionsOnly}
           />
         </div>
 
