@@ -167,7 +167,9 @@ function extractMatchupsWithAutoMoves(content: string): {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
 
         // Extract pokemon name and optional move
-        const fullMatch = pokemonWithNote.match(/^([^（(]+)(?:[（(]([^）)]+)[）)])?/);
+        const fullMatch = pokemonWithNote.match(
+          /^([^（(]+)(?:[（(]([^）)]+)[）)])?/,
+        );
         if (fullMatch) {
           const targetPokemon = fullMatch[1].trim();
           const moveName = fullMatch[2]?.trim();
@@ -191,12 +193,14 @@ function extractMatchupsWithAutoMoves(content: string): {
               pokemonName: targetPokemon,
               moveName: moveName,
             };
-            
+
             if (currentSection && moveAdvantages.has(currentSection)) {
               const moveList = moveAdvantages.get(currentSection)!;
               // Check for duplicates
               const exists = moveList.some(
-                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+                (t) =>
+                  t.pokemonName === targetInfo.pokemonName &&
+                  t.moveName === targetInfo.moveName,
               );
               if (!exists) {
                 moveList.push(targetInfo);
@@ -204,7 +208,9 @@ function extractMatchupsWithAutoMoves(content: string): {
             } else {
               // Check for duplicates
               const exists = generalAdvantages.some(
-                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+                (t) =>
+                  t.pokemonName === targetInfo.pokemonName &&
+                  t.moveName === targetInfo.moveName,
               );
               if (!exists) {
                 generalAdvantages.push(targetInfo);
@@ -254,7 +260,9 @@ function extractMatchupsWithAutoMoves(content: string): {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
 
         // Extract pokemon name and optional move
-        const fullMatch = pokemonWithNote.match(/^([^（(]+)(?:[（(]([^）)]+)[）)])?/);
+        const fullMatch = pokemonWithNote.match(
+          /^([^（(]+)(?:[（(]([^）)]+)[）)])?/,
+        );
         if (fullMatch) {
           const targetPokemon = fullMatch[1].trim();
           const moveName = fullMatch[2]?.trim();
@@ -278,12 +286,14 @@ function extractMatchupsWithAutoMoves(content: string): {
               pokemonName: targetPokemon,
               moveName: moveName,
             };
-            
+
             if (currentSection && moveDisadvantages.has(currentSection)) {
               const moveList = moveDisadvantages.get(currentSection)!;
               // Check for duplicates
               const exists = moveList.some(
-                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+                (t) =>
+                  t.pokemonName === targetInfo.pokemonName &&
+                  t.moveName === targetInfo.moveName,
               );
               if (!exists) {
                 moveList.push(targetInfo);
@@ -291,7 +301,9 @@ function extractMatchupsWithAutoMoves(content: string): {
             } else {
               // Check for duplicates
               const exists = generalDisadvantages.some(
-                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+                (t) =>
+                  t.pokemonName === targetInfo.pokemonName &&
+                  t.moveName === targetInfo.moveName,
               );
               if (!exists) {
                 generalDisadvantages.push(targetInfo);
@@ -414,15 +426,24 @@ async function extractMatchupData(): Promise<PokemonData> {
       const sourceNodeId = `${sourceInfo.normalizedName}_${move.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
 
       for (const target of targets) {
-        const targetInfo = pokemonInfo.get(target);
-        if (!targetInfo) continue; // Skip if target Pokemon not found
+        const targetPokemonInfo = pokemonInfo.get(target.pokemonName);
+        if (!targetPokemonInfo) continue; // Skip if target Pokemon not found
 
-        // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(
-          (n) =>
-            n.id === targetInfo.normalizedName ||
-            n.id.startsWith(`${targetInfo.normalizedName}_`),
-        );
+        // Find nodes that match the target
+        let targetNodes: typeof nodes = [];
+
+        if (target.moveName) {
+          // If a specific move is specified, only match that move variation
+          const targetMoveId = `${targetPokemonInfo.normalizedName}_${target.moveName.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
+          targetNodes = nodes.filter((n) => n.id === targetMoveId);
+        } else {
+          // If no move specified, match all variations (including base)
+          targetNodes = nodes.filter(
+            (n) =>
+              n.id === targetPokemonInfo.normalizedName ||
+              n.id.startsWith(`${targetPokemonInfo.normalizedName}_`),
+          );
+        }
 
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNodeId}-${targetNode.id}-advantage`;
@@ -442,15 +463,24 @@ async function extractMatchupData(): Promise<PokemonData> {
       const sourceNodeId = `${sourceInfo.normalizedName}_${move.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
 
       for (const target of targets) {
-        const targetInfo = pokemonInfo.get(target);
-        if (!targetInfo) continue; // Skip if target Pokemon not found
+        const targetPokemonInfo = pokemonInfo.get(target.pokemonName);
+        if (!targetPokemonInfo) continue; // Skip if target Pokemon not found
 
-        // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(
-          (n) =>
-            n.id === targetInfo.normalizedName ||
-            n.id.startsWith(`${targetInfo.normalizedName}_`),
-        );
+        // Find nodes that match the target
+        let targetNodes: typeof nodes = [];
+
+        if (target.moveName) {
+          // If a specific move is specified, only match that move variation
+          const targetMoveId = `${targetPokemonInfo.normalizedName}_${target.moveName.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
+          targetNodes = nodes.filter((n) => n.id === targetMoveId);
+        } else {
+          // If no move specified, match all variations (including base)
+          targetNodes = nodes.filter(
+            (n) =>
+              n.id === targetPokemonInfo.normalizedName ||
+              n.id.startsWith(`${targetPokemonInfo.normalizedName}_`),
+          );
+        }
 
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNodeId}-${targetNode.id}-disadvantage`;
@@ -476,15 +506,24 @@ async function extractMatchupData(): Promise<PokemonData> {
     for (const sourceNode of sourceNodes) {
       // General advantages
       for (const target of generalAdvantages) {
-        const targetInfo = pokemonInfo.get(target);
-        if (!targetInfo) continue; // Skip if target Pokemon not found
+        const targetPokemonInfo = pokemonInfo.get(target.pokemonName);
+        if (!targetPokemonInfo) continue; // Skip if target Pokemon not found
 
-        // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(
-          (n) =>
-            n.id === targetInfo.normalizedName ||
-            n.id.startsWith(`${targetInfo.normalizedName}_`),
-        );
+        // Find nodes that match the target
+        let targetNodes: typeof nodes = [];
+
+        if (target.moveName) {
+          // If a specific move is specified, only match that move variation
+          const targetMoveId = `${targetPokemonInfo.normalizedName}_${target.moveName.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
+          targetNodes = nodes.filter((n) => n.id === targetMoveId);
+        } else {
+          // If no move specified, match all variations
+          targetNodes = nodes.filter(
+            (n) =>
+              n.id === targetPokemonInfo.normalizedName ||
+              n.id.startsWith(`${targetPokemonInfo.normalizedName}_`),
+          );
+        }
 
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNode.id}-${targetNode.id}-advantage`;
@@ -501,15 +540,24 @@ async function extractMatchupData(): Promise<PokemonData> {
 
       // General disadvantages
       for (const target of generalDisadvantages) {
-        const targetInfo = pokemonInfo.get(target);
-        if (!targetInfo) continue; // Skip if target Pokemon not found
+        const targetPokemonInfo = pokemonInfo.get(target.pokemonName);
+        if (!targetPokemonInfo) continue; // Skip if target Pokemon not found
 
-        // Find all nodes that match the target (including its variations)
-        const targetNodes = nodes.filter(
-          (n) =>
-            n.id === targetInfo.normalizedName ||
-            n.id.startsWith(`${targetInfo.normalizedName}_`),
-        );
+        // Find nodes that match the target
+        let targetNodes: typeof nodes = [];
+
+        if (target.moveName) {
+          // If a specific move is specified, only match that move variation
+          const targetMoveId = `${targetPokemonInfo.normalizedName}_${target.moveName.replace(/\s+/g, "_").replace(/\+/g, "_").replace(/[・]/g, "_").toLowerCase()}`;
+          targetNodes = nodes.filter((n) => n.id === targetMoveId);
+        } else {
+          // If no move specified, match all variations
+          targetNodes = nodes.filter(
+            (n) =>
+              n.id === targetPokemonInfo.normalizedName ||
+              n.id.startsWith(`${targetPokemonInfo.normalizedName}_`),
+          );
+        }
 
         for (const targetNode of targetNodes) {
           const edgeKey = `${sourceNode.id}-${targetNode.id}-disadvantage`;

@@ -606,22 +606,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tsareena_トリプルアクセル",
-      to: "metagross_コメットパンチ",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_トリプルアクセル",
       to: "absol_サイコカッター",
       type: "advantage",
     },
     {
       from: "tsareena_トリプルアクセル",
       to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_トリプルアクセル",
-      to: "gengar_ゆめくい",
       type: "advantage",
     },
     {
@@ -636,17 +626,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tsareena_トリプルアクセル",
-      to: "mimikyu_かげうち",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_トリプルアクセル",
       to: "charizard_フレアドライブ",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_トリプルアクセル",
-      to: "charizard_大文字",
       type: "advantage",
     },
     {
@@ -666,11 +646,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tsareena_ふみつけ",
-      to: "gengar_ゆめくい",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_ふみつけ",
       to: "gengar_たたりめ",
       type: "advantage",
     },
@@ -681,23 +656,8 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tsareena_ふみつけ",
-      to: "mimikyu_かげうち",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_ふみつけ",
       to: "charizard_フレアドライブ",
       type: "advantage",
-    },
-    {
-      from: "tsareena_ふみつけ",
-      to: "charizard_大文字",
-      type: "advantage",
-    },
-    {
-      from: "tsareena_トリプルアクセル",
-      to: "blastoise_こうそくスピン",
-      type: "disadvantage",
     },
     {
       from: "tsareena_トリプルアクセル",
@@ -722,11 +682,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "tsareena_トリプルアクセル",
       to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "tsareena_ふみつけ",
-      to: "blastoise_こうそくスピン",
       type: "disadvantage",
     },
     {
@@ -766,11 +721,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tsareena_ふみつけ",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "tsareena_ふみつけ",
       to: "zacian_聖なる剣",
       type: "disadvantage",
     },
@@ -801,22 +751,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "alolan_ninetales_ふぶき",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_ninetales_ふぶき",
       to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
       from: "alolan_ninetales_ふぶき",
       to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_ninetales_ふぶき",
-      to: "talonflame_ブレイブバード",
       type: "disadvantage",
     },
     {
@@ -862,11 +802,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "alolan_raichu_エレキボール",
       to: "clefable_このゆびとまれ",
-      type: "advantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
-      to: "dragonite",
       type: "advantage",
     },
     {
@@ -1001,11 +936,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "alolan_raichu_エレキボール",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
       to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
     },
@@ -1016,37 +946,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "alolan_raichu_エレキボール",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
       to: "aegislash_聖なる剣",
       type: "disadvantage",
     },
     {
       from: "alolan_raichu_エレキボール",
       to: "blastoise_こうそくスピン",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
-      to: "garchomp_ドラゴンクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_エレキボール",
-      to: "machamp_ばくれつパンチ",
       type: "disadvantage",
     },
     {
@@ -1112,16 +1017,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "alolan_raichu_アシストパワー",
       to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_アシストパワー",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "alolan_raichu_アシストパワー",
-      to: "lucario_グロウパンチ_インファイト",
       type: "disadvantage",
     },
     {
@@ -1256,11 +1151,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "urshifu_すいりゅうれんだ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "urshifu_すいりゅうれんだ",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
@@ -1311,11 +1201,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "cinderace_ブレイズキック",
-      to: "miraidon_チャージビーム",
-      type: "advantage",
-    },
-    {
-      from: "cinderace_ブレイズキック",
       to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
@@ -1342,16 +1227,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "cinderace_ブレイズキック",
       to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "cinderace_ブレイズキック",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "cinderace_ブレイズキック",
-      to: "lucario_グロウパンチ_インファイト",
       type: "disadvantage",
     },
     {
@@ -1421,11 +1296,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "espeon_サイコショック",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "espeon_サイコショック",
       to: "tsareena_トリプルアクセル",
       type: "disadvantage",
     },
@@ -1476,22 +1346,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "trevenant_呪い",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "trevenant_呪い",
       to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "trevenant_ウッドハンマー",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "trevenant_ウッドハンマー",
-      to: "zacian_聖なる剣",
       type: "disadvantage",
     },
     {
@@ -1538,11 +1393,6 @@ export const pokemonMatchupData: PokemonData = {
       from: "machamp_ばくれつパンチ",
       to: "clefable_このゆびとまれ",
       type: "advantage",
-    },
-    {
-      from: "machamp_地獄車",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
     },
     {
       from: "machamp_地獄車",
@@ -1621,17 +1471,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "blastoise_こうそくスピン",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "blastoise_こうそくスピン",
       to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "blastoise_こうそくスピン",
-      to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
@@ -1642,11 +1482,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "blastoise_こうそくスピン",
       to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "blastoise_こうそくスピン",
-      to: "machamp_ばくれつパンチ",
       type: "disadvantage",
     },
     {
@@ -1711,17 +1546,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "garchomp_ドラゴンクロー",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "garchomp_ドラゴンクロー",
       to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "garchomp_ドラゴンクロー",
-      to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
@@ -1747,11 +1572,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "garchomp_ドラゴンクロー",
       to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "garchomp_ドラゴンクロー",
-      to: "tsareena_ふみつけ",
       type: "disadvantage",
     },
     {
@@ -1806,16 +1626,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "galarian_rapidash_マジカルシャイン",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "galarian_rapidash_マジカルシャイン",
       to: "absol_サイコカッター",
       type: "disadvantage",
     },
@@ -1851,42 +1661,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "galarian_rapidash_マジカルシャイン",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "galarian_rapidash_マジカルシャイン",
-      to: "umbreon_イカサマ",
-      type: "disadvantage",
-    },
-    {
-      from: "galarian_rapidash_マジカルシャイン",
       to: "umbreon_くろいまなざし",
       type: "disadvantage",
     },
     {
       from: "gyarados_滝登り",
-      to: "zacian_メタルクロー",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_滝登り",
-      to: "zacian_聖なる剣",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_滝登り",
       to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_滝登り",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_滝登り",
-      to: "lucario_グロウパンチ_インファイト",
       type: "advantage",
     },
     {
@@ -1911,16 +1691,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "gyarados_飛び跳ねる",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_飛び跳ねる",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "gyarados_飛び跳ねる",
       to: "absol_サイコカッター",
       type: "advantage",
     },
@@ -1936,22 +1706,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "gyarados_滝登り",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_滝登り",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_滝登り",
       to: "buzzwole_ばかぢから",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_滝登り",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -1961,22 +1716,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "gyarados_飛び跳ねる",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_飛び跳ねる",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_飛び跳ねる",
       to: "buzzwole_ばかぢから",
-      type: "disadvantage",
-    },
-    {
-      from: "gyarados_飛び跳ねる",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -1992,11 +1732,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "aegislash_聖なる剣",
       to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "aegislash_聖なる剣",
-      to: "mimikyu_トリックルーム",
       type: "advantage",
     },
     {
@@ -2026,27 +1761,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "aegislash_聖なる剣",
-      to: "charizard_フレアドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "aegislash_聖なる剣",
-      to: "charizard_大文字",
-      type: "disadvantage",
-    },
-    {
-      from: "aegislash_聖なる剣",
       to: "cinderace_ブレイズキック",
       type: "disadvantage",
     },
     {
       from: "aegislash_聖なる剣",
       to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "aegislash_聖なる剣",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -2101,17 +1821,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "armarouge_ほのおのうず",
-      to: "dragonite",
-      type: "advantage",
-    },
-    {
-      from: "armarouge_ほのおのうず",
       to: "glaceon_つららばり",
-      type: "advantage",
-    },
-    {
-      from: "armarouge_ほのおのうず",
-      to: "glaceon_こごえるかぜ",
       type: "advantage",
     },
     {
@@ -2137,11 +1847,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "armarouge_ほのおのうず",
       to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "armarouge_ほのおのうず",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -2315,26 +2020,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "gengar_ゆめくい",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
-    },
-    {
-      from: "gengar_たたりめ",
-      to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "gengar_たたりめ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "gengar_たたりめ",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
       from: "gengar_たたりめ",
       to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
@@ -2356,17 +2041,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "gengar_たたりめ",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
-    },
-    {
-      from: "gengar_たたりめ",
       to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "gengar_たたりめ",
-      to: "mimikyu_かげうち",
       type: "disadvantage",
     },
     {
@@ -2397,11 +2072,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "zacian_メタルクロー",
       to: "dodrio_トライアタック",
-      type: "advantage",
-    },
-    {
-      from: "zacian_メタルクロー",
-      to: "mimikyu_トリックルーム",
       type: "advantage",
     },
     {
@@ -2437,16 +2107,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "zacian_メタルクロー",
       to: "buzzwole_ばかぢから",
-      type: "disadvantage",
-    },
-    {
-      from: "zacian_メタルクロー",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "zacian_メタルクロー",
-      to: "tsareena_ふみつけ",
       type: "disadvantage",
     },
     {
@@ -2521,17 +2181,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "decidueye_かげぬい",
       to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "decidueye_かげぬい",
-      to: "zacian_聖なる剣",
       type: "disadvantage",
     },
     {
@@ -2666,16 +2316,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "scyther_剣の舞",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "scyther_剣の舞",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
-      from: "scyther_剣の舞",
       to: "zacian_メタルクロー",
       type: "disadvantage",
     },
@@ -2716,11 +2356,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "ceruledge_ゴーストダイブ",
-      to: "glaceon_こごえるかぜ",
-      type: "advantage",
-    },
-    {
-      from: "ceruledge_ゴーストダイブ",
       to: "absol_サイコカッター",
       type: "advantage",
     },
@@ -2742,11 +2377,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "ceruledge_ゴーストダイブ",
       to: "dodrio_トライアタック",
-      type: "disadvantage",
-    },
-    {
-      from: "ceruledge_ゴーストダイブ",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -2826,11 +2456,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "zoroark_だましうち",
-      to: "gengar_ゆめくい",
-      type: "advantage",
-    },
-    {
-      from: "zoroark_だましうち",
       to: "gengar_たたりめ",
       type: "advantage",
     },
@@ -2852,16 +2477,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "zoroark_だましうち",
       to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "zoroark_だましうち",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "zoroark_だましうち",
-      to: "machamp_ばくれつパンチ",
       type: "disadvantage",
     },
     {
@@ -2897,16 +2512,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "falinks_アイアンヘッド",
       to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "falinks_アイアンヘッド",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "falinks_アイアンヘッド",
-      to: "lucario_グロウパンチ_インファイト",
       type: "disadvantage",
     },
     {
@@ -2947,16 +2552,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "falinks_メガホーン",
       to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "falinks_メガホーン",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "falinks_メガホーン",
-      to: "lucario_グロウパンチ_インファイト",
       type: "disadvantage",
     },
     {
@@ -3071,11 +2666,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "darkrai_悪だくみ",
-      to: "mimikyu_かげうち",
-      type: "advantage",
-    },
-    {
-      from: "darkrai_悪だくみ",
       to: "machamp_地獄車",
       type: "disadvantage",
     },
@@ -3135,11 +2725,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "darkrai_悪だくみ",
-      to: "blissey_たまごうみ",
-      type: "disadvantage",
-    },
-    {
       from: "tinkaton_デカハンマー",
       to: "garchomp_ドラゴンクロー",
       type: "advantage",
@@ -3166,22 +2751,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "tinkaton_デカハンマー",
-      to: "mimikyu_かげうち",
-      type: "advantage",
-    },
-    {
-      from: "tinkaton_デカハンマー",
       to: "tsareena_トリプルアクセル",
       type: "disadvantage",
     },
     {
       from: "tinkaton_デカハンマー",
       to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "tinkaton_デカハンマー",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -3217,21 +2792,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "dodrio_トライアタック",
       to: "garchomp_ドラゴンクロー",
-      type: "advantage",
-    },
-    {
-      from: "dodrio_トライアタック",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "dodrio_トライアタック",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "dodrio_トライアタック",
-      to: "lucario_グロウパンチ_インファイト",
       type: "advantage",
     },
     {
@@ -3337,11 +2897,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "dodrio_トライアタック",
       to: "leafeon_はっぱカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "dodrio_トライアタック",
-      to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
     },
     {
@@ -3441,32 +2996,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "sylveon_マジカルフレイム",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "sylveon_マジカルフレイム",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "sylveon_マジカルフレイム",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "sylveon_マジカルフレイム",
       to: "machamp_地獄車",
       type: "advantage",
     },
     {
       from: "sylveon_マジカルフレイム",
       to: "machamp_ばくれつパンチ",
-      type: "advantage",
-    },
-    {
-      from: "sylveon_マジカルフレイム",
-      to: "miraidon_チャージビーム",
       type: "advantage",
     },
     {
@@ -3636,11 +3171,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "blaziken",
-      to: "zacian_メタルクロー",
-      type: "advantage",
-    },
-    {
-      from: "blaziken",
       to: "zacian_聖なる剣",
       type: "advantage",
     },
@@ -3682,11 +3212,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "blaziken",
       to: "charizard_フレアドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "blaziken",
-      to: "charizard_大文字",
       type: "disadvantage",
     },
     {
@@ -3771,32 +3296,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "pikachu_ボルテッカー",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "pikachu_ボルテッカー",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
     {
       from: "pikachu_ボルテッカー",
-      to: "talonflame_ブレイブバード",
-      type: "disadvantage",
-    },
-    {
-      from: "pikachu_ボルテッカー",
       to: "talonflame_そらをとぶ",
-      type: "disadvantage",
-    },
-    {
-      from: "pikachu_ボルテッカー",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "pikachu_ボルテッカー",
-      to: "mimikyu_かげうち",
       type: "disadvantage",
     },
     {
@@ -3807,11 +3312,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "pikachu_10_万ボルト",
       to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "pikachu_10_万ボルト",
-      to: "machamp_ばくれつパンチ",
       type: "disadvantage",
     },
     {
@@ -3861,11 +3361,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_重力",
-      to: "ho_oh",
-      type: "advantage",
-    },
-    {
-      from: "clefable_重力",
       to: "urshifu_すいりゅうれんだ",
       type: "advantage",
     },
@@ -3882,16 +3377,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "clefable_このゆびとまれ",
       to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "lucario_グロウパンチ_インファイト",
       type: "advantage",
     },
     {
@@ -3916,11 +3401,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_重力",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
       to: "glaceon_つららばり",
       type: "disadvantage",
     },
@@ -3941,16 +3421,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_重力",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
       to: "psyduck",
       type: "disadvantage",
     },
@@ -3962,16 +3432,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "clefable_重力",
       to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
-      to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
     },
     {
@@ -4001,22 +3461,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_このゆびとまれ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
       to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "machamp_ばくれつパンチ",
       type: "disadvantage",
     },
     {
@@ -4027,11 +3472,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "clefable_このゆびとまれ",
       to: "suicune_うずしお",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
     },
     {
@@ -4247,21 +3687,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "umbreon_くろいまなざし",
       to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "umbreon_くろいまなざし",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "umbreon_くろいまなざし",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "umbreon_くろいまなざし",
-      to: "miraidon_チャージビーム",
       type: "advantage",
     },
     {
@@ -4336,42 +3761,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "meowscarada_トリックフラワー",
-      to: "absol_サイコカッター",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "zeraora",
-      type: "advantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
       to: "clefable_重力",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "clefable_このゆびとまれ",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "meowscarada_トリックフラワー",
-      to: "lucario_グロウパンチ_インファイト",
       type: "disadvantage",
     },
     {
@@ -4431,11 +3821,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "buzzwole_ばかぢから",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "buzzwole_ばかぢから",
       to: "garchomp_ドラゴンクロー",
       type: "disadvantage",
     },
@@ -4481,27 +3866,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "delphox_ニトロチャージ",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
       to: "crustle_シザークロス",
-      type: "advantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "miraidon_チャージビーム",
       type: "advantage",
     },
     {
@@ -4516,22 +3881,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "delphox_ほのおのうず",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ほのおのうず",
       to: "miraidon_イナズマドライブ",
       type: "disadvantage",
     },
     {
       from: "delphox_ニトロチャージ",
       to: "galarian_rapidash_マジカルシャイン",
-      type: "disadvantage",
-    },
-    {
-      from: "delphox_ニトロチャージ",
-      to: "absol_サイコカッター",
       type: "disadvantage",
     },
     {
@@ -4545,11 +3900,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "delphox_ニトロチャージ",
-      to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
       from: "azumarill_アクアテール",
       to: "absol_サイコカッター",
       type: "advantage",
@@ -4557,11 +3907,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "azumarill_アクアテール",
       to: "absol_ふいうち",
-      type: "advantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "mimikyu_トリックルーム",
       type: "advantage",
     },
     {
@@ -4596,22 +3941,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "azumarill_アクアテール",
-      to: "charizard_大文字",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
       to: "cinderace_ブレイズキック",
       type: "disadvantage",
     },
     {
       from: "azumarill_アクアテール",
       to: "cinderace_かえんボール",
-      type: "disadvantage",
-    },
-    {
-      from: "azumarill_アクアテール",
-      to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
@@ -4650,11 +3985,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "advantage",
     },
     {
-      from: "mimikyu_トリックルーム",
-      to: "miraidon_イナズマドライブ",
-      type: "advantage",
-    },
-    {
       from: "mimikyu_かげうち",
       to: "garchomp_ドラゴンクロー",
       type: "advantage",
@@ -4671,11 +4001,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mimikyu_トリックルーム",
-      to: "alolan_ninetales_ふぶき",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
       to: "tsareena_トリプルアクセル",
       type: "disadvantage",
     },
@@ -4687,16 +4012,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "mimikyu_トリックルーム",
       to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "zacian_メタルクロー",
-      type: "disadvantage",
-    },
-    {
-      from: "mimikyu_トリックルーム",
-      to: "zacian_聖なる剣",
       type: "disadvantage",
     },
     {
@@ -4771,11 +4086,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mew",
-      to: "absol_サイコカッター",
-      type: "disadvantage",
-    },
-    {
-      from: "mew",
       to: "absol_ふいうち",
       type: "disadvantage",
     },
@@ -4821,17 +4131,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mewtwo_y_サイコブレイク",
-      to: "miraidon_チャージビーム",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_サイコブレイク",
       to: "miraidon_イナズマドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "mewtwo_y_みらいよち",
-      to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
@@ -4891,27 +4191,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "miraidon_チャージビーム",
-      to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "machamp_地獄車",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_チャージビーム",
-      to: "machamp_ばくれつパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "miraidon_イナズマドライブ",
       to: "machamp_地獄車",
       type: "disadvantage",
     },
     {
       from: "miraidon_イナズマドライブ",
-      to: "machamp_ばくれつパンチ",
+      to: "machamp_地獄車",
       type: "disadvantage",
     },
     {
@@ -4945,23 +4230,8 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "miraidon_イナズマドライブ",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "lucario_神速",
-      type: "advantage",
-    },
-    {
       from: "metagross_ジャイロボール",
       to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "advantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "lucario_グロウパンチ_インファイト",
       type: "advantage",
     },
     {
@@ -4991,17 +4261,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "metagross_ジャイロボール",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
       to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "metagross_ジャイロボール",
-      to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
@@ -5101,11 +4361,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "charizard_フレアドライブ",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
@@ -5122,11 +4377,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "charizard_フレアドライブ",
       to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_フレアドライブ",
-      to: "talonflame_ブレイブバード",
       type: "disadvantage",
     },
     {
@@ -5136,11 +4386,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "charizard_大文字",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
@@ -5161,17 +4406,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "charizard_大文字",
-      to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
       to: "mimikyu_かげうち",
-      type: "disadvantage",
-    },
-    {
-      from: "charizard_大文字",
-      to: "talonflame_ブレイブバード",
       type: "disadvantage",
     },
     {
@@ -5251,28 +4486,8 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "leafeon_はっぱカッター",
-      to: "lucario_神速",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "lucario_グロウパンチ_ボーンラッシュ",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
-      to: "lucario_グロウパンチ_インファイト",
-      type: "disadvantage",
-    },
-    {
-      from: "leafeon_はっぱカッター",
       to: "zeraora",
       type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "gengar_ゆめくい",
-      type: "advantage",
     },
     {
       from: "lucario_神速",
@@ -5331,17 +4546,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "lucario_グロウパンチ_インファイト",
-      to: "pikachu_10_万ボルト",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
       to: "machamp_地獄車",
-      type: "advantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "machamp_ばくれつパンチ",
       type: "advantage",
     },
     {
@@ -5367,11 +4572,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "lucario_神速",
       to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_神速",
-      to: "mimikyu_かげうち",
       type: "disadvantage",
     },
     {
@@ -5380,11 +4580,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "lucario_神速",
-      to: "zacian_聖なる剣",
-      type: "disadvantage",
-    },
-    {
       from: "lucario_グロウパンチ_ボーンラッシュ",
       to: "blastoise_こうそくスピン",
       type: "disadvantage",
@@ -5407,11 +4602,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "lucario_グロウパンチ_ボーンラッシュ",
       to: "mimikyu_トリックルーム",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "mimikyu_かげうち",
       type: "disadvantage",
     },
     {
@@ -5431,11 +4621,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "metagross_コメットパンチ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
       to: "tsareena_トリプルアクセル",
       type: "disadvantage",
     },
@@ -5447,11 +4632,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "lucario_グロウパンチ_ボーンラッシュ",
       to: "charizard_フレアドライブ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_ボーンラッシュ",
-      to: "charizard_大文字",
       type: "disadvantage",
     },
     {
@@ -5471,17 +4651,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "lucario_グロウパンチ_インファイト",
-      to: "gengar_ゆめくい",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
       to: "gengar_たたりめ",
-      type: "disadvantage",
-    },
-    {
-      from: "lucario_グロウパンチ_インファイト",
-      to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
