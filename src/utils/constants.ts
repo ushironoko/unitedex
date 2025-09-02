@@ -1,4 +1,4 @@
-import type { Role, EdgeType } from "../types";
+import type { EdgeType, Role } from "../types";
 
 export const ROLE_COLORS: Record<Role, string> = {
   タンク: "#4CAF50", // 緑

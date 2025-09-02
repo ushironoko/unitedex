@@ -1,9 +1,9 @@
 import type React from "react";
 import { useEffect, useRef } from "react";
-import { Network } from "vis-network/standalone";
 import { DataSet } from "vis-data";
-import { ROLE_COLORS, EDGE_COLORS, MY_POOL } from "../utils/constants";
+import { Network } from "vis-network/standalone";
 import type { PokemonData, Role } from "../types";
+import { EDGE_COLORS, MY_POOL, ROLE_COLORS } from "../utils/constants";
 
 interface NetworkGraphProps {
   data: PokemonData;

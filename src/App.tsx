@@ -1,9 +1,10 @@
-import { useState, useEffect, type CSSProperties } from "react";
-import NetworkGraph from "./components/NetworkGraph";
+import { type CSSProperties, useEffect, useState } from "react";
+import AdvantageList from "./components/AdvantageList";
 import ControlPanel from "./components/ControlPanel";
+import NetworkGraph from "./components/NetworkGraph";
 import { usePokemonData } from "./hooks/usePokemonData";
-import { ROLE_COLORS } from "./utils/constants";
 import type { Role } from "./types";
+import { ROLE_COLORS } from "./utils/constants";
 
 function App() {
   const { data } = usePokemonData();
@@ -16,7 +17,7 @@ function App() {
     Object.keys(ROLE_COLORS) as Role[],
   );
   const [showDirectConnectionsOnly, setShowDirectConnectionsOnly] =
-    useState(false);
+    useState(true);
 
   // Handle search
   useEffect(() => {
@@ -52,14 +53,26 @@ function App() {
           onShowDirectConnectionsOnlyChange={setShowDirectConnectionsOnly}
         />
 
-        <div style={styles.graphContainer}>
-          <NetworkGraph
-            data={data}
-            selectedPokemon={selectedPokemon}
-            edgeFilter={edgeFilter}
-            roleFilter={roleFilter}
-            showDirectConnectionsOnly={showDirectConnectionsOnly}
-          />
+        <div style={styles.contentContainer}>
+          <div style={styles.graphContainer}>
+            <NetworkGraph
+              data={data}
+              selectedPokemon={selectedPokemon}
+              edgeFilter={edgeFilter}
+              roleFilter={roleFilter}
+              showDirectConnectionsOnly={showDirectConnectionsOnly}
+            />
+          </div>
+
+          {selectedPokemon.length > 0 && (
+            <div style={styles.sidePanel}>
+              <AdvantageList
+                data={data}
+                selectedPokemon={selectedPokemon}
+                showDirectConnectionsOnly={showDirectConnectionsOnly}
+              />
+            </div>
+          )}
         </div>
 
         <div style={styles.stats}>
@@ -102,17 +115,32 @@ const styles: Record<string, CSSProperties> = {
   main: {
     flex: 1,
     padding: "20px",
-    maxWidth: "1400px",
+    maxWidth: "1600px",
     width: "100%",
     margin: "0 auto",
   },
+  contentContainer: {
+    display: "flex",
+    gap: "20px",
+    alignItems: "flex-start",
+  },
   graphContainer: {
+    flex: 1,
     backgroundColor: "white",
     borderRadius: "10px",
     padding: "20px",
     minHeight: "800px",
     height: "calc(100vh - 400px)",
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  },
+  sidePanel: {
+    width: "320px",
+    backgroundColor: "white",
+    borderRadius: "10px",
+    padding: "20px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    maxHeight: "calc(100vh - 400px)",
+    overflow: "auto",
   },
   stats: {
     marginTop: "20px",

@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { Role, PokemonData } from "../src/types";
+
+// ESモジュールで__dirnameを取得
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ディレクトリ内のマークダウンファイルを取得
 const uniteDir = path.join(__dirname, "..", "unite");
@@ -20,19 +25,15 @@ const typeMapping: Record<string, Role> = {
   "Defender（ディフェンス型）": "タンク",
   "Supporter（サポート型）": "サポート",
   "Attacker（アタック型）": "メイジ",
+  "Attacker（アタッカー型）": "メイジ",
   "All-Rounder（バランス型）": "ファイター",
   "Speedster（スピード型）": "アサシン",
   // 括弧なしのバリエーション
-  "Defender": "タンク",
-  "Supporter": "サポート",
-  "Attacker": "メイジ",
+  Defender: "タンク",
+  Supporter: "サポート",
+  Attacker: "メイジ",
   "All-Rounder": "ファイター",
-  "Speedster": "アサシン",
-  // その他のバリエーション
-  "Attacker（アタッカー型）": "メイジ",
-  "Attacker（アタッカー）": "メイジ",
-  "Supporter（サポート）": "サポート",
-  "Supporter（サポーター）": "サポート",
+  Speedster: "アサシン",
 };
 
 interface PokemonType {
@@ -64,11 +65,15 @@ async function extractTypes(): Promise<void> {
             const typeInfo = typeMatch[1].trim();
 
             // マッピングを適用
-            const mappedType = typeMapping[typeInfo] || ("メイジ" as Role);
-            pokemonTypes[pokemonName] = {
-              original: typeInfo,
-              mapped: mappedType,
-            };
+            const mappedType = typeMapping[typeInfo];
+            if (mappedType) {
+              pokemonTypes[pokemonName] = {
+                original: typeInfo,
+                mapped: mappedType,
+              };
+            } else {
+              console.warn(`Unknown type for ${pokemonName}: ${typeInfo}`);
+            }
           }
         }
       } catch (error) {
@@ -80,7 +85,7 @@ async function extractTypes(): Promise<void> {
   // 結果を出力
   console.log("ポケモンタイプ抽出結果:");
   const sortedPokemon = Object.entries(pokemonTypes).sort(([a], [b]) =>
-    a.localeCompare(b)
+    a.localeCompare(b),
   );
   for (const [pokemon, types] of sortedPokemon) {
     console.log(`${pokemon}: ${types.original} → ${types.mapped}`);
@@ -95,19 +100,25 @@ async function extractTypes(): Promise<void> {
 
   console.log("\nロール別体数:");
   const sortedRoles = Object.entries(roleCounts).sort(([a], [b]) =>
-    a.localeCompare(b)
+    a.localeCompare(b),
   );
   for (const [role, count] of sortedRoles) {
     console.log(`${role}: ${count}体`);
   }
 
   // TypeScriptデータファイル読み込みと更新
-  const dataPath = path.join(__dirname, "..", "src", "data", "pokemonMatchupData.ts");
+  const dataPath = path.join(
+    __dirname,
+    "..",
+    "src",
+    "data",
+    "pokemonMatchupData.ts",
+  );
   const dataContent = fs.readFileSync(dataPath, "utf-8");
 
   // データを抽出
   const dataMatch = dataContent.match(
-    /export const pokemonMatchupData: PokemonData = ({[\s\S]*});/
+    /export const pokemonMatchupData: PokemonData = ({[\s\S]*});/,
   );
   if (!dataMatch) {
     throw new Error("Could not extract data from TypeScript file");
@@ -117,7 +128,7 @@ async function extractTypes(): Promise<void> {
   const jsonStr = dataMatch[1]
     .replace(/(\w+):/g, '"$1":') // キーをクォート
     .replace(/'/g, '"'); // シングルクォートをダブルクォートに
-    
+
   let data: PokemonData;
   try {
     data = JSON.parse(jsonStr);
@@ -144,17 +155,24 @@ async function extractTypes(): Promise<void> {
   console.log(`\n更新されたポケモン数: ${updatedCount}`);
 
   // 更新されたTypeScriptファイルを書き戻し
-  const updatedContent = `import { PokemonData } from '../types';
+  const updatedContent = `import type { PokemonData } from "../types";
 
-export const pokemonMatchupData: PokemonData = ${JSON.stringify(
-    data,
-    null,
-    2
-  )};
+export const pokemonMatchupData: PokemonData = ${JSON.stringify(data, null, 2)};
 `;
 
   fs.writeFileSync(dataPath, updatedContent, "utf-8");
   console.log("pokemonMatchupData.ts を更新しました");
+
+  // Biomeでフォーマットを適用
+  const { execSync } = await import("child_process");
+  try {
+    execSync("pnpm biome format --write src/data/pokemonMatchupData.ts", {
+      stdio: "inherit",
+    });
+    console.log("Biomeフォーマットを適用しました");
+  } catch (error) {
+    console.error("Biomeフォーマットの適用に失敗しました:", error);
+  }
 }
 
 // スクリプトとして実行された場合

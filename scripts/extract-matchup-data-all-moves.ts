@@ -108,18 +108,24 @@ function extractRole(content: string): Role {
   return "メイジ";
 }
 
+// Target info interface
+interface TargetInfo {
+  pokemonName: string;
+  moveName?: string; // Move name in parentheses (if specified)
+}
+
 // Extract matchups and automatically detect move variations
 function extractMatchupsWithAutoMoves(content: string): {
-  moveAdvantages: Map<string, string[]>;
-  moveDisadvantages: Map<string, string[]>;
-  generalAdvantages: string[];
-  generalDisadvantages: string[];
+  moveAdvantages: Map<string, TargetInfo[]>;
+  moveDisadvantages: Map<string, TargetInfo[]>;
+  generalAdvantages: TargetInfo[];
+  generalDisadvantages: TargetInfo[];
   detectedMoves: Set<string>;
 } {
-  const moveAdvantages = new Map<string, string[]>();
-  const moveDisadvantages = new Map<string, string[]>();
-  const generalAdvantages: string[] = [];
-  const generalDisadvantages: string[] = [];
+  const moveAdvantages = new Map<string, TargetInfo[]>();
+  const moveDisadvantages = new Map<string, TargetInfo[]>();
+  const generalAdvantages: TargetInfo[] = [];
+  const generalDisadvantages: TargetInfo[] = [];
   const detectedMoves = new Set<string>();
 
   // Find the advantages section
@@ -160,10 +166,11 @@ function extractMatchupsWithAutoMoves(content: string): {
       } else if (trimmedLine.startsWith("-") || trimmedLine.startsWith("*")) {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
 
-        // Extract just the pokemon name, ignoring any move in parentheses
-        const match = pokemonWithNote.match(/^([^（(]+)/);
-        if (match) {
-          const targetPokemon = match[1].trim();
+        // Extract pokemon name and optional move
+        const fullMatch = pokemonWithNote.match(/^([^（(]+)(?:[（(]([^）)]+)[）)])?/);
+        if (fullMatch) {
+          const targetPokemon = fullMatch[1].trim();
+          const moveName = fullMatch[2]?.trim();
 
           // Filter out role names and English descriptions
           if (
@@ -180,14 +187,27 @@ function extractMatchupsWithAutoMoves(content: string): {
             ].includes(targetPokemon) &&
             !targetPokemon.match(/^[a-zA-Z\s]+$/)
           ) {
+            const targetInfo: TargetInfo = {
+              pokemonName: targetPokemon,
+              moveName: moveName,
+            };
+            
             if (currentSection && moveAdvantages.has(currentSection)) {
               const moveList = moveAdvantages.get(currentSection)!;
-              if (!moveList.includes(targetPokemon)) {
-                moveList.push(targetPokemon);
+              // Check for duplicates
+              const exists = moveList.some(
+                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+              );
+              if (!exists) {
+                moveList.push(targetInfo);
               }
             } else {
-              if (!generalAdvantages.includes(targetPokemon)) {
-                generalAdvantages.push(targetPokemon);
+              // Check for duplicates
+              const exists = generalAdvantages.some(
+                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+              );
+              if (!exists) {
+                generalAdvantages.push(targetInfo);
               }
             }
           }
@@ -233,10 +253,11 @@ function extractMatchupsWithAutoMoves(content: string): {
       } else if (trimmedLine.startsWith("-") || trimmedLine.startsWith("*")) {
         const pokemonWithNote = trimmedLine.replace(/^[-*]\s*/, "").trim();
 
-        // Extract just the pokemon name, ignoring any move in parentheses
-        const match = pokemonWithNote.match(/^([^（(]+)/);
-        if (match) {
-          const targetPokemon = match[1].trim();
+        // Extract pokemon name and optional move
+        const fullMatch = pokemonWithNote.match(/^([^（(]+)(?:[（(]([^）)]+)[）)])?/);
+        if (fullMatch) {
+          const targetPokemon = fullMatch[1].trim();
+          const moveName = fullMatch[2]?.trim();
 
           // Filter out role names and English descriptions
           if (
@@ -248,18 +269,32 @@ function extractMatchupsWithAutoMoves(content: string): {
               "ファイター",
               "サポート",
               "ADC",
+              "べた足",
               "ポーク",
             ].includes(targetPokemon) &&
             !targetPokemon.match(/^[a-zA-Z\s]+$/)
           ) {
+            const targetInfo: TargetInfo = {
+              pokemonName: targetPokemon,
+              moveName: moveName,
+            };
+            
             if (currentSection && moveDisadvantages.has(currentSection)) {
               const moveList = moveDisadvantages.get(currentSection)!;
-              if (!moveList.includes(targetPokemon)) {
-                moveList.push(targetPokemon);
+              // Check for duplicates
+              const exists = moveList.some(
+                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+              );
+              if (!exists) {
+                moveList.push(targetInfo);
               }
             } else {
-              if (!generalDisadvantages.includes(targetPokemon)) {
-                generalDisadvantages.push(targetPokemon);
+              // Check for duplicates
+              const exists = generalDisadvantages.some(
+                t => t.pokemonName === targetInfo.pokemonName && t.moveName === targetInfo.moveName
+              );
+              if (!exists) {
+                generalDisadvantages.push(targetInfo);
               }
             }
           }

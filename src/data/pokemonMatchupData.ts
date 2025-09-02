@@ -1376,11 +1376,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "cinderace_かえんボール",
-      to: "aegislash_聖なる剣",
-      type: "disadvantage",
-    },
-    {
-      from: "cinderace_かえんボール",
       to: "blastoise_こうそくスピン",
       type: "disadvantage",
     },

@@ -1,7 +1,7 @@
 import type React from "react";
 import type { CSSProperties } from "react";
-import { ROLE_COLORS } from "../utils/constants";
 import type { Role } from "../types";
+import { ROLE_COLORS } from "../utils/constants";
 
 interface ControlPanelProps {
   searchValue: string;

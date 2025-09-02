@@ -1,0 +1,112 @@
+.relation-popover {
+  position: fixed;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 300px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.relation-popover__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.relation-popover__role-badge {
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.relation-popover__title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.relation-popover__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.relation-popover__section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.relation-popover__section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.relation-popover__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+}
+
+.relation-popover__item.advantage {
+  border-left: 3px solid #4CAF50;
+}
+
+.relation-popover__item.disadvantage {
+  border-left: 3px solid #FF5722;
+}
+
+.relation-popover__symbol {
+  font-size: 14px;
+  font-weight: bold;
+  width: 16px;
+  text-align: center;
+}
+
+.relation-popover__item.advantage .relation-popover__symbol {
+  color: #4CAF50;
+}
+
+.relation-popover__item.disadvantage .relation-popover__symbol {
+  color: #FF5722;
+}
+
+.relation-popover__pokemon-name {
+  color: #333;
+}
+
+.relation-popover__empty {
+  font-size: 12px;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 8px;
+}
