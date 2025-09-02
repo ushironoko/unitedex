@@ -59,8 +59,9 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
           self.findIndex((n) => n.id === node.id) === index,
       );
 
-    const advantages: RelationDetail[] = [];
-    const disadvantages: RelationDetail[] = [];
+    // Use Map to prevent duplicates
+    const advantageMap = new Map<string, RelationDetail>();
+    const disadvantageMap = new Map<string, RelationDetail>();
 
     // Check edges for relations
     for (const selectedNode of matchingNodes) {
@@ -71,7 +72,7 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
           edge.to === targetPokemonId &&
           edge.type === "advantage"
         ) {
-          advantages.push({
+          advantageMap.set(selectedNode.id, {
             pokemonId: selectedNode.id,
             pokemonLabel: selectedNode.label,
             relationType: "advantage",
@@ -83,7 +84,7 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
           edge.to === selectedNode.id &&
           edge.type === "advantage"
         ) {
-          disadvantages.push({
+          disadvantageMap.set(selectedNode.id, {
             pokemonId: selectedNode.id,
             pokemonLabel: selectedNode.label,
             relationType: "disadvantage",
@@ -95,7 +96,7 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
           edge.to === targetPokemonId &&
           edge.type === "disadvantage"
         ) {
-          disadvantages.push({
+          disadvantageMap.set(selectedNode.id, {
             pokemonId: selectedNode.id,
             pokemonLabel: selectedNode.label,
             relationType: "disadvantage",
@@ -107,7 +108,7 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
           edge.to === selectedNode.id &&
           edge.type === "disadvantage"
         ) {
-          advantages.push({
+          advantageMap.set(selectedNode.id, {
             pokemonId: selectedNode.id,
             pokemonLabel: selectedNode.label,
             relationType: "advantage",
@@ -115,6 +116,10 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
         }
       }
     }
+
+    // Convert Maps to arrays
+    const advantages = Array.from(advantageMap.values());
+    const disadvantages = Array.from(disadvantageMap.values());
 
     return { advantages, disadvantages };
   })();
