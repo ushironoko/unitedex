@@ -152,7 +152,7 @@ const styles: Record<string, CSSProperties> = {
   searchInput: {
     width: "100%",
     padding: "10px",
-    fontSize: "14px",
+    fontSize: "16px",
     border: "2px solid #ddd",
     borderRadius: "5px",
     outline: "none",
