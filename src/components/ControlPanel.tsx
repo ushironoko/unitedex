@@ -2,6 +2,7 @@ import type React from "react";
 import type { CSSProperties } from "react";
 import type { Role } from "../types";
 import { ROLE_COLORS } from "../utils/constants";
+import "../styles/ControlPanel.css";
 
 interface ControlPanelProps {
   searchValue: string;
@@ -47,8 +48,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         />
       </div>
 
-      <div style={styles.section}>
-        <h3 style={styles.sectionTitle}>エッジフィルター</h3>
+      <div className="desktop-only">
+        <div style={styles.section}>
+          <h3 style={styles.sectionTitle}>エッジフィルター</h3>
         <div style={styles.buttonGroup}>
           <button
             type="button"
@@ -127,6 +129,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             </button>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
