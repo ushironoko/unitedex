@@ -1,15 +1,13 @@
-import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { PokemonData } from "../types";
 import { ROLE_COLORS } from "../utils/constants";
 import "../styles/RelationPopover.css";
 
 interface RelationPopoverProps {
+  children: React.ReactElement<any>;
   targetPokemonId: string;
   selectedPokemon: string[];
   data: PokemonData;
-  position: { x: number; y: number };
-  onClose: () => void;
 }
 
 interface RelationDetail {
@@ -19,17 +17,18 @@ interface RelationDetail {
 }
 
 const RelationPopover: React.FC<RelationPopoverProps> = ({
+  children,
   targetPokemonId,
   selectedPokemon,
   data,
-  position,
-  onClose,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const [adjustedPosition, setAdjustedPosition] = useState(position);
 
   // Get relation details
-  const relationDetails = (() => {
+  const relationDetails = useMemo(() => {
     const targetNode = data.nodes.find((n) => n.id === targetPokemonId);
     if (!targetNode) return { advantages: [], disadvantages: [] };
 
@@ -122,120 +121,159 @@ const RelationPopover: React.FC<RelationPopoverProps> = ({
     const disadvantages = Array.from(disadvantageMap.values());
 
     return { advantages, disadvantages };
-  })();
+  }, [targetPokemonId, selectedPokemon, data]);
 
-  // Adjust position to keep popover within viewport
-  useEffect(() => {
-    if (!popoverRef.current) return;
-
-    const rect = popoverRef.current.getBoundingClientRect();
+  // Calculate position when opening
+  const updatePosition = useCallback((event: React.MouseEvent) => {
+    // Use the actual target element for positioning
+    const target = event.currentTarget;
+    const rect = target.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-
-    let newX = position.x;
-    let newY = position.y;
-
-    // Adjust horizontal position
-    if (rect.right > viewportWidth) {
-      newX = position.x - rect.width - 10;
+    const popoverWidth = 250; // Estimated width
+    const popoverHeight = 200; // Estimated height
+    
+    let x = rect.right + 10;
+    let y = rect.top;
+    
+    // Adjust if going off-screen
+    if (x + popoverWidth > viewportWidth) {
+      x = rect.left - popoverWidth - 10;
     }
-
-    // Adjust vertical position
-    if (rect.bottom > viewportHeight) {
-      newY = viewportHeight - rect.height - 10;
+    
+    if (y + popoverHeight > viewportHeight) {
+      y = viewportHeight - popoverHeight - 10;
     }
+    
+    if (y < 10) {
+      y = 10;
+    }
+    
+    setPosition({ x, y });
+  }, []);
 
-    setAdjustedPosition({ x: newX, y: newY });
-  }, [position]);
+  const handleMouseEnter = useCallback((event: React.MouseEvent) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    updatePosition(event);
+    setIsOpen(true);
+  }, [updatePosition]);
 
-  // Close on click outside
+  const handleMouseLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
+  }, []);
+
+  const handlePopoverMouseEnter = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  const handlePopoverMouseLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
+  }, []);
+
+  // Cleanup on unmount
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        popoverRef.current &&
-        !popoverRef.current.contains(event.target as Node)
-      ) {
-        onClose();
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [onClose]);
+  }, []);
 
   const targetNode = data.nodes.find((n) => n.id === targetPokemonId);
-  if (!targetNode) return null;
+  if (!targetNode) return children;
 
   return (
-    <div
-      ref={popoverRef}
-      className="relation-popover"
-      style={{
-        left: `${adjustedPosition.x}px`,
-        top: `${adjustedPosition.y}px`,
-      }}
-    >
-      <div className="relation-popover__header">
-        <span
-          className="relation-popover__role-badge"
+    <>
+      {React.cloneElement(children, {
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+      })}
+      {isOpen && (
+        <div
+          ref={popoverRef}
+          className="relation-popover"
+          onMouseEnter={handlePopoverMouseEnter}
+          onMouseLeave={handlePopoverMouseLeave}
           style={{
-            backgroundColor: ROLE_COLORS[targetNode.role] || "#999",
+            position: "fixed",
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+            zIndex: 1000,
           }}
-        >
-          {targetNode.role}
-        </span>
-        <span className="relation-popover__title">{targetNode.label}</span>
-      </div>
-
-      <div className="relation-popover__content">
-        {relationDetails.advantages.length > 0 && (
-          <div className="relation-popover__section">
-            <div className="relation-popover__section-title">
-              有利な選択ポケモン
-            </div>
-            {relationDetails.advantages.map((detail) => (
-              <div
-                key={`${detail.pokemonId}-adv`}
-                className="relation-popover__item advantage"
+          >
+            <div className="relation-popover__header">
+              <span
+                className="relation-popover__role-badge"
+                style={{
+                  backgroundColor: ROLE_COLORS[targetNode.role] || "#999",
+                }}
               >
-                <span className="relation-popover__symbol">○</span>
-                <span className="relation-popover__pokemon-name">
-                  {detail.pokemonLabel}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {relationDetails.disadvantages.length > 0 && (
-          <div className="relation-popover__section">
-            <div className="relation-popover__section-title">
-              不利な選択ポケモン
+                {targetNode.role}
+              </span>
+              <span className="relation-popover__title">
+                {targetNode.label}
+              </span>
             </div>
-            {relationDetails.disadvantages.map((detail) => (
-              <div
-                key={`${detail.pokemonId}-dis`}
-                className="relation-popover__item disadvantage"
-              >
-                <span className="relation-popover__symbol">△</span>
-                <span className="relation-popover__pokemon-name">
-                  {detail.pokemonLabel}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
 
-        {relationDetails.advantages.length === 0 &&
-          relationDetails.disadvantages.length === 0 && (
-            <div className="relation-popover__empty">
-              選択中のポケモンとの関係はありません
+            <div className="relation-popover__content">
+              {relationDetails.advantages.length > 0 && (
+                <div className="relation-popover__section">
+                  <div className="relation-popover__section-title">
+                    有利な選択ポケモン
+                  </div>
+                  {relationDetails.advantages.map((detail) => (
+                    <div
+                      key={`${detail.pokemonId}-adv`}
+                      className="relation-popover__item advantage"
+                    >
+                      <span className="relation-popover__symbol">○</span>
+                      <span className="relation-popover__pokemon-name">
+                        {detail.pokemonLabel}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {relationDetails.disadvantages.length > 0 && (
+                <div className="relation-popover__section">
+                  <div className="relation-popover__section-title">
+                    不利な選択ポケモン
+                  </div>
+                  {relationDetails.disadvantages.map((detail) => (
+                    <div
+                      key={`${detail.pokemonId}-dis`}
+                      className="relation-popover__item disadvantage"
+                    >
+                      <span className="relation-popover__symbol">△</span>
+                      <span className="relation-popover__pokemon-name">
+                        {detail.pokemonLabel}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {relationDetails.advantages.length === 0 &&
+                relationDetails.disadvantages.length === 0 && (
+                  <div className="relation-popover__empty">
+                    選択中のポケモンとの関係はありません
+                  </div>
+                )}
             </div>
-          )}
-      </div>
-    </div>
+          </div>
+      )}
+    </>
   );
 };
 

@@ -79,6 +79,7 @@
   width: 24px;
   text-align: center;
   color: #4CAF50;
+  pointer-events: none;
 }
 
 .advantage-list__relation-symbol.disadvantage {
@@ -93,12 +94,14 @@
   border-radius: 3px;
   text-transform: uppercase;
   white-space: nowrap;
+  pointer-events: none;
 }
 
 .advantage-list__pokemon-name {
   font-size: 13px;
   color: #333;
   flex: 1;
+  pointer-events: none;
 }
 
 .advantage-list__empty {

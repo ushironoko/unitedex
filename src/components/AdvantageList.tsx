@@ -36,11 +36,6 @@ const AdvantageList: React.FC<AdvantageListProps> = ({
     disadvantage: true,
   });
 
-  const [hoveredPokemon, setHoveredPokemon] = useState<{
-    id: string;
-    position: { x: number; y: number };
-  } | null>(null);
-
   const pokemonRelations = useMemo((): {
     advantages: PokemonNodeWithCount[];
     disadvantages: PokemonNodeWithCount[];
@@ -189,24 +184,6 @@ const AdvantageList: React.FC<AdvantageListProps> = ({
     }));
   };
 
-  const handleMouseEnter = (
-    pokemonId: string,
-    event: React.MouseEvent<HTMLDivElement>,
-  ) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    setHoveredPokemon({
-      id: pokemonId,
-      position: {
-        x: rect.right + 10,
-        y: rect.top,
-      },
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredPokemon(null);
-  };
-
   if (selectedPokemon.length === 0) {
     return null;
   }
@@ -237,59 +214,67 @@ const AdvantageList: React.FC<AdvantageListProps> = ({
             ) : (
               <>
                 {pokemonRelations.advantages.map((node) => (
-                  <div
+                  <RelationPopover
                     key={node.id}
-                    className="advantage-list__item"
-                    style={{
-                      borderLeftColor: ROLE_COLORS[node.role] || "#999",
-                    }}
-                    onMouseEnter={(e) => handleMouseEnter(node.id, e)}
-                    onMouseLeave={handleMouseLeave}
+                    targetPokemonId={node.id}
+                    selectedPokemon={selectedPokemon}
+                    data={data}
                   >
-                    <span className="advantage-list__relation-symbol">
-                      {node.relationCount > 1 ? "◎" : "○"}
-                    </span>
-                    <span
-                      className="advantage-list__role-badge"
+                    <div
+                      className="advantage-list__item"
                       style={{
-                        backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        borderLeftColor: ROLE_COLORS[node.role] || "#999",
                       }}
                     >
-                      {node.role}
-                    </span>
-                    <span className="advantage-list__pokemon-name">
-                      {node.label}
-                    </span>
-                  </div>
+                      <span className="advantage-list__relation-symbol">
+                        {node.relationCount > 1 ? "◎" : "○"}
+                      </span>
+                      <span
+                        className="advantage-list__role-badge"
+                        style={{
+                          backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        }}
+                      >
+                        {node.role}
+                      </span>
+                      <span className="advantage-list__pokemon-name">
+                        {node.label}
+                      </span>
+                    </div>
+                  </RelationPopover>
                 ))}
                 {pokemonRelations.both.map((node) => (
-                  <div
+                  <RelationPopover
                     key={node.id}
-                    className="advantage-list__item"
-                    style={{
-                      borderLeftColor: ROLE_COLORS[node.role] || "#999",
-                    }}
-                    onMouseEnter={(e) => handleMouseEnter(node.id, e)}
-                    onMouseLeave={handleMouseLeave}
+                    targetPokemonId={node.id}
+                    selectedPokemon={selectedPokemon}
+                    data={data}
                   >
-                    <span className="advantage-list__relation-symbol">
-                      {node.relationCount > 1 ? "◎" : "○"}
-                    </span>
-                    <span className="advantage-list__relation-symbol disadvantage">
-                      {node.disadvantageCount > 1 ? "×" : "△"}
-                    </span>
-                    <span
-                      className="advantage-list__role-badge"
+                    <div
+                      className="advantage-list__item"
                       style={{
-                        backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        borderLeftColor: ROLE_COLORS[node.role] || "#999",
                       }}
                     >
-                      {node.role}
-                    </span>
-                    <span className="advantage-list__pokemon-name">
-                      {node.label}
-                    </span>
-                  </div>
+                      <span className="advantage-list__relation-symbol">
+                        {node.relationCount > 1 ? "◎" : "○"}
+                      </span>
+                      <span className="advantage-list__relation-symbol disadvantage">
+                        {node.disadvantageCount > 1 ? "×" : "△"}
+                      </span>
+                      <span
+                        className="advantage-list__role-badge"
+                        style={{
+                          backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        }}
+                      >
+                        {node.role}
+                      </span>
+                      <span className="advantage-list__pokemon-name">
+                        {node.label}
+                      </span>
+                    </div>
+                  </RelationPopover>
                 ))}
               </>
             )}
@@ -319,75 +304,73 @@ const AdvantageList: React.FC<AdvantageListProps> = ({
             ) : (
               <>
                 {pokemonRelations.disadvantages.map((node) => (
-                  <div
+                  <RelationPopover
                     key={node.id}
-                    className="advantage-list__item"
-                    style={{
-                      borderLeftColor: ROLE_COLORS[node.role] || "#999",
-                    }}
-                    onMouseEnter={(e) => handleMouseEnter(node.id, e)}
-                    onMouseLeave={handleMouseLeave}
+                    targetPokemonId={node.id}
+                    selectedPokemon={selectedPokemon}
+                    data={data}
                   >
-                    <span className="advantage-list__relation-symbol disadvantage">
-                      {node.relationCount > 1 ? "×" : "△"}
-                    </span>
-                    <span
-                      className="advantage-list__role-badge"
+                    <div
+                      className="advantage-list__item"
                       style={{
-                        backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        borderLeftColor: ROLE_COLORS[node.role] || "#999",
                       }}
                     >
-                      {node.role}
-                    </span>
-                    <span className="advantage-list__pokemon-name">
-                      {node.label}
-                    </span>
-                  </div>
+                      <span className="advantage-list__relation-symbol disadvantage">
+                        {node.relationCount > 1 ? "×" : "△"}
+                      </span>
+                      <span
+                        className="advantage-list__role-badge"
+                        style={{
+                          backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        }}
+                      >
+                        {node.role}
+                      </span>
+                      <span className="advantage-list__pokemon-name">
+                        {node.label}
+                      </span>
+                    </div>
+                  </RelationPopover>
                 ))}
                 {pokemonRelations.both.map((node) => (
-                  <div
+                  <RelationPopover
                     key={`${node.id}-disadvantage`}
-                    className="advantage-list__item"
-                    style={{
-                      borderLeftColor: ROLE_COLORS[node.role] || "#999",
-                    }}
-                    onMouseEnter={(e) => handleMouseEnter(node.id, e)}
-                    onMouseLeave={handleMouseLeave}
+                    targetPokemonId={node.id}
+                    selectedPokemon={selectedPokemon}
+                    data={data}
                   >
-                    <span className="advantage-list__relation-symbol">
-                      {node.relationCount > 1 ? "◎" : "○"}
-                    </span>
-                    <span className="advantage-list__relation-symbol disadvantage">
-                      {node.disadvantageCount > 1 ? "×" : "△"}
-                    </span>
-                    <span
-                      className="advantage-list__role-badge"
+                    <div
+                      className="advantage-list__item"
                       style={{
-                        backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        borderLeftColor: ROLE_COLORS[node.role] || "#999",
                       }}
                     >
-                      {node.role}
-                    </span>
-                    <span className="advantage-list__pokemon-name">
-                      {node.label}
-                    </span>
-                  </div>
+                      <span className="advantage-list__relation-symbol">
+                        {node.relationCount > 1 ? "◎" : "○"}
+                      </span>
+                      <span className="advantage-list__relation-symbol disadvantage">
+                        {node.disadvantageCount > 1 ? "×" : "△"}
+                      </span>
+                      <span
+                        className="advantage-list__role-badge"
+                        style={{
+                          backgroundColor: ROLE_COLORS[node.role] || "#999",
+                        }}
+                      >
+                        {node.role}
+                      </span>
+                      <span className="advantage-list__pokemon-name">
+                        {node.label}
+                      </span>
+                    </div>
+                  </RelationPopover>
                 ))}
               </>
             )}
           </div>
         )}
       </div>
-
-      {hoveredPokemon && (
-        <RelationPopover
-          targetPokemonId={hoveredPokemon.id}
-          selectedPokemon={selectedPokemon}
-          data={data}
-          position={hoveredPokemon.position}
-          onClose={() => setHoveredPokemon(null)}
-        />
-      )}
     </div>
   );
 };
