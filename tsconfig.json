@@ -22,6 +22,6 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
+  "include": ["src", "src/data/pokemonMatchupData.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

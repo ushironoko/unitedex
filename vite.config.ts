@@ -9,14 +9,6 @@ export default defineConfig({
     port: 5173,
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          "pokemon-data": ["./src/data/pokemonMatchupData.ts"],
-        },
-      },
-    },
-    // Ensure large arrays are not removed
     minify: "esbuild",
     target: "es2015",
   },
