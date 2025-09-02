@@ -3450,16 +3450,6 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "clefable_重力",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_重力",
-      to: "tsareena_ふみつけ",
-      type: "disadvantage",
-    },
-    {
       from: "clefable_このゆびとまれ",
       to: "gengar_たたりめ",
       type: "disadvantage",
@@ -3482,16 +3472,6 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "clefable_このゆびとまれ",
       to: "blastoise_こうそくスピン",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "tsareena_トリプルアクセル",
-      type: "disadvantage",
-    },
-    {
-      from: "clefable_このゆびとまれ",
-      to: "tsareena_ふみつけ",
       type: "disadvantage",
     },
     {

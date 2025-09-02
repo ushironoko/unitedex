@@ -11,7 +11,7 @@ import { ROLE_COLORS } from "../utils/constants";
 import "../styles/RelationPopover.css";
 
 interface RelationPopoverProps {
-  children: React.ReactElement<any>;
+  children: React.ReactElement<Record<string, unknown>>;
   targetPokemonId: string;
   selectedPokemon: string[];
   data: PokemonData;
