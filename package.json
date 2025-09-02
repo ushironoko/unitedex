@@ -15,7 +15,6 @@
     "prepare": "pnpm lint && pnpm format && pnpm tsc && pnpm extract-data && pnpm extract-types",
     "extract-data": "tsx scripts/extract-matchup-data-all-moves.ts",
     "extract-types": "tsx scripts/extract-types.ts",
-    "check-stats": "tsx scripts/check-json-stats.ts",
     "scrape": "tsx scripts/scrape-unite.ts"
   },
   "keywords": [],
