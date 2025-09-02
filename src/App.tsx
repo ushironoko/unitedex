@@ -1,8 +1,9 @@
-import { type CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AdvantageList from "./components/AdvantageList";
 import ControlPanel from "./components/ControlPanel";
 import NetworkGraph from "./components/NetworkGraph";
 import { usePokemonData } from "./hooks/usePokemonData";
+import "./styles/App.css";
 import type { Role } from "./types";
 import { ROLE_COLORS } from "./utils/constants";
 
@@ -35,13 +36,13 @@ function App() {
   }, [searchValue]);
 
   return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={styles.title}>Pokemon Unite Matchup Visualizer</h1>
-        <p style={styles.subtitle}>ポケモンの相性関係を可視化</p>
+    <div className="container">
+      <header className="header">
+        <h1 className="title">Pokemon Unite Matchup Visualizer</h1>
+        <p className="subtitle">ポケモンの相性関係を可視化</p>
       </header>
 
-      <main style={styles.main}>
+      <main className="main">
         <ControlPanel
           searchValue={searchValue}
           onSearchChange={setSearchValue}
@@ -53,8 +54,8 @@ function App() {
           onShowDirectConnectionsOnlyChange={setShowDirectConnectionsOnly}
         />
 
-        <div style={styles.contentContainer}>
-          <div style={styles.graphContainer}>
+        <div className="contentContainer">
+          <div className="graphContainer">
             <NetworkGraph
               data={data}
               selectedPokemon={selectedPokemon}
@@ -65,7 +66,7 @@ function App() {
           </div>
 
           {selectedPokemon.length > 0 && (
-            <div style={styles.sidePanel}>
+            <div className="sidePanel">
               <AdvantageList
                 data={data}
                 selectedPokemon={selectedPokemon}
@@ -75,7 +76,7 @@ function App() {
           )}
         </div>
 
-        <div style={styles.stats}>
+        <div className="stats">
           <span>総ポケモン数: {data.nodes.length}</span>
           <span style={{ marginLeft: "20px" }}>
             総エッジ数: {data.edges.length}
@@ -91,89 +92,5 @@ function App() {
     </div>
   );
 }
-
-const styles: Record<string, CSSProperties> = {
-  container: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-  },
-  header: {
-    background: "rgba(0, 0, 0, 0.7)",
-    color: "white",
-    padding: "20px",
-    textAlign: "center",
-  },
-  title: {
-    fontSize: "2rem",
-    marginBottom: "10px",
-  },
-  subtitle: {
-    fontSize: "1rem",
-    opacity: 0.9,
-  },
-  main: {
-    flex: 1,
-    padding: "20px",
-    maxWidth: "1600px",
-    width: "100%",
-    margin: "0 auto",
-  },
-  contentContainer: {
-    display: "flex",
-    gap: "20px",
-    alignItems: "flex-start",
-  },
-  graphContainer: {
-    flex: 1,
-    backgroundColor: "white",
-    borderRadius: "10px",
-    padding: "20px",
-    minHeight: "800px",
-    height: "calc(100vh - 400px)",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  },
-  sidePanel: {
-    width: "320px",
-    backgroundColor: "white",
-    borderRadius: "10px",
-    padding: "20px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    maxHeight: "calc(100vh - 400px)",
-    overflow: "auto",
-  },
-  stats: {
-    marginTop: "20px",
-    padding: "15px",
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
-    borderRadius: "10px",
-    textAlign: "center",
-    fontSize: "14px",
-    color: "#666",
-  },
-  loadingContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: "100vh",
-  },
-  loading: {
-    fontSize: "1.5rem",
-    color: "white",
-  },
-  errorContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: "100vh",
-  },
-  error: {
-    fontSize: "1.5rem",
-    color: "#f44336",
-    backgroundColor: "white",
-    padding: "20px",
-    borderRadius: "10px",
-  },
-};
 
 export default App;
