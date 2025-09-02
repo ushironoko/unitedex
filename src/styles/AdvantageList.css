@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
 }
 
 .advantage-list__title {
@@ -55,6 +56,7 @@
   flex-direction: column;
   gap: 4px;
   padding-left: 28px;
+  padding-bottom: 24px;
 }
 
 .advantage-list__item {
@@ -78,12 +80,12 @@
   font-weight: bold;
   width: 24px;
   text-align: center;
-  color: #4CAF50;
+  color: #4caf50;
   pointer-events: none;
 }
 
 .advantage-list__relation-symbol.disadvantage {
-  color: #FF5722;
+  color: #ff5722;
 }
 
 .advantage-list__role-badge {

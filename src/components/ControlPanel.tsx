@@ -51,85 +51,85 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       <div className="desktop-only">
         <div style={styles.section}>
           <h3 style={styles.sectionTitle}>エッジフィルター</h3>
-        <div style={styles.buttonGroup}>
-          <button
-            type="button"
-            onClick={() => onEdgeFilterChange("all")}
-            style={{
-              ...styles.button,
-              ...(edgeFilter === "all" ? styles.activeButton : {}),
-            }}
-          >
-            すべて
-          </button>
-          <button
-            type="button"
-            onClick={() => onEdgeFilterChange("advantage")}
-            style={{
-              ...styles.button,
-              ...(edgeFilter === "advantage" ? styles.activeButton : {}),
-              ...(edgeFilter === "advantage"
-                ? { backgroundColor: "#4CAF50" }
-                : {}),
-            }}
-          >
-            有利のみ
-          </button>
-          <button
-            type="button"
-            onClick={() => onEdgeFilterChange("disadvantage")}
-            style={{
-              ...styles.button,
-              ...(edgeFilter === "disadvantage" ? styles.activeButton : {}),
-              ...(edgeFilter === "disadvantage"
-                ? { backgroundColor: "#F44336" }
-                : {}),
-            }}
-          >
-            不利のみ
-          </button>
-        </div>
-      </div>
-
-      <div style={styles.section}>
-        <h3 style={styles.sectionTitle}>表示オプション</h3>
-        <label style={styles.checkboxLabel}>
-          <input
-            type="checkbox"
-            checked={showDirectConnectionsOnly}
-            onChange={(e) =>
-              onShowDirectConnectionsOnlyChange(e.target.checked)
-            }
-            style={styles.checkbox}
-          />
-          <span style={styles.checkboxText}>
-            直接接続のみ表示（孫ノードを非表示）
-          </span>
-        </label>
-      </div>
-
-      <div style={styles.section}>
-        <h3 style={styles.sectionTitle}>ロールフィルター</h3>
-        <div style={styles.roleButtonGroup}>
-          {roles.map((role) => (
+          <div style={styles.buttonGroup}>
             <button
               type="button"
-              key={role}
-              onClick={() => handleRoleToggle(role)}
+              onClick={() => onEdgeFilterChange("all")}
               style={{
-                ...styles.roleButton,
-                backgroundColor: ROLE_COLORS[role],
-                opacity: roleFilter.includes(role) ? 1 : 0.3,
-                transform: roleFilter.includes(role)
-                  ? "scale(1)"
-                  : "scale(0.95)",
+                ...styles.button,
+                ...(edgeFilter === "all" ? styles.activeButton : {}),
               }}
             >
-              {role}
+              すべて
             </button>
-          ))}
+            <button
+              type="button"
+              onClick={() => onEdgeFilterChange("advantage")}
+              style={{
+                ...styles.button,
+                ...(edgeFilter === "advantage" ? styles.activeButton : {}),
+                ...(edgeFilter === "advantage"
+                  ? { backgroundColor: "#4CAF50" }
+                  : {}),
+              }}
+            >
+              有利のみ
+            </button>
+            <button
+              type="button"
+              onClick={() => onEdgeFilterChange("disadvantage")}
+              style={{
+                ...styles.button,
+                ...(edgeFilter === "disadvantage" ? styles.activeButton : {}),
+                ...(edgeFilter === "disadvantage"
+                  ? { backgroundColor: "#F44336" }
+                  : {}),
+              }}
+            >
+              不利のみ
+            </button>
+          </div>
         </div>
-      </div>
+
+        <div style={styles.section}>
+          <h3 style={styles.sectionTitle}>表示オプション</h3>
+          <label style={styles.checkboxLabel}>
+            <input
+              type="checkbox"
+              checked={showDirectConnectionsOnly}
+              onChange={(e) =>
+                onShowDirectConnectionsOnlyChange(e.target.checked)
+              }
+              style={styles.checkbox}
+            />
+            <span style={styles.checkboxText}>
+              直接接続のみ表示（孫ノードを非表示）
+            </span>
+          </label>
+        </div>
+
+        <div style={styles.section}>
+          <h3 style={styles.sectionTitle}>ロールフィルター</h3>
+          <div style={styles.roleButtonGroup}>
+            {roles.map((role) => (
+              <button
+                type="button"
+                key={role}
+                onClick={() => handleRoleToggle(role)}
+                style={{
+                  ...styles.roleButton,
+                  backgroundColor: ROLE_COLORS[role],
+                  opacity: roleFilter.includes(role) ? 1 : 0.3,
+                  transform: roleFilter.includes(role)
+                    ? "scale(1)"
+                    : "scale(0.95)",
+                }}
+              >
+                {role}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
