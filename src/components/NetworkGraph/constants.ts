@@ -23,7 +23,7 @@ export const NETWORK_OPTIONS = {
     adaptiveTimestep: false,
   },
   interaction: {
-    hover: true,
+    hover: false, // ホバーを無効化してパフォーマンス向上
     tooltipDelay: 300,
     hideEdgesOnDrag: true,
     navigationButtons: true,

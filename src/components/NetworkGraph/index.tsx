@@ -4,6 +4,7 @@ import { useNetwork } from "./hooks/useNetwork";
 import { useNodeSelection } from "./hooks/useNodeSelection";
 import { useEdgeFilter } from "./hooks/useEdgeFilter";
 import { useRoleFilter } from "./hooks/useRoleFilter";
+import { useDebouncedSelection } from "./hooks/useDebouncedSelection";
 
 const NetworkGraph: React.FC<NetworkGraphProps> = ({
   data,
@@ -12,19 +13,22 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
   roleFilter,
   showDirectConnectionsOnly,
 }) => {
+  // 選択をデバウンス
+  const debouncedSelection = useDebouncedSelection(selectedPokemon, 100);
+  
   // ネットワークを初期化し、refを取得
   const refs = useNetwork(data);
 
-  // 各フィルタリング機能を適用
+  // 各フィルタリング機能を適用（デバウンスされた選択を使用）
   useNodeSelection(
     refs,
     data,
-    selectedPokemon,
+    debouncedSelection,
     showDirectConnectionsOnly,
     roleFilter,
   );
-  useEdgeFilter(refs, data, selectedPokemon, edgeFilter);
-  useRoleFilter(refs, data, selectedPokemon, roleFilter);
+  useEdgeFilter(refs, data, debouncedSelection, edgeFilter);
+  useRoleFilter(refs, data, debouncedSelection, roleFilter);
 
   return (
     <div
