@@ -199,6 +199,7 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     cursor: "pointer",
     fontSize: "14px",
+    width: "fit-content",
   },
   checkbox: {
     marginRight: "8px",
