@@ -1,5 +1,5 @@
 import type React from "react";
-import { memo, useMemo, useEffect } from "react";
+import { memo, useMemo, useEffect, useRef } from "react";
 import type { NetworkGraphProps } from "./types";
 import { useNetworkInstance } from "./hooks/useNetworkInstance";
 import { useDebouncedSelection } from "./hooks/useDebouncedSelection";
@@ -15,6 +15,9 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(
   }) => {
     // 選択をデバウンス
     const debouncedSelection = useDebouncedSelection(selectedPokemon, 150);
+
+    // 初回レンダリングかどうかを追跡
+    const isInitialRender = useRef(true);
 
     // ネットワークインスタンスを初期化（一度だけ）
     const { containerRef, network, nodesDataset, edgesDataset } =
@@ -46,13 +49,26 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(
         return;
       }
 
-      // ノードを更新
-      nodesDataset.current.clear();
-      nodesDataset.current.add(graphState.nodes);
+      if (isInitialRender.current) {
+        // 初回のみadd()を使用（初期位置付きで追加）
+        nodesDataset.current.add(graphState.nodes);
+        edgesDataset.current.add(graphState.edges);
+        isInitialRender.current = false;
 
-      // エッジを更新
-      edgesDataset.current.clear();
-      edgesDataset.current.add(graphState.edges);
+        // 初回データ追加後、即座に物理エンジンを停止
+        // グリッド配置を維持するため、物理エンジンを動かさない
+        network.current.setOptions({
+          physics: { enabled: false },
+        });
+      } else {
+        // 2回目以降はupdate()を使用して差分更新（位置は更新しない）
+        const nodesWithoutPosition = graphState.nodes.map((node) => {
+          const { x, y, ...nodeWithoutPos } = node as any;
+          return nodeWithoutPos;
+        });
+        nodesDataset.current.update(nodesWithoutPosition);
+        edgesDataset.current.update(graphState.edges);
+      }
 
       // 選択状態をリセット
       network.current.unselectAll();
