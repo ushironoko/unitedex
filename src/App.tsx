@@ -42,8 +42,8 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">Pokemon Unite Matchup Visualizer</h1>
-        <p className="subtitle">ポケモンの相性関係を可視化</p>
+        <h1 className="title">Unite Graph</h1>
+        <p className="subtitle">ユナグラフ</p>
       </header>
 
       <main className="main">
