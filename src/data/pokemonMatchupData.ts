@@ -43,6 +43,11 @@ export const pokemonMatchupData: PokemonData = {
       role: "タンク",
     },
     {
+      id: "inteleon_ねらいうち",
+      label: "インテレオン (ねらいうち)",
+      role: "メイジ",
+    },
+    {
       id: "urshifu_すいりゅうれんだ",
       label: "ウーラオス (すいりゅうれんだ)",
       role: "ファイター",
@@ -193,6 +198,11 @@ export const pokemonMatchupData: PokemonData = {
       role: "メイジ",
     },
     {
+      id: "ジュラルドン_ラスターカノン",
+      label: "ジュラルドン (ラスターカノン)",
+      role: "メイジ",
+    },
+    {
       id: "suicune_うずしお",
       label: "スイクン (うずしお)",
       role: "ファイター",
@@ -241,6 +251,11 @@ export const pokemonMatchupData: PokemonData = {
       id: "tinkaton_デカハンマー",
       label: "デカヌチャン (デカハンマー)",
       role: "ファイター",
+    },
+    {
+      id: "dragapult",
+      label: "ドラパルト",
+      role: "メイジ",
     },
     {
       id: "dodrio_トライアタック",
@@ -301,6 +316,16 @@ export const pokemonMatchupData: PokemonData = {
       id: "talonflame_そらをとぶ",
       label: "ファイアロー (そらをとぶ)",
       role: "アサシン",
+    },
+    {
+      id: "venusaur_はなびらのまい",
+      label: "フシギバナ (はなびらのまい)",
+      role: "メイジ",
+    },
+    {
+      id: "venusaur_ソーラービーム",
+      label: "フシギバナ (ソーラービーム)",
+      role: "メイジ",
     },
     {
       id: "hoopa",
@@ -490,6 +515,86 @@ export const pokemonMatchupData: PokemonData = {
       type: "advantage",
     },
     {
+      from: "absol_サイコカッター",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "glaceon_こごえるかぜ",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "inteleon_ねらいうち",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "miraidon_チャージビーム",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "venusaur_ソーラービーム",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "decidueye_かげぬい",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "dragapult",
+      type: "advantage",
+    },
+    {
+      from: "absol_サイコカッター",
+      to: "ジュラルドン_ラスターカノン",
+      type: "advantage",
+    },
+    {
       from: "absol_ふいうち",
       to: "dodrio_トライアタック",
       type: "advantage",
@@ -512,6 +617,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "absol_ふいうち",
       to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "absol_ふいうち",
+      to: "alolan_raichu_アシストパワー",
       type: "advantage",
     },
     {
@@ -1037,6 +1147,181 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "alolan_raichu_アシストパワー",
       to: "mimikyu_かげうち",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "ジュラルドン_ラスターカノン",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "sylveon_ハイパーボイス",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "absol_ふいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "talonflame_ブレイブバード",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "talonflame_そらをとぶ",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "darkrai_悪だくみ",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "galarian_rapidash_マジカルシャイン",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "greninja_なみのり",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "aegislash_聖なる剣",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "gyarados_滝登り",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "gyarados_飛び跳ねる",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "decidueye_かげぬい",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "venusaur_ソーラービーム",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "mew",
       type: "disadvantage",
     },
     {
@@ -2141,18 +2426,103 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
+      to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "ジュラルドン_ラスターカノン",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
       to: "espeon_サイコショック",
       type: "advantage",
     },
     {
       from: "decidueye_かげぬい",
-      to: "blaziken",
+      to: "gardevoir_サイコショック",
       type: "advantage",
     },
     {
       from: "decidueye_かげぬい",
-      to: "armarouge_ほのおのうず",
+      to: "gardevoir_みらいよち",
       type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "sylveon_ハイパーボイス",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "absol_サイコカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "absol_ふいうち",
+      type: "disadvantage",
     },
     {
       from: "decidueye_かげぬい",
@@ -2166,7 +2536,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
-      to: "galarian_rapidash_マジカルシャイン",
+      to: "zoroark_だましうち",
       type: "disadvantage",
     },
     {
@@ -2176,12 +2546,337 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
-      to: "gengar_ゆめくい",
+      to: "darkrai_悪だくみ",
       type: "disadvantage",
     },
     {
       from: "decidueye_かげぬい",
-      to: "zacian_メタルクロー",
+      to: "leafeon_はっぱカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "galarian_rapidash_マジカルシャイン",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "scyther_剣の舞",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "meowscarada_トリックフラワー",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "mimikyu_トリックルーム",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "mimikyu_かげうち",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "greninja_なみのり",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "aegislash_聖なる剣",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "gyarados_滝登り",
+      type: "disadvantage",
+    },
+    {
+      from: "decidueye_かげぬい",
+      to: "gyarados_飛び跳ねる",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "glaceon_こごえるかぜ",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "sylveon_ハイパーボイス",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "sylveon_マジカルフレイム",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "buzzwole_ばかぢから",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "dragonite",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "metagross_ジャイロボール",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "metagross_コメットパンチ",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "azumarill_アクアテール",
+      type: "advantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "absol_サイコカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "absol_ふいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "talonflame_ブレイブバード",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "talonflame_そらをとぶ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "zoroark_だましうち",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "darkrai_悪だくみ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "leafeon_はっぱカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "scyther_剣の舞",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "mimikyu_トリックルーム",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "mimikyu_かげうち",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "miraidon_チャージビーム",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "greninja_なみのり",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "aegislash_聖なる剣",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "urshifu_すいりゅうれんだ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "tsareena_トリプルアクセル",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "tsareena_ふみつけ",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gyarados_滝登り",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "gyarados_飛び跳ねる",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "venusaur_ソーラービーム",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "decidueye_かげぬい",
+      type: "disadvantage",
+    },
+    {
+      from: "ジュラルドン_ラスターカノン",
+      to: "inteleon_ねらいうち",
       type: "disadvantage",
     },
     {
@@ -2508,6 +3203,16 @@ export const pokemonMatchupData: PokemonData = {
       from: "zoroark_だましうち",
       to: "clefable_このゆびとまれ",
       type: "disadvantage",
+    },
+    {
+      from: "falinks_アイアンヘッド",
+      to: "inteleon_ねらいうち",
+      type: "advantage",
+    },
+    {
+      from: "falinks_メガホーン",
+      to: "inteleon_ねらいうち",
+      type: "advantage",
     },
     {
       from: "falinks_アイアンヘッド",
@@ -3381,6 +4086,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_このゆびとまれ",
+      to: "inteleon_ねらいうち",
+      type: "advantage",
+    },
+    {
+      from: "clefable_このゆびとまれ",
       to: "urshifu_すいりゅうれんだ",
       type: "advantage",
     },
@@ -3572,6 +4282,446 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "talonflame_そらをとぶ",
       to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "absol_ふいうち",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "aegislash_聖なる剣",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "azumarill_アクアテール",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "blaziken",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "falinks_アイアンヘッド",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "falinks_メガホーン",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gyarados_滝登り",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gyarados_飛び跳ねる",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "metagross_ジャイロボール",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "metagross_コメットパンチ",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "urshifu_すいりゅうれんだ",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "zacian_メタルクロー",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "zacian_聖なる剣",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "ジュラルドン_ラスターカノン",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "sylveon_ハイパーボイス",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "absol_サイコカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "absol_ふいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "talonflame_ブレイブバード",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "talonflame_そらをとぶ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "zoroark_だましうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "darkrai_悪だくみ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "leafeon_はっぱカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "scyther_剣の舞",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "miraidon_チャージビーム",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "decidueye_かげぬい",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "inteleon_ねらいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gardevoir_サイコショック",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "gardevoir_みらいよち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "espeon_サイコショック",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "latios",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "glaceon_つららばり",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "mewtwo_y_サイコブレイク",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "mewtwo_y_みらいよち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "mew",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "delphox_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "buzzwole_ばかぢから",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "charizard_フレアドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "charizard_大文字",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "tinkaton_デカハンマー",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "trevenant_呪い",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "trevenant_ウッドハンマー",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "absol_サイコカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "absol_ふいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "talonflame_ブレイブバード",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "talonflame_そらをとぶ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "zoroark_だましうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "darkrai_悪だくみ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "leafeon_はっぱカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "galarian_rapidash_マジカルシャイン",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "scyther_剣の舞",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "meowscarada_トリックフラワー",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "mimikyu_トリックルーム",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "mimikyu_かげうち",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "greninja_水手裏剣",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "greninja_なみのり",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "aegislash_聖なる剣",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gyarados_滝登り",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
+      to: "gyarados_飛び跳ねる",
       type: "disadvantage",
     },
     {
@@ -4052,6 +5202,176 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "mew",
       to: "charizard_大文字",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "ジュラルドン_ラスターカノン",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "gengar_ゆめくい",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "gengar_たたりめ",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "absol_サイコカッター",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "absol_ふいうち",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "talonflame_ブレイブバード",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "talonflame_そらをとぶ",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "zoroark_だましうち",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "dodrio_トライアタック",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "darkrai_悪だくみ",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "leafeon_はっぱカッター",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "lucario_神速",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "galarian_rapidash_マジカルシャイン",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "scyther_剣の舞",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "zeraora",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "meowscarada_トリックフラワー",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "mimikyu_トリックルーム",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "mimikyu_かげうち",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "miraidon_イナズマドライブ",
+      type: "advantage",
+    },
+    {
+      from: "mew",
+      to: "greninja_なみのり",
       type: "advantage",
     },
     {
