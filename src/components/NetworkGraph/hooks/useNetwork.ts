@@ -48,16 +48,28 @@ export const useNetwork = (data: PokemonData): NetworkRefs => {
       network.setOptions({ physics: { enabled: false } });
     });
 
-    // ドラッグ開始時に一時的に物理エンジンを有効化
-    network.on("dragStart", () => {
-      network.setOptions({ physics: { enabled: true } });
+    // ドラッグ中のノードIDを追跡
+    let draggingNodeId: string | null = null;
+
+    // ドラッグ開始時に該当ノードのみ物理エンジンを有効化
+    network.on("dragStart", (params) => {
+      if (params.nodes.length > 0) {
+        draggingNodeId = params.nodes[0];
+        // ドラッグ中のノードのみ物理演算を有効化
+        network.setOptions({ 
+          physics: { 
+            enabled: false // グローバルな物理演算は無効のまま
+          } 
+        });
+        // ドラッグ中のノードは手動で位置を更新（vis-networkが自動処理）
+      }
     });
 
-    // ドラッグ終了時に物理エンジンを停止
+    // ドラッグ終了時の処理
     network.on("dragEnd", () => {
-      setTimeout(() => {
-        network.setOptions({ physics: { enabled: false } });
-      }, 2000);
+      draggingNodeId = null;
+      // 物理エンジンは無効のまま維持（不要な動きを防ぐ）
+      network.setOptions({ physics: { enabled: false } });
     });
 
     return () => {

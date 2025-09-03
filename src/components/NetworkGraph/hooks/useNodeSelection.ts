@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import type { NetworkRefs } from "../types";
 import type { PokemonData, Role } from "../../../types";
 import { FOCUS_ANIMATION } from "../constants";
@@ -18,6 +18,9 @@ export const useNodeSelection = (
   showDirectConnectionsOnly: boolean,
   roleFilter: Role[],
 ) => {
+  // 前回の選択状態を保持
+  const prevSelectedRef = useRef<Set<string>>(new Set());
+  
   useEffect(() => {
     if (
       !refs.networkRef.current ||
@@ -146,35 +149,46 @@ export const useNodeSelection = (
       try {
         refs.networkRef.current.selectNodes(Array.from(matchingNodeIds));
 
-        // DOMの更新完了を待ってからフィット
-        setTimeout(() => {
-          if (!refs.networkRef.current || !refs.nodesDatasetRef.current) return;
+        // 初回選択時のみフィット（頻繁なフィットを避ける）
+        const currentSelected = new Set(matchingNodeIds);
+        const hasSelectionChanged = 
+          prevSelectedRef.current.size !== currentSelected.size ||
+          ![...currentSelected].every(id => prevSelectedRef.current.has(id));
+        
+        if (hasSelectionChanged) {
+          prevSelectedRef.current = currentSelected;
+          
+          // DOMの更新完了を待ってからフィット
+          setTimeout(() => {
+            if (!refs.networkRef.current || !refs.nodesDatasetRef.current) return;
 
-          if (connectedNodeIds.size > 0) {
-            // データセットに存在するノードのみを対象にフィット
-            const existingNodes = Array.from(connectedNodeIds).filter(
-              (nodeId) => {
+            if (connectedNodeIds.size > 0) {
+              // データセットに存在するノードのみを対象にフィット
+              const existingNodes = Array.from(connectedNodeIds).filter(
+                (nodeId) => {
+                  try {
+                    const node = refs.nodesDatasetRef.current?.get(nodeId);
+                    return node !== null && node !== undefined;
+                  } catch {
+                    return false;
+                  }
+                },
+              );
+
+              if (existingNodes.length > 0) {
                 try {
-                  const node = refs.nodesDatasetRef.current?.get(nodeId);
-                  return node !== null && node !== undefined;
-                } catch {
-                  return false;
+                  // アニメーションを無効化して即座にフィット
+                  refs.networkRef.current.fit({
+                    nodes: existingNodes,
+                    animation: false, // アニメーションを無効化
+                  });
+                } catch (fitError) {
+                  console.error("Error in fit operation:", fitError);
                 }
-              },
-            );
-
-            if (existingNodes.length > 0) {
-              try {
-                refs.networkRef.current.fit({
-                  nodes: existingNodes,
-                  animation: FOCUS_ANIMATION,
-                });
-              } catch (fitError) {
-                console.error("Error in fit operation:", fitError);
               }
             }
-          }
-        }, 100);
+          }, 100);
+        }
       } catch (error) {
         console.error("Error selecting nodes:", error);
       }
