@@ -266,8 +266,8 @@ describe("utils", () => {
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(false);
       expect(result.opacity).toBe(1);
-      expect(result.borderWidth).toBeGreaterThan(5); // 選択時は太い境界線
-      expect(result.size).toBeGreaterThan(20); // 選択時は大きいサイズ
+      expect(result.borderWidth).toBe(4); // 選択時は太い境界線 (BORDER_WIDTHS.selected)
+      expect(result.size).toBe(20); // 選択時は大きいサイズ (NODE_SIZES.selected)
     });
 
     it("薄く表示されるノードの更新データを作成", () => {

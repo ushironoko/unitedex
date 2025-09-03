@@ -13,7 +13,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "pnpm format && pnpm tsc && pnpm extract-data && pnpm extract-types",
+    "prepare": "pnpm format && pnpm tsc && pnpm lint && pnpm test && pnpm extract-data && pnpm extract-types",
     "extract-data": "tsx scripts/extract-matchup-data-all-moves.ts",
     "extract-types": "tsx scripts/extract-types.ts",
     "scrape": "tsx scripts/scrape-unite.ts"

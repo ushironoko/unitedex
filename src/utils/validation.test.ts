@@ -175,10 +175,8 @@ describe("validatePokemonData", () => {
     });
 
     it("無効なロールを拒否する", () => {
-      const data: PokemonData = {
-        nodes: [
-          { id: "pikachu", label: "ピカチュウ", role: "無効なロール" as any },
-        ],
+      const data = {
+        nodes: [{ id: "pikachu", label: "ピカチュウ", role: "無効なロール" }],
         edges: [],
       };
 

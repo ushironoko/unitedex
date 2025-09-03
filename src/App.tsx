@@ -20,7 +20,7 @@ function App() {
   const [selectedPokemon, setSelectedPokemon] = useState<string[]>([]);
   const [edgeFilter, setEdgeFilter] = useState<
     "all" | "advantage" | "disadvantage"
-  >("all");
+  >("advantage");
   const [roleFilter, setRoleFilter] = useState<Role[]>(
     Object.keys(ROLE_COLORS) as Role[],
   );

@@ -20,6 +20,9 @@ export const isNodeMatchingSearch = (
 ): boolean => {
   const trimmedSearch = searchTerm.trim();
 
+  // 空文字やスペースのみの場合はfalse
+  if (!trimmedSearch) return false;
+
   // 完全一致をチェック（技バリエーションを含む）
   if (node.label === trimmedSearch) return true;
   if (node.id.toLowerCase() === trimmedSearch.toLowerCase()) return true;
@@ -135,13 +138,16 @@ export const createNodeData = (
     role: node.role,
   };
 
-  // 孤立ノードの位置を固定
+  // 孤立ノードの位置固定を削除（forceAtlas2Basedアルゴリズムに任せる）
+  // 輪っか状配置は物理エンジンの自然な配置を妨げるため無効化
+  /*
   if (isIsolated) {
     const angle = (index / totalNodes) * Math.PI * 2;
     nodeData.x = Math.cos(angle) * ISOLATED_NODES_CONFIG.radius;
     nodeData.y = Math.sin(angle) * ISOLATED_NODES_CONFIG.radius;
     nodeData.physics = !ISOLATED_NODES_CONFIG.disablePhysics;
   }
+  */
 
   return nodeData;
 };

@@ -143,7 +143,7 @@ export function computeGraphState(
   const isRoleFilterActive = roleFilter.length > 0 && roleFilter.length < 5;
 
   // 4. ノード状態の計算
-  const nodes: NodeState[] = data.nodes.map((node) => {
+  const nodes: NodeState[] = data.nodes.map((node, index) => {
     const isMatching = matchingNodeIds.has(node.id);
     const isConnected = connectedNodeIds.has(node.id);
     const isRoleFiltered =
@@ -211,7 +211,14 @@ export function computeGraphState(
       }
     }
 
-    return {
+    // 初期位置をランダムに設定（グリッド状に配置）
+    const gridSize = Math.ceil(Math.sqrt(data.nodes.length));
+    const row = Math.floor(index / gridSize);
+    const col = index % gridSize;
+    const spacing = 300; // ノード間の間隔を広げる
+    const jitter = 100; // ランダムなズレを大きくする
+    
+    const nodeState: NodeState & { x?: number; y?: number } = {
       id: node.id,
       label: node.label,
       hidden,
@@ -223,7 +230,12 @@ export function computeGraphState(
         ...font,
         bold: font.bold || undefined,
       },
+      // 初期位置（グリッド配置 + ランダムな揺らぎ）
+      x: col * spacing - (gridSize * spacing) / 2 + (Math.random() - 0.5) * jitter,
+      y: row * spacing - (gridSize * spacing) / 2 + (Math.random() - 0.5) * jitter,
     };
+    
+    return nodeState;
   });
 
   // 5. エッジ状態の計算
