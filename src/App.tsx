@@ -55,7 +55,10 @@ function App() {
           roleFilter={roleFilter}
           onRoleFilterChange={useCallback(setRoleFilter, [])}
           showDirectConnectionsOnly={showDirectConnectionsOnly}
-          onShowDirectConnectionsOnlyChange={useCallback(setShowDirectConnectionsOnly, [])}
+          onShowDirectConnectionsOnlyChange={useCallback(
+            setShowDirectConnectionsOnly,
+            [],
+          )}
         />
 
         <div className="contentContainer">
@@ -86,10 +89,18 @@ function App() {
             総エッジ数: {data.edges.length}
           </span>
           <span style={{ marginLeft: "20px" }}>
-            有利: {useMemo(() => data.edges.filter((e) => e.type === "advantage").length, [data.edges])}
+            有利:{" "}
+            {useMemo(
+              () => data.edges.filter((e) => e.type === "advantage").length,
+              [data.edges],
+            )}
           </span>
           <span style={{ marginLeft: "20px" }}>
-            不利: {useMemo(() => data.edges.filter((e) => e.type === "disadvantage").length, [data.edges])}
+            不利:{" "}
+            {useMemo(
+              () => data.edges.filter((e) => e.type === "disadvantage").length,
+              [data.edges],
+            )}
           </span>
         </div>
       </main>

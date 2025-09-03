@@ -1,8 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { renderHook, cleanup } from "@testing-library/react";
 import { useEdgeFilter } from "./useEdgeFilter";
-import type { NetworkRefs } from "../types";
+import type { NetworkRefs, NodeData, EdgeData } from "../types";
 import type { PokemonData } from "../../../types";
+import type { DataSet } from "vis-data";
+import type { Network } from "vis-network/standalone";
 import * as utils from "../utils";
 
 // utilsモジュールをモック
@@ -33,8 +35,13 @@ describe("useEdgeFilter", () => {
   };
 
   let mockRefs: NetworkRefs;
-  let mockNodesDataset: any;
-  let mockEdgesDataset: any;
+  let mockNodesDataset: {
+    update: ReturnType<typeof vi.fn>;
+  };
+  let mockEdgesDataset: {
+    clear: ReturnType<typeof vi.fn>;
+    add: ReturnType<typeof vi.fn>;
+  };
 
   beforeEach(() => {
     // DataSetのモック
@@ -48,11 +55,17 @@ describe("useEdgeFilter", () => {
     };
 
     // NetworkRefsのモック
+    const mockNetwork = {} as Network;
+    const mockNodesDataSetInstance =
+      mockNodesDataset as unknown as DataSet<NodeData>;
+    const mockEdgesDataSetInstance =
+      mockEdgesDataset as unknown as DataSet<EdgeData>;
+
     mockRefs = {
       containerRef: { current: document.createElement("div") },
-      networkRef: { current: {} },
-      nodesDatasetRef: { current: mockNodesDataset },
-      edgesDatasetRef: { current: mockEdgesDataset },
+      networkRef: { current: mockNetwork },
+      nodesDatasetRef: { current: mockNodesDataSetInstance },
+      edgesDatasetRef: { current: mockEdgesDataSetInstance },
     };
 
     // utilsモックの設定
@@ -65,9 +78,7 @@ describe("useEdgeFilter", () => {
   });
 
   it("エッジフィルタが'all'の場合、全てのエッジを表示することを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "all")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "all"));
 
     // エッジデータセットがクリアされることを確認
     expect(mockEdgesDataset.clear).toHaveBeenCalled();
@@ -93,14 +104,12 @@ describe("useEdgeFilter", () => {
           to: "blastoise",
           type: "advantage",
         }),
-      ])
+      ]),
     );
   });
 
   it("エッジフィルタが'advantage'の場合、advantageエッジのみを表示することを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "advantage")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "advantage"));
 
     // エッジデータセットがクリアされることを確認
     expect(mockEdgesDataset.clear).toHaveBeenCalled();
@@ -116,23 +125,21 @@ describe("useEdgeFilter", () => {
           id: "pikachu-blastoise-advantage",
           type: "advantage",
         }),
-      ])
+      ]),
     );
 
     // disadvantageエッジが含まれていないことを確認
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
     expect(addedEdges).not.toContainEqual(
       expect.objectContaining({
         id: "charizard-blastoise-disadvantage",
         type: "disadvantage",
-      })
+      }),
     );
   });
 
   it("エッジフィルタが'disadvantage'の場合、disadvantageエッジのみを表示することを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "disadvantage")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "disadvantage"));
 
     // エッジデータセットがクリアされることを確認
     expect(mockEdgesDataset.clear).toHaveBeenCalled();
@@ -144,25 +151,23 @@ describe("useEdgeFilter", () => {
           id: "charizard-blastoise-disadvantage",
           type: "disadvantage",
         }),
-      ])
+      ]),
     );
 
     // advantageエッジが含まれていないことを確認
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
     expect(addedEdges).toHaveLength(1);
   });
 
   it("選択されたポケモンがない場合、全てのエッジが通常表示されることを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "all")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "all"));
 
     // getMatchingNodesが空の配列で呼ばれることを確認
     expect(utils.getMatchingNodes).toHaveBeenCalledWith([], mockData.nodes);
 
     // 追加されたエッジの色が通常の色であることを確認
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    addedEdges.forEach((edge: any) => {
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+    addedEdges.forEach((edge) => {
       expect(edge.color.color).not.toContain("0A"); // 透明度が追加されていない
       expect(edge.color.opacity).toBe(1);
     });
@@ -170,57 +175,62 @@ describe("useEdgeFilter", () => {
 
   it("選択されたポケモンがある場合、接続されたエッジがハイライトされることを確認", () => {
     // マッチするノードを設定
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
 
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, ["ピカチュウ"], "all")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, ["ピカチュウ"], "all"));
 
     // getMatchingNodesが呼ばれることを確認
-    expect(utils.getMatchingNodes).toHaveBeenCalledWith(["ピカチュウ"], mockData.nodes);
+    expect(utils.getMatchingNodes).toHaveBeenCalledWith(
+      ["ピカチュウ"],
+      mockData.nodes,
+    );
 
     // 追加されたエッジを確認
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+
     // pikachuから接続されているエッジは通常の色
-    const pikachuEdges = addedEdges.filter((edge: any) => 
-      edge.from === "pikachu" || edge.to === "pikachu"
+    const pikachuEdges = addedEdges.filter(
+      (edge) => edge.from === "pikachu" || edge.to === "pikachu",
     );
-    pikachuEdges.forEach((edge: any) => {
+    pikachuEdges.forEach((edge) => {
       expect(edge.color.color).not.toContain("0A");
       expect(edge.color.opacity).toBe(1);
     });
 
     // pikachuに接続されていないエッジは薄い色
-    const otherEdges = addedEdges.filter((edge: any) => 
-      edge.from !== "pikachu" && edge.to !== "pikachu"
+    const otherEdges = addedEdges.filter(
+      (edge) => edge.from !== "pikachu" && edge.to !== "pikachu",
     );
-    otherEdges.forEach((edge: any) => {
+    otherEdges.forEach((edge) => {
       expect(edge.color.color).toContain("0A");
       expect(edge.color.opacity).toBeLessThan(1);
     });
   });
 
   it("選択されたポケモンと複数のエッジタイプフィルタが組み合わされることを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
 
     renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, ["ピカチュウ"], "advantage")
+      useEdgeFilter(mockRefs, mockData, ["ピカチュウ"], "advantage"),
     );
 
     // advantageエッジのみがフィルタされ、その中でpikachuに接続されたものがハイライト
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+
     // 全てのエッジがadvantageタイプであることを確認
-    addedEdges.forEach((edge: any) => {
+    addedEdges.forEach((edge) => {
       expect(edge.type).toBe("advantage");
     });
 
     // pikachuから/へのエッジがハイライトされていることを確認
-    const highlightedEdges = addedEdges.filter((edge: any) => 
-      edge.color.opacity === 1
+    const highlightedEdges = addedEdges.filter(
+      (edge) => edge.color.opacity === 1,
     );
     expect(highlightedEdges).toHaveLength(2); // pikachu->charizard, pikachu->blastoise
   });
@@ -233,40 +243,36 @@ describe("useEdgeFilter", () => {
       edgesDatasetRef: { current: null },
     };
 
-    renderHook(() =>
-      useEdgeFilter(nullRefs, mockData, [], "all")
-    );
+    renderHook(() => useEdgeFilter(nullRefs, mockData, [], "all"));
 
     // 何も処理されないことを確認
     expect(utils.getMatchingNodes).not.toHaveBeenCalled();
   });
 
   it("エッジの色が正しく設定されることを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "all")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "all"));
 
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+
     // advantageエッジの色を確認
-    const advantageEdge = addedEdges.find((edge: any) => edge.type === "advantage");
-    expect(advantageEdge.color.color).toBe("#00ff00");
-    expect(advantageEdge.color.highlight).toBe("#00ff00");
+    const advantageEdge = addedEdges.find((edge) => edge.type === "advantage");
+    expect(advantageEdge?.color.color).toBe("#00ff00");
+    expect(advantageEdge?.color.highlight).toBe("#00ff00");
 
     // disadvantageエッジの色を確認
-    const disadvantageEdge = addedEdges.find((edge: any) => edge.type === "disadvantage");
-    expect(disadvantageEdge.color.color).toBe("#ff0000");
-    expect(disadvantageEdge.color.highlight).toBe("#ff0000");
+    const disadvantageEdge = addedEdges.find(
+      (edge) => edge.type === "disadvantage",
+    );
+    expect(disadvantageEdge?.color.color).toBe("#ff0000");
+    expect(disadvantageEdge?.color.highlight).toBe("#ff0000");
   });
 
   it("矢印の設定が正しくされることを確認", () => {
-    renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, [], "all")
-    );
+    renderHook(() => useEdgeFilter(mockRefs, mockData, [], "all"));
 
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    
-    addedEdges.forEach((edge: any) => {
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+
+    addedEdges.forEach((edge) => {
       expect(edge.arrows.to.enabled).toBe(true);
       expect(edge.arrows.to.scaleFactor).toBeGreaterThan(0);
     });
@@ -274,9 +280,12 @@ describe("useEdgeFilter", () => {
 
   it("プロパティ変更時にuseEffectが再実行されることを確認", () => {
     const { rerender } = renderHook(
-      ({ edgeFilter }) =>
-        useEdgeFilter(mockRefs, mockData, [], edgeFilter),
-      { initialProps: { edgeFilter: "all" as const } }
+      ({ edgeFilter }) => useEdgeFilter(mockRefs, mockData, [], edgeFilter),
+      {
+        initialProps: {
+          edgeFilter: "all" as "all" | "advantage" | "disadvantage",
+        },
+      },
     );
 
     // 初回実行でclearが呼ばれる
@@ -297,19 +306,19 @@ describe("useEdgeFilter", () => {
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
 
     renderHook(() =>
-      useEdgeFilter(mockRefs, mockData, ["ピカチュウ", "リザードン"], "all")
+      useEdgeFilter(mockRefs, mockData, ["ピカチュウ", "リザードン"], "all"),
     );
 
     // getMatchingNodesが正しい引数で呼ばれることを確認
     expect(utils.getMatchingNodes).toHaveBeenCalledWith(
       ["ピカチュウ", "リザードン"],
-      mockData.nodes
+      mockData.nodes,
     );
 
     // 全てのエッジがハイライトされることを確認（全ノードが選択されているため）
-    const addedEdges = mockEdgesDataset.add.mock.calls[0][0];
-    const highlightedEdges = addedEdges.filter((edge: any) => 
-      edge.color.opacity === 1
+    const addedEdges = mockEdgesDataset.add.mock.calls[0][0] as EdgeData[];
+    const highlightedEdges = addedEdges.filter(
+      (edge) => edge.color.opacity === 1,
     );
     expect(highlightedEdges).toHaveLength(3);
   });

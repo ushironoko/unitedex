@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
  */
 export const useDebouncedSelection = (
   selectedPokemon: string[],
-  delay: number = 150,
+  delay = 150,
 ): string[] => {
   const [debouncedSelection, setDebouncedSelection] = useState(selectedPokemon);
 

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { NetworkRefs } from "../types";
 import type { PokemonData, Role } from "../../../types";
-import { FOCUS_ANIMATION } from "../constants";
 import {
   getMatchingNodes,
   getConnectedElementIds,
@@ -23,7 +22,7 @@ export const useNodeSelection = (
   const prevConnectedRef = useRef<Set<string>>(new Set());
   const prevConnectedEdges = useRef<Set<string>>(new Set());
   const prevRoleFilterRef = useRef<Role[]>([]);
-  
+
   useEffect(() => {
     if (
       !refs.networkRef.current ||
@@ -128,7 +127,7 @@ export const useNodeSelection = (
         );
       }),
     );
-    
+
     // 現在の状態を保存
     prevConnectedRef.current = new Set(connectedNodeIds);
     prevRoleFilterRef.current = [...roleFilter];
@@ -138,7 +137,7 @@ export const useNodeSelection = (
       data.edges.map((edge) => {
         const edgeId = `${edge.from}-${edge.to}-${edge.type}`;
         const isConnected = connectedEdgeIds.has(edgeId);
-        
+
         // エッジの両端のノードを取得してロールフィルタを適用
         const fromNode = data.nodes.find((n) => n.id === edge.from);
         const toNode = data.nodes.find((n) => n.id === edge.to);
@@ -146,11 +145,11 @@ export const useNodeSelection = (
           isRoleFilterActive &&
           ((fromNode && !roleFilter.includes(fromNode.role)) ||
             (toNode && !roleFilter.includes(toNode.role)));
-        
+
         return createEdgeUpdateData(edge, isConnected, Boolean(isRoleFiltered));
       }),
     );
-    
+
     prevConnectedEdges.current = new Set(connectedEdgeIds);
 
     // 選択されたノードにフォーカス
@@ -160,16 +159,17 @@ export const useNodeSelection = (
 
         // 初回選択時のみフィット（頻繁なフィットを避ける）
         const currentSelected = new Set(matchingNodeIds);
-        const hasSelectionChanged = 
+        const hasSelectionChanged =
           prevSelectedRef.current.size !== currentSelected.size ||
-          ![...currentSelected].every(id => prevSelectedRef.current.has(id));
-        
+          ![...currentSelected].every((id) => prevSelectedRef.current.has(id));
+
         if (hasSelectionChanged) {
           prevSelectedRef.current = currentSelected;
-          
+
           // DOMの更新完了を待ってからフィット
           setTimeout(() => {
-            if (!refs.networkRef.current || !refs.nodesDatasetRef.current) return;
+            if (!refs.networkRef.current || !refs.nodesDatasetRef.current)
+              return;
 
             if (connectedNodeIds.size > 0) {
               // データセットに存在するノードのみを対象にフィット

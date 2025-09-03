@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, cleanup } from "@testing-library/react";
-import type React from "react";
 import NetworkGraph from "./index";
 import type { NetworkGraphProps, NetworkRefs } from "./types";
 import type { PokemonData } from "../../types";
@@ -73,7 +72,7 @@ describe("NetworkGraph", () => {
 
   it("基本的にレンダリングされることを確認", () => {
     const { container } = render(<NetworkGraph {...defaultProps} />);
-    
+
     // divが1つレンダリングされることを確認
     expect(container.firstChild).toBeInTheDocument();
     expect(container.firstChild).toHaveStyle({
@@ -85,45 +84,35 @@ describe("NetworkGraph", () => {
 
   it("useNetworkフックが正しい引数で呼ばれることを確認", () => {
     render(<NetworkGraph {...defaultProps} />);
-    
+
     expect(useNetwork).toHaveBeenCalledWith(mockData);
     expect(useNetwork).toHaveBeenCalledTimes(1);
   });
 
   it("useNodeSelectionフックが正しい引数で呼ばれることを確認", () => {
     render(<NetworkGraph {...defaultProps} />);
-    
+
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       [],
       false,
-      []
+      [],
     );
     expect(useNodeSelection).toHaveBeenCalledTimes(1);
   });
 
   it("useEdgeFilterフックが正しい引数で呼ばれることを確認", () => {
     render(<NetworkGraph {...defaultProps} />);
-    
-    expect(useEdgeFilter).toHaveBeenCalledWith(
-      mockRefs,
-      mockData,
-      [],
-      "all"
-    );
+
+    expect(useEdgeFilter).toHaveBeenCalledWith(mockRefs, mockData, [], "all");
     expect(useEdgeFilter).toHaveBeenCalledTimes(1);
   });
 
   it("useRoleFilterフックが正しい引数で呼ばれることを確認", () => {
     render(<NetworkGraph {...defaultProps} />);
-    
-    expect(useRoleFilter).toHaveBeenCalledWith(
-      mockRefs,
-      mockData,
-      [],
-      []
-    );
+
+    expect(useRoleFilter).toHaveBeenCalledWith(mockRefs, mockData, [], []);
     expect(useRoleFilter).toHaveBeenCalledTimes(1);
   });
 
@@ -132,29 +121,29 @@ describe("NetworkGraph", () => {
       ...defaultProps,
       selectedPokemon: ["ピカチュウ", "リザードン"],
     };
-    
+
     render(<NetworkGraph {...propsWithSelection} />);
-    
+
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ", "リザードン"],
       false,
-      []
+      [],
     );
 
     expect(useEdgeFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ", "リザードン"],
-      "all"
+      "all",
     );
 
     expect(useRoleFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ", "リザードン"],
-      []
+      [],
     );
   });
 
@@ -163,14 +152,14 @@ describe("NetworkGraph", () => {
       ...defaultProps,
       edgeFilter: "advantage",
     };
-    
+
     render(<NetworkGraph {...propsWithEdgeFilter} />);
-    
+
     expect(useEdgeFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       [],
-      "advantage"
+      "advantage",
     );
   });
 
@@ -179,22 +168,22 @@ describe("NetworkGraph", () => {
       ...defaultProps,
       roleFilter: ["メイジ", "タンク"],
     };
-    
+
     render(<NetworkGraph {...propsWithRoleFilter} />);
-    
+
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       [],
       false,
-      ["メイジ", "タンク"]
+      ["メイジ", "タンク"],
     );
 
     expect(useRoleFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       [],
-      ["メイジ", "タンク"]
+      ["メイジ", "タンク"],
     );
   });
 
@@ -203,15 +192,15 @@ describe("NetworkGraph", () => {
       ...defaultProps,
       showDirectConnectionsOnly: true,
     };
-    
+
     render(<NetworkGraph {...propsWithDirectOnly} />);
-    
+
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       [],
       true,
-      []
+      [],
     );
   });
 
@@ -223,37 +212,37 @@ describe("NetworkGraph", () => {
       roleFilter: ["メイジ", "ファイター"],
       showDirectConnectionsOnly: true,
     };
-    
+
     render(<NetworkGraph {...propsWithAllSettings} />);
-    
+
     expect(useNetwork).toHaveBeenCalledWith(mockData);
-    
+
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ"],
       true,
-      ["メイジ", "ファイター"]
+      ["メイジ", "ファイター"],
     );
 
     expect(useEdgeFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ"],
-      "disadvantage"
+      "disadvantage",
     );
 
     expect(useRoleFilter).toHaveBeenCalledWith(
       mockRefs,
       mockData,
       ["ピカチュウ"],
-      ["メイジ", "ファイター"]
+      ["メイジ", "ファイター"],
     );
   });
 
   it("containerRefが適切に設定されることを確認", () => {
     const { container } = render(<NetworkGraph {...defaultProps} />);
-    
+
     // useNetworkから返されたcontainerRefがdivに設定されることを確認
     const divElement = container.firstChild as HTMLDivElement;
     expect(divElement).toBeInstanceOf(HTMLDivElement);
@@ -262,18 +251,18 @@ describe("NetworkGraph", () => {
 
   it("プロパティ変更時にフックが再実行されることを確認", () => {
     const { rerender } = render(<NetworkGraph {...defaultProps} />);
-    
+
     // 初回レンダリング後にクリア
     vi.clearAllMocks();
-    
+
     // プロパティを変更して再レンダリング
     const updatedProps: NetworkGraphProps = {
       ...defaultProps,
       selectedPokemon: ["ピカチュウ"],
     };
-    
+
     rerender(<NetworkGraph {...updatedProps} />);
-    
+
     // 全てのフックが再実行されることを確認
     expect(useNetwork).toHaveBeenCalledTimes(1);
     expect(useNodeSelection).toHaveBeenCalledTimes(1);
@@ -283,42 +272,45 @@ describe("NetworkGraph", () => {
 
   it("データが変更された時にフックが再実行されることを確認", () => {
     const { rerender } = render(<NetworkGraph {...defaultProps} />);
-    
+
     // 初回レンダリング後にクリア
     vi.clearAllMocks();
-    
+
     // データを変更
     const updatedData: PokemonData = {
-      nodes: [...mockData.nodes, { id: "venusaur", label: "フシギバナ", role: "メイジ" }],
+      nodes: [
+        ...mockData.nodes,
+        { id: "venusaur", label: "フシギバナ", role: "メイジ" },
+      ],
       edges: mockData.edges,
     };
-    
+
     const updatedProps: NetworkGraphProps = {
       ...defaultProps,
       data: updatedData,
     };
-    
+
     rerender(<NetworkGraph {...updatedProps} />);
-    
+
     // useNetworkが新しいデータで呼ばれることを確認
     expect(useNetwork).toHaveBeenCalledWith(updatedData);
-    
+
     // 他のフックも新しいデータで呼ばれることを確認
     expect(useNodeSelection).toHaveBeenCalledWith(
       mockRefs,
       updatedData,
       [],
       false,
-      []
+      [],
     );
   });
 
   it("必要なスタイルが適用されることを確認", () => {
     const { container } = render(<NetworkGraph {...defaultProps} />);
-    
+
     const divElement = container.firstChild as HTMLDivElement;
     const computedStyle = window.getComputedStyle(divElement);
-    
+
     expect(computedStyle.width).toBe("100%");
     expect(computedStyle.height).toBe("100%");
     expect(computedStyle.minHeight).toBe("750px");
@@ -330,11 +322,11 @@ describe("NetworkGraph", () => {
       ...defaultProps,
       data: emptyData,
     };
-    
+
     expect(() => {
       render(<NetworkGraph {...propsWithEmptyData} />);
     }).not.toThrow();
-    
+
     expect(useNetwork).toHaveBeenCalledWith(emptyData);
   });
 });

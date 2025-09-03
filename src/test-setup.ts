@@ -51,7 +51,7 @@ class MockCanvas {
   }
 }
 
-global.HTMLCanvasElement = MockCanvas as any;
+global.HTMLCanvasElement = MockCanvas as unknown as typeof HTMLCanvasElement;
 
 // ResizeObserverのモック
 global.ResizeObserver = class ResizeObserver {

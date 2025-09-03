@@ -3,6 +3,8 @@ import { renderHook, cleanup } from "@testing-library/react";
 import { useNodeSelection } from "./useNodeSelection";
 import type { NetworkRefs, NodeData, EdgeData } from "../types";
 import type { PokemonData, Role } from "../../../types";
+import type { Network } from "vis-network/standalone";
+import type { DataSet } from "vis-data";
 import * as utils from "../utils";
 
 // utilsモジュールをモック
@@ -29,9 +31,9 @@ describe("useNodeSelection", () => {
   };
 
   let mockRefs: NetworkRefs;
-  let mockNetwork: any;
-  let mockNodesDataset: any;
-  let mockEdgesDataset: any;
+  let mockNetwork: Partial<Network>;
+  let mockNodesDataset: Partial<DataSet<NodeData>>;
+  let mockEdgesDataset: Partial<DataSet<EdgeData>>;
 
   beforeEach(() => {
     // Networkのモック
@@ -53,9 +55,9 @@ describe("useNodeSelection", () => {
     // NetworkRefsのモック
     mockRefs = {
       containerRef: { current: document.createElement("div") },
-      networkRef: { current: mockNetwork },
-      nodesDatasetRef: { current: mockNodesDataset },
-      edgesDatasetRef: { current: mockEdgesDataset },
+      networkRef: { current: mockNetwork as Network },
+      nodesDatasetRef: { current: mockNodesDataset as DataSet<NodeData> },
+      edgesDatasetRef: { current: mockEdgesDataset as DataSet<EdgeData> },
     };
 
     // utilsモックの設定
@@ -64,10 +66,68 @@ describe("useNodeSelection", () => {
       connectedNodeIds: new Set(),
       connectedEdgeIds: new Set(),
     });
-    vi.mocked(utils.createNodeUpdateData).mockReturnValue({} as any);
-    vi.mocked(utils.createEdgeUpdateData).mockReturnValue({} as any);
-    vi.mocked(utils.createResetNodeData).mockReturnValue({} as any);
-    vi.mocked(utils.createResetEdgeData).mockReturnValue({} as any);
+    vi.mocked(utils.createNodeUpdateData).mockReturnValue({
+      id: "test-id",
+      hidden: false,
+      opacity: 1,
+      color: {
+        background: "#999",
+        border: "#333",
+      },
+      borderWidth: 2,
+      size: 15,
+      font: {
+        color: "#000",
+        size: 11,
+        bold: undefined,
+        strokeWidth: 2,
+        strokeColor: "#fff",
+        vadjust: -20,
+      },
+    });
+    vi.mocked(utils.createEdgeUpdateData).mockReturnValue({
+      id: "test-edge-id",
+      hidden: false,
+      color: {
+        color: "#999",
+        opacity: 1,
+      },
+      width: 2,
+      arrows: {
+        to: {
+          enabled: true,
+          scaleFactor: 1,
+        },
+      },
+    });
+    vi.mocked(utils.createResetNodeData).mockReturnValue({
+      id: "test-id",
+      hidden: false,
+      opacity: 1,
+      size: 15,
+      color: {
+        background: "#999",
+        border: "#333",
+      },
+      borderWidth: 2,
+      font: {
+        color: "#000",
+        size: 11,
+        bold: undefined,
+        strokeWidth: 2,
+        strokeColor: "#fff",
+        vadjust: -20,
+      },
+    });
+    vi.mocked(utils.createResetEdgeData).mockReturnValue({
+      id: "test-edge-id",
+      hidden: false,
+      color: {
+        color: "#999",
+        opacity: 1,
+      },
+      width: 1.5,
+    });
 
     vi.useFakeTimers();
   });
@@ -79,9 +139,7 @@ describe("useNodeSelection", () => {
   });
 
   it("選択されたポケモンがない場合、全てを通常表示に戻すことを確認", () => {
-    renderHook(() =>
-      useNodeSelection(mockRefs, mockData, [], false, [])
-    );
+    renderHook(() => useNodeSelection(mockRefs, mockData, [], false, []));
 
     // createResetNodeDataが各ノードに対して呼ばれることを確認
     expect(utils.createResetNodeData).toHaveBeenCalledTimes(3);
@@ -102,11 +160,14 @@ describe("useNodeSelection", () => {
     vi.mocked(utils.getMatchingNodes).mockReturnValue([]);
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["存在しない"], false, [])
+      useNodeSelection(mockRefs, mockData, ["存在しない"], false, []),
     );
 
     // getMatchingNodesが呼ばれることを確認
-    expect(utils.getMatchingNodes).toHaveBeenCalledWith(["存在しない"], mockData.nodes);
+    expect(utils.getMatchingNodes).toHaveBeenCalledWith(
+      ["存在しない"],
+      mockData.nodes,
+    );
 
     // ノードが薄く表示されるように更新されることを確認
     expect(mockNodesDataset.update).toHaveBeenCalledWith(
@@ -123,7 +184,7 @@ describe("useNodeSelection", () => {
           id: "blastoise",
           opacity: 0.1,
         }),
-      ])
+      ]),
     );
 
     // エッジも薄く表示されるように更新されることを確認
@@ -135,12 +196,14 @@ describe("useNodeSelection", () => {
             opacity: 0.05,
           }),
         }),
-      ])
+      ]),
     );
   });
 
   it("マッチするノードがある場合、適切に処理することを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
     vi.mocked(utils.getConnectedElementIds).mockReturnValue({
       connectedNodeIds: new Set(["pikachu", "charizard"]),
@@ -148,17 +211,20 @@ describe("useNodeSelection", () => {
     });
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, [])
+      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, []),
     );
 
     // getMatchingNodesが呼ばれることを確認
-    expect(utils.getMatchingNodes).toHaveBeenCalledWith(["ピカチュウ"], mockData.nodes);
+    expect(utils.getMatchingNodes).toHaveBeenCalledWith(
+      ["ピカチュウ"],
+      mockData.nodes,
+    );
 
     // getConnectedElementIdsが呼ばれることを確認
     expect(utils.getConnectedElementIds).toHaveBeenCalledWith(
       new Set(["pikachu"]),
       mockData.edges,
-      false
+      false,
     );
 
     // ノード更新関数が各ノードに対して呼ばれることを確認
@@ -172,23 +238,27 @@ describe("useNodeSelection", () => {
   });
 
   it("直接接続のみのオプションが適切に渡されることを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], true, [])
+      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], true, []),
     );
 
     // showDirectConnectionsOnlyがtrueで呼ばれることを確認
     expect(utils.getConnectedElementIds).toHaveBeenCalledWith(
       expect.any(Set),
       mockData.edges,
-      true
+      true,
     );
   });
 
   it("ロールフィルタが適用されることを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
     vi.mocked(utils.getConnectedElementIds).mockReturnValue({
       connectedNodeIds: new Set(["pikachu"]),
@@ -198,7 +268,7 @@ describe("useNodeSelection", () => {
     const roleFilter: Role[] = ["メイジ"];
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, roleFilter)
+      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, roleFilter),
     );
 
     // createNodeUpdateDataがロールフィルタ情報と共に呼ばれることを確認
@@ -206,19 +276,21 @@ describe("useNodeSelection", () => {
       mockData.nodes[0], // pikachu
       true, // isSelected
       true, // isConnected
-      false // isRoleFiltered (メイジなので含まれる)
+      false, // isRoleFiltered (メイジなので含まれる)
     );
 
     expect(utils.createNodeUpdateData).toHaveBeenCalledWith(
       mockData.nodes[1], // charizard
       false, // isSelected
       false, // isConnected
-      true // isRoleFiltered (メイジでないので除外)
+      true, // isRoleFiltered (メイジでないので除外)
     );
   });
 
   it("遅延してfitが実行されることを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
     vi.mocked(utils.getConnectedElementIds).mockReturnValue({
       connectedNodeIds: new Set(["pikachu", "charizard"]),
@@ -226,10 +298,12 @@ describe("useNodeSelection", () => {
     });
 
     // nodesDatasetのgetメソッドをモック
-    mockNodesDataset.get = vi.fn((nodeId: string) => ({ id: nodeId }));
+    mockNodesDataset.get = vi
+      .fn()
+      .mockImplementation((nodeId: string) => ({ id: nodeId }));
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, [])
+      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, []),
     );
 
     // 即座にはfitが呼ばれないことを確認
@@ -252,7 +326,7 @@ describe("useNodeSelection", () => {
     };
 
     renderHook(() =>
-      useNodeSelection(nullRefs, mockData, ["ピカチュウ"], false, [])
+      useNodeSelection(nullRefs, mockData, ["ピカチュウ"], false, []),
     );
 
     // 何も処理されないことを確認
@@ -263,7 +337,7 @@ describe("useNodeSelection", () => {
     const emptyData: PokemonData = { nodes: [], edges: [] };
 
     renderHook(() =>
-      useNodeSelection(mockRefs, emptyData, ["ピカチュウ"], false, [])
+      useNodeSelection(mockRefs, emptyData, ["ピカチュウ"], false, []),
     );
 
     // 何も処理されないことを確認
@@ -271,7 +345,9 @@ describe("useNodeSelection", () => {
   });
 
   it("エッジのロールフィルタが適用されることを確認", () => {
-    const matchingNodes = [{ id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role }];
+    const matchingNodes = [
+      { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
+    ];
     vi.mocked(utils.getMatchingNodes).mockReturnValue(matchingNodes);
     vi.mocked(utils.getConnectedElementIds).mockReturnValue({
       connectedNodeIds: new Set(["pikachu"]),
@@ -281,14 +357,14 @@ describe("useNodeSelection", () => {
     const roleFilter: Role[] = ["メイジ"];
 
     renderHook(() =>
-      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, roleFilter)
+      useNodeSelection(mockRefs, mockData, ["ピカチュウ"], false, roleFilter),
     );
 
     // createEdgeUpdateDataがロールフィルタ情報と共に呼ばれることを確認
     expect(utils.createEdgeUpdateData).toHaveBeenCalledWith(
       mockData.edges[0], // pikachu -> charizard
       true, // isConnected
-      true // isRoleFiltered (charizardがファイターなので除外される)
+      true, // isRoleFiltered (charizardがファイターなので除外される)
     );
   });
 
@@ -296,7 +372,7 @@ describe("useNodeSelection", () => {
     const { rerender } = renderHook(
       ({ selectedPokemon }) =>
         useNodeSelection(mockRefs, mockData, selectedPokemon, false, []),
-      { initialProps: { selectedPokemon: [] } }
+      { initialProps: { selectedPokemon: [] as string[] } },
     );
 
     // 初回実行でresetが呼ばれる

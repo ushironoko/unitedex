@@ -15,7 +15,11 @@ import {
 // テスト用のモックデータ
 const mockNodes = [
   { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role },
-  { id: "pikachu_agility", label: "ピカチュウ(アジリティ)", role: "メイジ" as Role },
+  {
+    id: "pikachu_agility",
+    label: "ピカチュウ(アジリティ)",
+    role: "メイジ" as Role,
+  },
   { id: "charizard", label: "リザードン", role: "ファイター" as Role },
   { id: "blastoise", label: "カメックス", role: "タンク" as Role },
   { id: "venusaur", label: "フシギバナ", role: "メイジ" as Role },
@@ -23,7 +27,11 @@ const mockNodes = [
 
 const mockEdges = [
   { from: "pikachu", to: "charizard", type: "advantage" as EdgeType },
-  { from: "pikachu_agility", to: "blastoise", type: "disadvantage" as EdgeType },
+  {
+    from: "pikachu_agility",
+    to: "blastoise",
+    type: "disadvantage" as EdgeType,
+  },
   { from: "charizard", to: "venusaur", type: "advantage" as EdgeType },
   { from: "blastoise", to: "venusaur", type: "disadvantage" as EdgeType },
 ];
@@ -71,22 +79,22 @@ describe("utils", () => {
     it("単一の検索語でマッチするノードを取得", () => {
       const result = getMatchingNodes(["ピカチュウ"], mockNodes);
       expect(result).toHaveLength(2);
-      expect(result.map(n => n.id)).toContain("pikachu");
-      expect(result.map(n => n.id)).toContain("pikachu_agility");
+      expect(result.map((n) => n.id)).toContain("pikachu");
+      expect(result.map((n) => n.id)).toContain("pikachu_agility");
     });
 
     it("複数の検索語でマッチするノードを取得", () => {
       const result = getMatchingNodes(["ピカチュウ", "リザードン"], mockNodes);
       expect(result).toHaveLength(3);
-      expect(result.map(n => n.id)).toContain("pikachu");
-      expect(result.map(n => n.id)).toContain("pikachu_agility");
-      expect(result.map(n => n.id)).toContain("charizard");
+      expect(result.map((n) => n.id)).toContain("pikachu");
+      expect(result.map((n) => n.id)).toContain("pikachu_agility");
+      expect(result.map((n) => n.id)).toContain("charizard");
     });
 
     it("重複するマッチを除去することを確認", () => {
       const result = getMatchingNodes(["ピカチュウ", "pikachu"], mockNodes);
       expect(result).toHaveLength(2);
-      const ids = result.map(n => n.id);
+      const ids = result.map((n) => n.id);
       expect(new Set(ids)).toHaveProperty("size", ids.length);
     });
 
@@ -106,32 +114,38 @@ describe("utils", () => {
 
     it("直接接続のみの場合、接続されたノードとエッジを取得", () => {
       const result = getConnectedElementIds(matchingNodeIds, mockEdges, true);
-      
+
       expect(result.connectedNodeIds.has("pikachu")).toBe(true);
       expect(result.connectedNodeIds.has("charizard")).toBe(true);
       expect(result.connectedNodeIds.size).toBe(2);
-      
-      expect(result.connectedEdgeIds.has("pikachu-charizard-advantage")).toBe(true);
+
+      expect(result.connectedEdgeIds.has("pikachu-charizard-advantage")).toBe(
+        true,
+      );
       expect(result.connectedEdgeIds.size).toBe(1);
     });
 
     it("二次接続も含む場合、より多くのノードとエッジを取得", () => {
       const result = getConnectedElementIds(matchingNodeIds, mockEdges, false);
-      
+
       expect(result.connectedNodeIds.has("pikachu")).toBe(true);
       expect(result.connectedNodeIds.has("charizard")).toBe(true);
       expect(result.connectedNodeIds.has("venusaur")).toBe(true);
       expect(result.connectedNodeIds.size).toBe(3);
-      
-      expect(result.connectedEdgeIds.has("pikachu-charizard-advantage")).toBe(true);
-      expect(result.connectedEdgeIds.has("charizard-venusaur-advantage")).toBe(true);
+
+      expect(result.connectedEdgeIds.has("pikachu-charizard-advantage")).toBe(
+        true,
+      );
+      expect(result.connectedEdgeIds.has("charizard-venusaur-advantage")).toBe(
+        true,
+      );
       expect(result.connectedEdgeIds.size).toBe(2);
     });
 
     it("複数の選択ノードからの接続を処理", () => {
       const multipleMatching = new Set(["pikachu", "blastoise"]);
       const result = getConnectedElementIds(multipleMatching, mockEdges, true);
-      
+
       expect(result.connectedNodeIds.has("pikachu")).toBe(true);
       expect(result.connectedNodeIds.has("blastoise")).toBe(true);
       expect(result.connectedNodeIds.has("charizard")).toBe(true);
@@ -141,7 +155,7 @@ describe("utils", () => {
     it("接続のないノードの場合、そのノードのみを返す", () => {
       const isolatedNodeIds = new Set(["isolated"]);
       const result = getConnectedElementIds(isolatedNodeIds, mockEdges, true);
-      
+
       expect(result.connectedNodeIds.has("isolated")).toBe(true);
       expect(result.connectedNodeIds.size).toBe(1);
       expect(result.connectedEdgeIds.size).toBe(0);
@@ -149,12 +163,16 @@ describe("utils", () => {
   });
 
   describe("createNodeData", () => {
-    const node = { id: "pikachu", label: "ピカチュウ", role: "attacker" as Role };
+    const node = {
+      id: "pikachu",
+      label: "ピカチュウ",
+      role: "attacker" as Role,
+    };
     const connectedNodes = new Set(["pikachu", "charizard"]);
 
     it("接続されたノードのデータを正しく作成", () => {
       const result = createNodeData(node, 0, 10, connectedNodes);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.label).toBe("ピカチュウ");
       expect(result.role).toBe("attacker");
@@ -170,7 +188,7 @@ describe("utils", () => {
     it("孤立したノードのデータを正しく作成", () => {
       const isolatedConnected = new Set(["charizard"]);
       const result = createNodeData(node, 0, 10, isolatedConnected);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.x).toBeDefined(); // 孤立ノードは座標が設定される
       expect(result.y).toBeDefined();
@@ -178,23 +196,35 @@ describe("utils", () => {
     });
 
     it("インデックスに基づいて異なる位置を生成", () => {
-      const node1 = { id: "pikachu", label: "ピカチュウ", role: "メイジ" as Role };
-      const node2 = { id: "charizard", label: "リザードン", role: "ファイター" as Role };
+      const node1 = {
+        id: "pikachu",
+        label: "ピカチュウ",
+        role: "メイジ" as Role,
+      };
+      const node2 = {
+        id: "charizard",
+        label: "リザードン",
+        role: "ファイター" as Role,
+      };
       const isolatedConnected = new Set(["blastoise"]); // どちらも含まれない
       const result1 = createNodeData(node1, 0, 10, isolatedConnected);
       const result2 = createNodeData(node2, 1, 10, isolatedConnected);
-      
+
       expect(result1.x).not.toBe(result2.x);
       expect(result1.y).not.toBe(result2.y);
     });
   });
 
   describe("createEdgeData", () => {
-    const edge = { from: "pikachu", to: "charizard", type: "advantage" as EdgeType };
+    const edge = {
+      from: "pikachu",
+      to: "charizard",
+      type: "advantage" as EdgeType,
+    };
 
     it("エッジデータを正しく作成", () => {
       const result = createEdgeData(edge);
-      
+
       expect(result.id).toBe("pikachu-charizard-advantage");
       expect(result.from).toBe("pikachu");
       expect(result.to).toBe("charizard");
@@ -207,13 +237,23 @@ describe("utils", () => {
     });
 
     it("異なるエッジタイプで異なる色を設定", () => {
-      const advantageEdge = { from: "a", to: "b", type: "advantage" as EdgeType };
-      const disadvantageEdge = { from: "a", to: "b", type: "disadvantage" as EdgeType };
-      
+      const advantageEdge = {
+        from: "a",
+        to: "b",
+        type: "advantage" as EdgeType,
+      };
+      const disadvantageEdge = {
+        from: "a",
+        to: "b",
+        type: "disadvantage" as EdgeType,
+      };
+
       const advantageResult = createEdgeData(advantageEdge);
       const disadvantageResult = createEdgeData(disadvantageEdge);
-      
-      expect(advantageResult.color.color).not.toBe(disadvantageResult.color.color);
+
+      expect(advantageResult.color.color).not.toBe(
+        disadvantageResult.color.color,
+      );
     });
   });
 
@@ -222,7 +262,7 @@ describe("utils", () => {
 
     it("選択されたノードの更新データを作成", () => {
       const result = createNodeUpdateData(node, true, true, false);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(false);
       expect(result.opacity).toBe(1);
@@ -232,7 +272,7 @@ describe("utils", () => {
 
     it("薄く表示されるノードの更新データを作成", () => {
       const result = createNodeUpdateData(node, false, false, false);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(false);
       expect(result.opacity).toBeLessThan(1);
@@ -242,14 +282,14 @@ describe("utils", () => {
 
     it("ロールフィルタで隠されるノードの更新データを作成", () => {
       const result = createNodeUpdateData(node, false, true, true);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(true);
     });
 
     it("接続されたノードの更新データを作成", () => {
       const result = createNodeUpdateData(node, false, true, false);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(false);
       expect(result.opacity).toBe(1);
@@ -257,11 +297,15 @@ describe("utils", () => {
   });
 
   describe("createEdgeUpdateData", () => {
-    const edge = { from: "pikachu", to: "charizard", type: "advantage" as EdgeType };
+    const edge = {
+      from: "pikachu",
+      to: "charizard",
+      type: "advantage" as EdgeType,
+    };
 
     it("接続されたエッジの更新データを作成", () => {
       const result = createEdgeUpdateData(edge, true, false);
-      
+
       expect(result.id).toBe("pikachu-charizard-advantage");
       expect(result.hidden).toBe(false);
       expect(result.color.opacity).toBe(1);
@@ -271,7 +315,7 @@ describe("utils", () => {
 
     it("薄く表示されるエッジの更新データを作成", () => {
       const result = createEdgeUpdateData(edge, false, false);
-      
+
       expect(result.id).toBe("pikachu-charizard-advantage");
       expect(result.hidden).toBe(false);
       expect(result.color.color).toContain("0A"); // 透明度が追加される
@@ -282,7 +326,7 @@ describe("utils", () => {
 
     it("ロールフィルタで隠されるエッジの更新データを作成", () => {
       const result = createEdgeUpdateData(edge, true, true);
-      
+
       expect(result.id).toBe("pikachu-charizard-advantage");
       expect(result.hidden).toBe(true);
     });
@@ -293,7 +337,7 @@ describe("utils", () => {
 
     it("リセット時のノードデータを作成", () => {
       const result = createResetNodeData(node);
-      
+
       expect(result.id).toBe("pikachu");
       expect(result.hidden).toBe(false);
       expect(result.opacity).toBe(1);
@@ -306,11 +350,15 @@ describe("utils", () => {
   });
 
   describe("createResetEdgeData", () => {
-    const edge = { from: "pikachu", to: "charizard", type: "advantage" as EdgeType };
+    const edge = {
+      from: "pikachu",
+      to: "charizard",
+      type: "advantage" as EdgeType,
+    };
 
     it("リセット時のエッジデータを作成", () => {
       const result = createResetEdgeData(edge);
-      
+
       expect(result.id).toBe("pikachu-charizard-advantage");
       expect(result.hidden).toBe(false);
       expect(result.color.color).toBeDefined();

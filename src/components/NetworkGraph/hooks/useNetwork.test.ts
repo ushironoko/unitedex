@@ -3,7 +3,7 @@ import { renderHook, cleanup } from "@testing-library/react";
 import { DataSet } from "vis-data";
 import { Network } from "vis-network/standalone";
 import { useNetwork } from "./useNetwork";
-import type { PokemonData } from "../../../types";
+import type { PokemonData, Role } from "../../../types";
 
 // vis-network/standaloneをモック
 vi.mock("vis-network/standalone", () => ({
@@ -87,10 +87,9 @@ describe("useNetwork", () => {
   });
 
   it("データが変更された時にネットワークを再初期化することを確認", () => {
-    const { result, rerender } = renderHook(
-      ({ data }) => useNetwork(data),
-      { initialProps: { data: mockData } }
-    );
+    const { result, rerender } = renderHook(({ data }) => useNetwork(data), {
+      initialProps: { data: mockData },
+    });
 
     // コンテナrefを設定
     const mockContainer = document.createElement("div");
@@ -99,7 +98,10 @@ describe("useNetwork", () => {
     // データを変更して再レンダリング
     const updatedData = {
       ...mockData,
-      nodes: [...mockData.nodes, { id: "venusaur", label: "フシギバナ", role: "attacker" }],
+      nodes: [
+        ...mockData.nodes,
+        { id: "venusaur", label: "フシギバナ", role: "アサシン" as Role },
+      ],
     };
 
     rerender({ data: updatedData });
@@ -129,11 +131,20 @@ describe("useNetwork", () => {
 
     // ネットワークが初期化されることを確認
     expect(Network).toHaveBeenCalled();
-    
+
     // イベントハンドラが設定されることを確認
-    expect(mockNetwork.on).toHaveBeenCalledWith("stabilizationIterationsDone", expect.any(Function));
-    expect(mockNetwork.on).toHaveBeenCalledWith("dragStart", expect.any(Function));
-    expect(mockNetwork.on).toHaveBeenCalledWith("dragEnd", expect.any(Function));
+    expect(mockNetwork.on).toHaveBeenCalledWith(
+      "stabilizationIterationsDone",
+      expect.any(Function),
+    );
+    expect(mockNetwork.on).toHaveBeenCalledWith(
+      "dragStart",
+      expect.any(Function),
+    );
+    expect(mockNetwork.on).toHaveBeenCalledWith(
+      "dragEnd",
+      expect.any(Function),
+    );
   });
 
   it("stabilizationIterationsDoneイベントで物理エンジンを停止することを確認", () => {
@@ -145,14 +156,16 @@ describe("useNetwork", () => {
 
     // stabilizationIterationsDoneイベントハンドラを取得
     const stabilizationHandler = mockNetwork.on.mock.calls.find(
-      (call) => call[0] === "stabilizationIterationsDone"
-    )[1];
+      (call: unknown[]) => call[0] === "stabilizationIterationsDone",
+    )?.[1] as () => void;
 
     // イベントハンドラを実行
     stabilizationHandler();
 
     // 物理エンジンが停止されることを確認
-    expect(mockNetwork.setOptions).toHaveBeenCalledWith({ physics: { enabled: false } });
+    expect(mockNetwork.setOptions).toHaveBeenCalledWith({
+      physics: { enabled: false },
+    });
   });
 
   it("dragStartイベントで物理エンジンを有効化することを確認", () => {
@@ -164,19 +177,21 @@ describe("useNetwork", () => {
 
     // dragStartイベントハンドラを取得
     const dragStartHandler = mockNetwork.on.mock.calls.find(
-      (call) => call[0] === "dragStart"
-    )[1];
+      (call: unknown[]) => call[0] === "dragStart",
+    )?.[1] as () => void;
 
     // イベントハンドラを実行
     dragStartHandler();
 
     // 物理エンジンが有効化されることを確認
-    expect(mockNetwork.setOptions).toHaveBeenCalledWith({ physics: { enabled: true } });
+    expect(mockNetwork.setOptions).toHaveBeenCalledWith({
+      physics: { enabled: true },
+    });
   });
 
   it("dragEndイベントで遅延して物理エンジンを停止することを確認", async () => {
     vi.useFakeTimers();
-    
+
     const { result } = renderHook(() => useNetwork(mockData));
 
     // コンテナrefを設定
@@ -185,8 +200,8 @@ describe("useNetwork", () => {
 
     // dragEndイベントハンドラを取得
     const dragEndHandler = mockNetwork.on.mock.calls.find(
-      (call) => call[0] === "dragEnd"
-    )[1];
+      (call: unknown[]) => call[0] === "dragEnd",
+    )?.[1] as () => void;
 
     // setOptionsのモックをリセット
     mockNetwork.setOptions.mockClear();
@@ -199,7 +214,9 @@ describe("useNetwork", () => {
 
     // 2秒経過後に呼ばれることを確認
     vi.advanceTimersByTime(2000);
-    expect(mockNetwork.setOptions).toHaveBeenCalledWith({ physics: { enabled: false } });
+    expect(mockNetwork.setOptions).toHaveBeenCalledWith({
+      physics: { enabled: false },
+    });
 
     vi.useRealTimers();
   });
@@ -234,16 +251,16 @@ describe("useNetwork", () => {
           role: "メイジ",
         }),
         expect.objectContaining({
-          id: "charizard", 
+          id: "charizard",
           label: "リザードン",
           role: "ファイター",
         }),
         expect.objectContaining({
           id: "blastoise",
-          label: "カメックス", 
+          label: "カメックス",
           role: "タンク",
         }),
-      ])
+      ]),
     );
   });
 
@@ -266,10 +283,10 @@ describe("useNetwork", () => {
         expect.objectContaining({
           id: "charizard-blastoise-disadvantage",
           from: "charizard",
-          to: "blastoise", 
+          to: "blastoise",
           type: "disadvantage",
         }),
-      ])
+      ]),
     );
   });
 });
