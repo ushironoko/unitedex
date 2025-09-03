@@ -251,8 +251,9 @@ export const createEdgeUpdateData = (
 /**
  * リセット時のノードデータを作成
  */
-export const createResetNodeData = (node: { id: string; role: Role }) => ({
+export const createResetNodeData = (node: { id: string; label?: string; role: Role }) => ({
   id: node.id,
+  label: node.label || node.id,
   hidden: false,
   opacity: OPACITY_VALUES.normal,
   size: NODE_SIZES.normal,
@@ -282,10 +283,18 @@ export const createResetEdgeData = (edge: {
   type: EdgeType;
 }) => ({
   id: `${edge.from}-${edge.to}-${edge.type}`,
+  from: edge.from,
+  to: edge.to,
   hidden: false,
   color: {
     color: EDGE_COLORS[edge.type],
     opacity: OPACITY_VALUES.normal,
   },
   width: EDGE_WIDTHS.normal,
+  arrows: {
+    to: {
+      enabled: true,
+      scaleFactor: ARROW_SCALE_FACTORS.normal,
+    },
+  },
 });

@@ -41,6 +41,7 @@ function normalizePokemonName(name: string): string {
     サーナイト: "gardevoir",
     ザシアン: "zacian",
     ジュナイパー: "decidueye",
+    ジュラルドン: "duraludon",
     スイクン: "suicune",
     ストライク: "scyther",
     ゼラオラ: "zeraora",

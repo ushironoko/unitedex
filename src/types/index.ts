@@ -20,4 +20,13 @@ export type EdgeType = "advantage" | "disadvantage";
 
 export interface UsePokemonDataReturn {
   data: PokemonData;
+  isCustomData: boolean;
+  uploadCustomData: (data: PokemonData) => Promise<void>;
+  resetToDefault: () => void;
+  downloadDefaultData: () => void;
+}
+
+export interface CustomDataError {
+  message: string;
+  details?: string[];
 }

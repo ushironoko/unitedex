@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
 import AdvantageList from "./components/AdvantageList";
 import ControlPanel from "./components/ControlPanel";
+import { DataManager } from "./components/DataManager";
 import NetworkGraph from "./components/NetworkGraph";
 import { usePokemonData } from "./hooks/usePokemonData";
 import "./styles/App.css";
@@ -8,7 +9,13 @@ import type { Role } from "./types";
 import { ROLE_COLORS } from "./utils/constants";
 
 function App() {
-  const { data } = usePokemonData();
+  const {
+    data,
+    isCustomData,
+    uploadCustomData,
+    resetToDefault,
+    downloadDefaultData,
+  } = usePokemonData();
   const [searchValue, setSearchValue] = useState("");
   const [selectedPokemon, setSelectedPokemon] = useState<string[]>([]);
   const [edgeFilter, setEdgeFilter] = useState<
@@ -42,8 +49,8 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">Pokemon Unite Matchup Visualizer</h1>
-        <p className="subtitle">ポケモンの相性関係を可視化</p>
+        <p className="subtitle">ユナグラフ</p>
+        <h1 className="title">Unite Graph</h1>
       </header>
 
       <main className="main">
@@ -103,6 +110,13 @@ function App() {
             )}
           </span>
         </div>
+
+        <DataManager
+          isCustomData={isCustomData}
+          uploadCustomData={uploadCustomData}
+          resetToDefault={resetToDefault}
+          downloadDefaultData={downloadDefaultData}
+        />
       </main>
     </div>
   );

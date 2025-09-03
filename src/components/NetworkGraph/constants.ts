@@ -1,26 +1,24 @@
 export const NETWORK_OPTIONS = {
   physics: {
     enabled: true,
-    forceAtlas2Based: {
-      gravitationalConstant: -80,
-      centralGravity: 0.005,
-      springLength: 150,
-      springConstant: 0.05,
-      damping: 0.8,
-      avoidOverlap: 0.5,
+    barnesHut: {
+      gravitationalConstant: -2000,
+      centralGravity: 0.3,
+      springLength: 95,
+      springConstant: 0.04,
+      damping: 0.09,
+      avoidOverlap: 0.1,
     },
-    maxVelocity: 20,
-    minVelocity: 0.1,
-    solver: "forceAtlas2Based" as const,
+    maxVelocity: 50,
+    minVelocity: 0.75,
+    solver: "barnesHut" as const,
     stabilization: {
       enabled: true,
-      iterations: 200,
-      updateInterval: 50,
+      iterations: 100, // 初期配置のための最小限のイテレーション
+      updateInterval: 10,
       onlyDynamicEdges: false,
-      fit: true,
+      fit: false,
     },
-    timestep: 0.5,
-    adaptiveTimestep: false,
   },
   interaction: {
     hover: false, // ホバーを無効化してパフォーマンス向上
