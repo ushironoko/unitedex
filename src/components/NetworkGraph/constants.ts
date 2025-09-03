@@ -3,13 +3,13 @@ export const NETWORK_OPTIONS = {
     enabled: true, // 物理シミュレーションの有効/無効
     forceAtlas2Based: {
       gravitationalConstant: -10, // ノード間の斥力の強さ（負の値で反発）
-      centralGravity: 0.005, // 中心への引力の強さ
-      springLength: 150, // エッジの理想的な長さ
+      centralGravity: 0.01, // 中心への引力の強さ
+      springLength: 200, // エッジの理想的な長さ
       springConstant: 0.01, // エッジのバネの強さ
       damping: 1, // 動きの減衰率（0-1、高いほど早く安定）
-      avoidOverlap: 0.3, // ノードの重なり回避の強さ
+      avoidOverlap: 2, // ノードの重なり回避の強さ
     },
-    maxVelocity: 20, // ノードの最大速度
+    maxVelocity: 50, // ノードの最大速度
     minVelocity: 1, // 安定化判定の最小速度閾値
     solver: "forceAtlas2Based" as const, // 使用する物理エンジンのアルゴリズム
     stabilization: {
@@ -40,10 +40,10 @@ export const NETWORK_OPTIONS = {
   nodes: {
     shape: "dot" as const, // ノードの形状
     scaling: {
-      min: 10, // ノードの最小サイズ
-      max: 25, // ノードの最大サイズ
+      min: 5, // ノードの最小サイズ
+      max: 15, // ノードの最大サイズ
     },
-    mass: 0.8, // ノードの質量（物理シミュレーションで使用）
+    mass: 1.5, // ノードの質量（物理シミュレーションで使用）
   },
   edges: {
     smooth: {
@@ -60,8 +60,8 @@ export const FOCUS_ANIMATION = {
 } as const;
 
 export const NODE_SIZES = {
-  normal: 15, // 通常状態のノードサイズ
-  selected: 20, // 選択状態のノードサイズ
+  normal: 5, // 通常状態のノードサイズ
+  selected: 10, // 選択状態のノードサイズ
 } as const;
 
 export const FONT_SIZES = {

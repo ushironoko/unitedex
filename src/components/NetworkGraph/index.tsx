@@ -54,21 +54,19 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(
         nodesDataset.current.add(graphState.nodes);
         edgesDataset.current.add(graphState.edges);
         isInitialRender.current = false;
-
-        // 初回データ追加後、即座に物理エンジンを停止
-        // グリッド配置を維持するため、物理エンジンを動かさない
-        network.current.setOptions({
-          physics: { enabled: false },
-        });
       } else {
         // 2回目以降はupdate()を使用して差分更新（位置は更新しない）
         const nodesWithoutPosition = graphState.nodes.map((node) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const { x, y, ...nodeWithoutPos } = node as any;
+          const { x, y, ...nodeWithoutPos } = node;
           return nodeWithoutPos;
         });
         nodesDataset.current.update(nodesWithoutPosition);
         edgesDataset.current.update(graphState.edges);
+        setTimeout(() => {
+          network.current?.setOptions({
+            physics: { enabled: false },
+          });
+        }, 100);
       }
 
       // 選択状態をリセット

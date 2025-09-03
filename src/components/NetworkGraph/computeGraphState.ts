@@ -2,6 +2,8 @@ import type { PokemonData, Role } from "../../types";
 import { ROLE_COLORS, EDGE_COLORS, MY_POOL } from "../../utils/constants";
 
 interface NodeState {
+  x: number;
+  y: number;
   id: string;
   label: string;
   hidden: boolean;
