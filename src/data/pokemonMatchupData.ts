@@ -198,7 +198,7 @@ export const pokemonMatchupData: PokemonData = {
       role: "メイジ",
     },
     {
-      id: "ジュラルドン_ラスターカノン",
+      id: "duraludon_ラスターカノン",
       label: "ジュラルドン (ラスターカノン)",
       role: "メイジ",
     },
@@ -591,7 +591,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "absol_サイコカッター",
-      to: "ジュラルドン_ラスターカノン",
+      to: "duraludon_ラスターカノン",
       type: "advantage",
     },
     {
@@ -1166,7 +1166,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "inteleon_ねらいうち",
-      to: "ジュラルドン_ラスターカノン",
+      to: "duraludon_ラスターカノン",
       type: "advantage",
     },
     {
@@ -2441,7 +2441,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
-      to: "ジュラルドン_ラスターカノン",
+      to: "duraludon_ラスターカノン",
       type: "advantage",
     },
     {
@@ -2625,257 +2625,257 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "armarouge_ほのおのうず",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "delphox_ほのおのうず",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "delphox_ニトロチャージ",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "espeon_サイコショック",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gardevoir_サイコショック",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gardevoir_みらいよち",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "glaceon_つららばり",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "glaceon_こごえるかぜ",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "latios",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "alolan_ninetales_ふぶき",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "pikachu_ボルテッカー",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "pikachu_10_万ボルト",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "alolan_raichu_エレキボール",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "alolan_raichu_アシストパワー",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "sylveon_ハイパーボイス",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "sylveon_マジカルフレイム",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "suicune_うずしお",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "buzzwole_ばかぢから",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "dragonite",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "metagross_ジャイロボール",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "metagross_コメットパンチ",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "azumarill_アクアテール",
       type: "advantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gengar_ゆめくい",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "absol_サイコカッター",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "absol_ふいうち",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "talonflame_ブレイブバード",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "talonflame_そらをとぶ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "zoroark_だましうち",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "dodrio_トライアタック",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "darkrai_悪だくみ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "leafeon_はっぱカッター",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "lucario_神速",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "scyther_剣の舞",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "zeraora",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "mimikyu_トリックルーム",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "mimikyu_かげうち",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "miraidon_チャージビーム",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "miraidon_イナズマドライブ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "greninja_なみのり",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "aegislash_聖なる剣",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "ceruledge_ゴーストダイブ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "ceruledge_ニトロチャージ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "urshifu_すいりゅうれんだ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "tsareena_トリプルアクセル",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "tsareena_ふみつけ",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gyarados_滝登り",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "gyarados_飛び跳ねる",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "venusaur_ソーラービーム",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "decidueye_かげぬい",
       type: "disadvantage",
     },
     {
-      from: "ジュラルドン_ラスターカノン",
+      from: "duraludon_ラスターカノン",
       to: "inteleon_ねらいうち",
       type: "disadvantage",
     },
@@ -4366,7 +4366,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "venusaur_ソーラービーム",
-      to: "ジュラルドン_ラスターカノン",
+      to: "duraludon_ラスターカノン",
       type: "advantage",
     },
     {
@@ -5111,7 +5111,17 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mimikyu_トリックルーム",
+      to: "zoroark_だましうち",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_トリックルーム",
       to: "miraidon_チャージビーム",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_トリックルーム",
+      to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
     {
@@ -5127,6 +5137,21 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "mimikyu_かげうち",
       to: "charizard_大文字",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "zoroark_だましうち",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "miraidon_チャージビーム",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
     {
@@ -5221,7 +5246,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mew",
-      to: "ジュラルドン_ラスターカノン",
+      to: "duraludon_ラスターカノン",
       type: "advantage",
     },
     {

@@ -8,7 +8,6 @@ import {
   EDGE_WIDTHS,
   ARROW_SCALE_FACTORS,
   OPACITY_VALUES,
-  ISOLATED_NODES_CONFIG,
 } from "./constants";
 
 /**
@@ -19,6 +18,9 @@ export const isNodeMatchingSearch = (
   searchTerm: string,
 ): boolean => {
   const trimmedSearch = searchTerm.trim();
+
+  // 空文字やスペースのみの場合はfalse
+  if (!trimmedSearch) return false;
 
   // 完全一致をチェック（技バリエーションを含む）
   if (node.label === trimmedSearch) return true;
@@ -107,12 +109,10 @@ export const getConnectedElementIds = (
  */
 export const createNodeData = (
   node: { id: string; label: string; role: Role },
-  index: number,
-  totalNodes: number,
-  connectedNodes: Set<string>,
+  _index: number,
+  _totalNodes: number,
+  _connectedNodes: Set<string>,
 ): NodeData => {
-  const isIsolated = !connectedNodes.has(node.id);
-
   const nodeData: NodeData = {
     id: node.id,
     label: node.label,
@@ -135,13 +135,16 @@ export const createNodeData = (
     role: node.role,
   };
 
-  // 孤立ノードの位置を固定
+  // 孤立ノードの位置固定を削除（forceAtlas2Basedアルゴリズムに任せる）
+  // 輪っか状配置は物理エンジンの自然な配置を妨げるため無効化
+  /*
   if (isIsolated) {
     const angle = (index / totalNodes) * Math.PI * 2;
     nodeData.x = Math.cos(angle) * ISOLATED_NODES_CONFIG.radius;
     nodeData.y = Math.sin(angle) * ISOLATED_NODES_CONFIG.radius;
     nodeData.physics = !ISOLATED_NODES_CONFIG.disablePhysics;
   }
+  */
 
   return nodeData;
 };
@@ -251,8 +254,13 @@ export const createEdgeUpdateData = (
 /**
  * リセット時のノードデータを作成
  */
-export const createResetNodeData = (node: { id: string; role: Role }) => ({
+export const createResetNodeData = (node: {
+  id: string;
+  label?: string;
+  role: Role;
+}) => ({
   id: node.id,
+  label: node.label || node.id,
   hidden: false,
   opacity: OPACITY_VALUES.normal,
   size: NODE_SIZES.normal,
@@ -282,10 +290,18 @@ export const createResetEdgeData = (edge: {
   type: EdgeType;
 }) => ({
   id: `${edge.from}-${edge.to}-${edge.type}`,
+  from: edge.from,
+  to: edge.to,
   hidden: false,
   color: {
     color: EDGE_COLORS[edge.type],
     opacity: OPACITY_VALUES.normal,
   },
   width: EDGE_WIDTHS.normal,
+  arrows: {
+    to: {
+      enabled: true,
+      scaleFactor: ARROW_SCALE_FACTORS.normal,
+    },
+  },
 });

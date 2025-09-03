@@ -57,12 +57,14 @@
 
 .stats {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff;
   border-radius: 10px;
   text-align: center;
   font-size: 14px;
   color: #666;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile styles */
