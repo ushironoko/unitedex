@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import AdvantageList from "./components/AdvantageList";
 import ControlPanel from "./components/ControlPanel";
 import NetworkGraph from "./components/NetworkGraph";
@@ -20,19 +20,23 @@ function App() {
   const [showDirectConnectionsOnly, setShowDirectConnectionsOnly] =
     useState(true);
 
-  // Handle search
+  // Handle search - デバウンス処理を追加
   useEffect(() => {
-    if (!searchValue.trim()) {
-      setSelectedPokemon([]);
-      return;
-    }
+    const timer = setTimeout(() => {
+      if (!searchValue.trim()) {
+        setSelectedPokemon([]);
+        return;
+      }
 
-    const searchTerms = searchValue
-      .split(",")
-      .map((term) => term.trim())
-      .filter(Boolean);
+      const searchTerms = searchValue
+        .split(",")
+        .map((term) => term.trim())
+        .filter(Boolean);
 
-    setSelectedPokemon(searchTerms);
+      setSelectedPokemon(searchTerms);
+    }, 200); // 200msのデバウンス
+
+    return () => clearTimeout(timer);
   }, [searchValue]);
 
   return (
@@ -45,13 +49,13 @@ function App() {
       <main className="main">
         <ControlPanel
           searchValue={searchValue}
-          onSearchChange={setSearchValue}
+          onSearchChange={useCallback(setSearchValue, [])}
           edgeFilter={edgeFilter}
-          onEdgeFilterChange={setEdgeFilter}
+          onEdgeFilterChange={useCallback(setEdgeFilter, [])}
           roleFilter={roleFilter}
-          onRoleFilterChange={setRoleFilter}
+          onRoleFilterChange={useCallback(setRoleFilter, [])}
           showDirectConnectionsOnly={showDirectConnectionsOnly}
-          onShowDirectConnectionsOnlyChange={setShowDirectConnectionsOnly}
+          onShowDirectConnectionsOnlyChange={useCallback(setShowDirectConnectionsOnly, [])}
         />
 
         <div className="contentContainer">
@@ -82,10 +86,10 @@ function App() {
             総エッジ数: {data.edges.length}
           </span>
           <span style={{ marginLeft: "20px" }}>
-            有利: {data.edges.filter((e) => e.type === "advantage").length}
+            有利: {useMemo(() => data.edges.filter((e) => e.type === "advantage").length, [data.edges])}
           </span>
           <span style={{ marginLeft: "20px" }}>
-            不利: {data.edges.filter((e) => e.type === "disadvantage").length}
+            不利: {useMemo(() => data.edges.filter((e) => e.type === "disadvantage").length, [data.edges])}
           </span>
         </div>
       </main>

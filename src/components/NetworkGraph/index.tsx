@@ -1,4 +1,4 @@
-import type React from "react";
+import React, { memo } from "react";
 import type { NetworkGraphProps } from "./types";
 import { useNetwork } from "./hooks/useNetwork";
 import { useNodeSelection } from "./hooks/useNodeSelection";
@@ -6,7 +6,7 @@ import { useEdgeFilter } from "./hooks/useEdgeFilter";
 import { useRoleFilter } from "./hooks/useRoleFilter";
 import { useDebouncedSelection } from "./hooks/useDebouncedSelection";
 
-const NetworkGraph: React.FC<NetworkGraphProps> = ({
+const NetworkGraph: React.FC<NetworkGraphProps> = memo(({
   data,
   selectedPokemon,
   edgeFilter,
@@ -40,6 +40,8 @@ const NetworkGraph: React.FC<NetworkGraphProps> = ({
       }}
     />
   );
-};
+});
+
+NetworkGraph.displayName = "NetworkGraph";
 
 export default NetworkGraph;

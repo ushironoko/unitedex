@@ -1,6 +1,5 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
-import type React from "react";
-import { useMemo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import type { PokemonData, Role } from "../types";
 import { ROLE_COLORS } from "../utils/constants";
 import RelationPopover from "./RelationPopover";
@@ -23,7 +22,7 @@ interface AdvantageListProps {
   showDirectConnectionsOnly: boolean;
 }
 
-const AdvantageList: React.FC<AdvantageListProps> = ({
+const AdvantageList: React.FC<AdvantageListProps> = memo(({
   data,
   selectedPokemon,
   showDirectConnectionsOnly,
@@ -373,6 +372,8 @@ const AdvantageList: React.FC<AdvantageListProps> = ({
       </div>
     </div>
   );
-};
+});
+
+AdvantageList.displayName = "AdvantageList";
 
 export default AdvantageList;

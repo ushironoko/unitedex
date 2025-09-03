@@ -1,4 +1,4 @@
-import type React from "react";
+import React, { memo, useCallback } from "react";
 import type { CSSProperties } from "react";
 import type { Role } from "../types";
 import { ROLE_COLORS } from "../utils/constants";
@@ -15,7 +15,7 @@ interface ControlPanelProps {
   onShowDirectConnectionsOnlyChange: (value: boolean) => void;
 }
 
-const ControlPanel: React.FC<ControlPanelProps> = ({
+const ControlPanel: React.FC<ControlPanelProps> = memo(({{
   searchValue,
   onSearchChange,
   edgeFilter,
@@ -27,13 +27,13 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 }) => {
   const roles = Object.keys(ROLE_COLORS) as Role[];
 
-  const handleRoleToggle = (role: Role) => {
+  const handleRoleToggle = useCallback((role: Role) => {
     if (roleFilter.includes(role)) {
       onRoleFilterChange(roleFilter.filter((r) => r !== role));
     } else {
       onRoleFilterChange([...roleFilter, role]);
     }
-  };
+  }, [roleFilter, onRoleFilterChange]);
 
   return (
     <div style={styles.container}>
@@ -133,7 +133,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
       </div>
     </div>
   );
-};
+});
+
+ControlPanel.displayName = "ControlPanel";
 
 const styles: Record<string, CSSProperties> = {
   container: {
