@@ -217,7 +217,7 @@ export function computeGraphState(
     const col = index % gridSize;
     const spacing = 300; // ノード間の間隔を広げる
     const jitter = 100; // ランダムなズレを大きくする
-    
+
     const nodeState: NodeState & { x?: number; y?: number } = {
       id: node.id,
       label: node.label,
@@ -231,10 +231,16 @@ export function computeGraphState(
         bold: font.bold || undefined,
       },
       // 初期位置（グリッド配置 + ランダムな揺らぎ）
-      x: col * spacing - (gridSize * spacing) / 2 + (Math.random() - 0.5) * jitter,
-      y: row * spacing - (gridSize * spacing) / 2 + (Math.random() - 0.5) * jitter,
+      x:
+        col * spacing -
+        (gridSize * spacing) / 2 +
+        (Math.random() - 0.5) * jitter,
+      y:
+        row * spacing -
+        (gridSize * spacing) / 2 +
+        (Math.random() - 0.5) * jitter,
     };
-    
+
     return nodeState;
   });
 

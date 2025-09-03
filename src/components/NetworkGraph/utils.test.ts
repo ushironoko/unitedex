@@ -190,12 +190,12 @@ describe("utils", () => {
       const result = createNodeData(node, 0, 10, isolatedConnected);
 
       expect(result.id).toBe("pikachu");
-      expect(result.x).toBeDefined(); // 孤立ノードは座標が設定される
-      expect(result.y).toBeDefined();
-      expect(result.physics).toBeDefined();
+      expect(result.x).toBeUndefined(); // 孤立ノードも座標は設定されない（物理エンジンに任せる）
+      expect(result.y).toBeUndefined();
+      expect(result.physics).toBeUndefined();
     });
 
-    it("インデックスに基づいて異なる位置を生成", () => {
+    it("インデックスに基づいて同じ形式のデータを生成", () => {
       const node1 = {
         id: "pikachu",
         label: "ピカチュウ",
@@ -210,8 +210,10 @@ describe("utils", () => {
       const result1 = createNodeData(node1, 0, 10, isolatedConnected);
       const result2 = createNodeData(node2, 1, 10, isolatedConnected);
 
-      expect(result1.x).not.toBe(result2.x);
-      expect(result1.y).not.toBe(result2.y);
+      expect(result1.x).toBeUndefined();
+      expect(result1.y).toBeUndefined();
+      expect(result2.x).toBeUndefined();
+      expect(result2.y).toBeUndefined();
     });
   });
 

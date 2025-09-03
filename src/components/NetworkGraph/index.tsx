@@ -63,6 +63,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(
       } else {
         // 2回目以降はupdate()を使用して差分更新（位置は更新しない）
         const nodesWithoutPosition = graphState.nodes.map((node) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const { x, y, ...nodeWithoutPos } = node as any;
           return nodeWithoutPos;
         });

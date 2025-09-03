@@ -5111,7 +5111,17 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mimikyu_トリックルーム",
+      to: "zoroark_だましうち",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_トリックルーム",
       to: "miraidon_チャージビーム",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_トリックルーム",
+      to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
     {
@@ -5127,6 +5137,21 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "mimikyu_かげうち",
       to: "charizard_大文字",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "zoroark_だましうち",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "miraidon_チャージビーム",
+      type: "advantage",
+    },
+    {
+      from: "mimikyu_かげうち",
+      to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
     {

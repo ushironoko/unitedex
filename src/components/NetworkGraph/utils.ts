@@ -8,7 +8,6 @@ import {
   EDGE_WIDTHS,
   ARROW_SCALE_FACTORS,
   OPACITY_VALUES,
-  ISOLATED_NODES_CONFIG,
 } from "./constants";
 
 /**
@@ -110,12 +109,10 @@ export const getConnectedElementIds = (
  */
 export const createNodeData = (
   node: { id: string; label: string; role: Role },
-  index: number,
-  totalNodes: number,
-  connectedNodes: Set<string>,
+  _index: number,
+  _totalNodes: number,
+  _connectedNodes: Set<string>,
 ): NodeData => {
-  const isIsolated = !connectedNodes.has(node.id);
-
   const nodeData: NodeData = {
     id: node.id,
     label: node.label,
