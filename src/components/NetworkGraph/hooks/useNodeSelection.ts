@@ -112,63 +112,44 @@ export const useNodeSelection = (
     // ロールフィルタの適用チェック
     const isRoleFilterActive = roleFilter.length > 0 && roleFilter.length < 5;
 
-    // 変更が必要なノードのみを更新（差分更新）
-    const nodesToUpdate: any[] = [];
-    
-    data.nodes.forEach((node) => {
-      const isSelected = matchingNodeIds.has(node.id);
-      const isConnected = connectedNodeIds.has(node.id);
-      const wasConnected = prevConnectedRef.current.has(node.id);
-      const isRoleFiltered =
-        isRoleFilterActive && !roleFilter.includes(node.role);
-      const wasRoleFiltered = 
-        prevRoleFilterRef.current.length > 0 && 
-        prevRoleFilterRef.current.length < 5 && 
-        !prevRoleFilterRef.current.includes(node.role);
-      
-      // 状態が変わったノードのみ更新
-      if (isConnected !== wasConnected || isRoleFiltered !== wasRoleFiltered) {
-        nodesToUpdate.push(
-          createNodeUpdateData(node, isSelected, isConnected, isRoleFiltered)
+    // 全てのノードを更新（選択されていないノードも適切に非表示/薄く表示する必要がある）
+    refs.nodesDatasetRef.current.update(
+      data.nodes.map((node) => {
+        const isSelected = matchingNodeIds.has(node.id);
+        const isConnected = connectedNodeIds.has(node.id);
+        const isRoleFiltered =
+          isRoleFilterActive && !roleFilter.includes(node.role);
+
+        return createNodeUpdateData(
+          node,
+          isSelected,
+          isConnected,
+          isRoleFiltered,
         );
-      }
-    });
-    
-    if (nodesToUpdate.length > 0) {
-      refs.nodesDatasetRef.current.update(nodesToUpdate);
-    }
+      }),
+    );
     
     // 現在の状態を保存
     prevConnectedRef.current = new Set(connectedNodeIds);
     prevRoleFilterRef.current = [...roleFilter];
 
-    // 変更が必要なエッジのみを更新（差分更新）
-    const edgesToUpdate: any[] = [];
-    
-    data.edges.forEach((edge) => {
-      const edgeId = `${edge.from}-${edge.to}-${edge.type}`;
-      const isConnected = connectedEdgeIds.has(edgeId);
-      const wasConnected = prevConnectedEdges.current.has(edgeId);
-      
-      // エッジの両端のノードを取得してロールフィルタを適用
-      const fromNode = data.nodes.find((n) => n.id === edge.from);
-      const toNode = data.nodes.find((n) => n.id === edge.to);
-      const isRoleFiltered =
-        isRoleFilterActive &&
-        ((fromNode && !roleFilter.includes(fromNode.role)) ||
-          (toNode && !roleFilter.includes(toNode.role)));
-      
-      // 状態が変わったエッジのみ更新
-      if (isConnected !== wasConnected) {
-        edgesToUpdate.push(
-          createEdgeUpdateData(edge, isConnected, Boolean(isRoleFiltered))
-        );
-      }
-    });
-    
-    if (edgesToUpdate.length > 0) {
-      refs.edgesDatasetRef.current.update(edgesToUpdate);
-    }
+    // 全てのエッジを更新
+    refs.edgesDatasetRef.current.update(
+      data.edges.map((edge) => {
+        const edgeId = `${edge.from}-${edge.to}-${edge.type}`;
+        const isConnected = connectedEdgeIds.has(edgeId);
+        
+        // エッジの両端のノードを取得してロールフィルタを適用
+        const fromNode = data.nodes.find((n) => n.id === edge.from);
+        const toNode = data.nodes.find((n) => n.id === edge.to);
+        const isRoleFiltered =
+          isRoleFilterActive &&
+          ((fromNode && !roleFilter.includes(fromNode.role)) ||
+            (toNode && !roleFilter.includes(toNode.role)));
+        
+        return createEdgeUpdateData(edge, isConnected, Boolean(isRoleFiltered));
+      }),
+    );
     
     prevConnectedEdges.current = new Set(connectedEdgeIds);
 

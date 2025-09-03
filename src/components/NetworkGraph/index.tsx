@@ -14,7 +14,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(({
   showDirectConnectionsOnly,
 }) => {
   // 選択をデバウンス
-  const debouncedSelection = useDebouncedSelection(selectedPokemon, 100);
+  const debouncedSelection = useDebouncedSelection(selectedPokemon, 150);
   
   // ネットワークを初期化し、refを取得
   const refs = useNetwork(data);
