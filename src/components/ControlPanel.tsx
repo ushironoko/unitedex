@@ -15,7 +15,7 @@ interface ControlPanelProps {
   onShowDirectConnectionsOnlyChange: (value: boolean) => void;
 }
 
-const ControlPanel: React.FC<ControlPanelProps> = memo(({{
+const ControlPanel: React.FC<ControlPanelProps> = memo(({
   searchValue,
   onSearchChange,
   edgeFilter,
