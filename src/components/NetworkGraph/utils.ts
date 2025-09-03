@@ -251,7 +251,11 @@ export const createEdgeUpdateData = (
 /**
  * リセット時のノードデータを作成
  */
-export const createResetNodeData = (node: { id: string; label?: string; role: Role }) => ({
+export const createResetNodeData = (node: {
+  id: string;
+  label?: string;
+  role: Role;
+}) => ({
   id: node.id,
   label: node.label || node.id,
   hidden: false,

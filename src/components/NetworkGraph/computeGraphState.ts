@@ -48,29 +48,29 @@ interface GraphState {
 // ノードが検索条件にマッチするかチェック
 function isNodeMatchingSearch(
   node: { id: string; label: string },
-  searchTerm: string
+  searchTerm: string,
 ): boolean {
   const trimmedSearch = searchTerm.trim();
-  
+
   if (!trimmedSearch) return false;
-  
+
   // 完全一致
   if (node.label === trimmedSearch) return true;
   if (node.id.toLowerCase() === trimmedSearch.toLowerCase()) return true;
-  
+
   // 括弧が含まれている場合（技の検索）
   if (trimmedSearch.includes("(") || trimmedSearch.includes("（")) {
     return node.label.includes(trimmedSearch);
   }
-  
+
   // ベースポケモンの検索
   const baseId = node.id.split("_")[0];
   if (baseId.toLowerCase() === trimmedSearch.toLowerCase()) return true;
-  
+
   const baseLabel = node.label.split("(")[0].trim();
   if (baseLabel === trimmedSearch) return true;
   if (node.label.includes(trimmedSearch)) return true;
-  
+
   return false;
 }
 
@@ -80,12 +80,12 @@ export function computeGraphState(
   searchTerms: string[],
   edgeFilter: "all" | "advantage" | "disadvantage",
   roleFilter: Role[],
-  showDirectConnectionsOnly: boolean
+  showDirectConnectionsOnly: boolean,
 ): GraphState {
   // 1. 検索によるマッチングノードの特定
   const matchingNodeIds = new Set<string>();
   const hasSearch = searchTerms.length > 0;
-  
+
   if (hasSearch) {
     for (const node of data.nodes) {
       for (const searchTerm of searchTerms) {
@@ -96,14 +96,14 @@ export function computeGraphState(
       }
     }
   }
-  
+
   // 検索があるが結果が0件の場合、全ノードを通常表示
   const noSearchResults = hasSearch && matchingNodeIds.size === 0;
-  
+
   // 2. 接続ノードの特定（検索結果がある場合のみ）
   const connectedNodeIds = new Set<string>();
   const connectedEdgeIds = new Set<string>();
-  
+
   if (hasSearch && !noSearchResults) {
     // 直接接続
     for (const edge of data.edges) {
@@ -116,12 +116,18 @@ export function computeGraphState(
         connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
       }
     }
-    
+
     // 二次接続（オプション）
     if (!showDirectConnectionsOnly) {
-      const firstLevelConnected = new Set([...matchingNodeIds, ...connectedNodeIds]);
+      const firstLevelConnected = new Set([
+        ...matchingNodeIds,
+        ...connectedNodeIds,
+      ]);
       for (const edge of data.edges) {
-        if (firstLevelConnected.has(edge.from) && !matchingNodeIds.has(edge.from)) {
+        if (
+          firstLevelConnected.has(edge.from) &&
+          !matchingNodeIds.has(edge.from)
+        ) {
           connectedNodeIds.add(edge.to);
           connectedEdgeIds.add(`${edge.from}-${edge.to}-${edge.type}`);
         }
@@ -132,16 +138,17 @@ export function computeGraphState(
       }
     }
   }
-  
+
   // 3. ロールフィルタの適用
   const isRoleFilterActive = roleFilter.length > 0 && roleFilter.length < 5;
-  
+
   // 4. ノード状態の計算
-  const nodes: NodeState[] = data.nodes.map(node => {
+  const nodes: NodeState[] = data.nodes.map((node) => {
     const isMatching = matchingNodeIds.has(node.id);
     const isConnected = connectedNodeIds.has(node.id);
-    const isRoleFiltered = isRoleFilterActive && !roleFilter.includes(node.role);
-    
+    const isRoleFiltered =
+      isRoleFilterActive && !roleFilter.includes(node.role);
+
     // 表示状態の決定
     let hidden = false;
     let opacity = 1;
@@ -159,7 +166,7 @@ export function computeGraphState(
       strokeColor: "#fff",
       vadjust: -20,
     };
-    
+
     // 検索がない場合
     if (!hasSearch) {
       // ロールフィルタのみ適用
@@ -203,7 +210,7 @@ export function computeGraphState(
         };
       }
     }
-    
+
     return {
       id: node.id,
       label: node.label,
@@ -218,32 +225,33 @@ export function computeGraphState(
       },
     };
   });
-  
+
   // 5. エッジ状態の計算
-  const edges: EdgeState[] = data.edges.map(edge => {
+  const edges: EdgeState[] = data.edges.map((edge) => {
     const edgeId = `${edge.from}-${edge.to}-${edge.type}`;
-    const fromNode = data.nodes.find(n => n.id === edge.from);
-    const toNode = data.nodes.find(n => n.id === edge.to);
-    
+    const fromNode = data.nodes.find((n) => n.id === edge.from);
+    const toNode = data.nodes.find((n) => n.id === edge.to);
+
     // エッジフィルタ
     const isEdgeTypeFiltered = edgeFilter !== "all" && edge.type !== edgeFilter;
-    
+
     // ロールフィルタ
-    const isRoleFiltered = isRoleFilterActive && (
-      (fromNode && !roleFilter.includes(fromNode.role)) ||
-      (toNode && !roleFilter.includes(toNode.role))
-    );
-    
+    const isRoleFiltered =
+      isRoleFilterActive &&
+      ((fromNode && !roleFilter.includes(fromNode.role)) ||
+        (toNode && !roleFilter.includes(toNode.role)));
+
     // 検索による接続状態
-    const isConnected = !hasSearch || noSearchResults || connectedEdgeIds.has(edgeId);
-    
+    const isConnected =
+      !hasSearch || noSearchResults || connectedEdgeIds.has(edgeId);
+
     // 表示状態の決定
     let hidden = isEdgeTypeFiltered;
     let opacity = 1;
     let width = 1.5;
     let arrowScale = 0.8;
     let color = EDGE_COLORS[edge.type];
-    
+
     // 検索がない場合
     if (!hasSearch) {
       hidden = Boolean(hidden || isRoleFiltered);
@@ -265,7 +273,7 @@ export function computeGraphState(
         color = `${EDGE_COLORS[edge.type]}0A`;
       }
     }
-    
+
     return {
       id: edgeId,
       from: edge.from,
@@ -284,6 +292,6 @@ export function computeGraphState(
       },
     };
   });
-  
+
   return { nodes, edges };
 }
