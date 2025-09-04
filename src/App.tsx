@@ -139,6 +139,16 @@ function App() {
           onClose={() => setIsHelpModalOpen(false)}
         />
       </main>
+
+      <footer className="footer">
+        <p className="disclaimer">
+          本サイトは任天堂株式会社とは一切関係がなく、非公式のファンサイトです。
+          <br />
+          Pokémon Unite および Pokémon は任天堂の商標または登録商標です。
+          掲載されている内容は、任天堂または Pokémon Unite の制作・運営に関わる
+          いかなる組織の見解を代表するものではありません。
+        </p>
+      </footer>
     </div>
   );
 }
