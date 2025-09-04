@@ -65,3 +65,49 @@ export interface NetworkRefs {
     import("vis-data").DataSet<EdgeData> | null
   >;
 }
+
+export interface NodeState {
+  id: string;
+  label: string;
+  hidden: boolean;
+  opacity: number;
+  size: number;
+  color: {
+    background: string;
+    border: string;
+  };
+  borderWidth: number;
+  font: {
+    color: string;
+    size: number;
+    bold?: string;
+    strokeWidth: number;
+    strokeColor: string;
+    vadjust: number;
+  };
+  x?: number;
+  y?: number;
+}
+
+export interface EdgeState {
+  id: string;
+  from: string;
+  to: string;
+  hidden: boolean;
+  color: {
+    color: string;
+    opacity: number;
+  };
+  width: number;
+  arrows: {
+    to: {
+      enabled: boolean;
+      scaleFactor: number;
+    };
+  };
+}
+
+export interface GraphState {
+  nodes: NodeState[];
+  edges: EdgeState[];
+}

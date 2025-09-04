@@ -154,14 +154,14 @@ export function computeGraphState(
 
     // 表示状態の決定
     let hidden = false;
-    let opacity = 1;
+    const opacity = 1;
     let size = 15;
     let borderWidth = MY_POOL.includes(node.id) ? 3 : 2;
-    let color = {
+    const color = {
       background: ROLE_COLORS[node.role] || "#999",
       border: MY_POOL.includes(node.id) ? "#FFD700" : "#333",
     };
-    let font = {
+    const font = {
       color: "#000",
       size: 11,
       bold: MY_POOL.includes(node.id) ? "bold" : undefined,
@@ -196,21 +196,8 @@ export function computeGraphState(
         // 接続ノードは通常表示
         // デフォルト値のまま
       } else {
-        // その他は薄く表示
-        opacity = 0.1;
-        color = {
-          background: `${ROLE_COLORS[node.role] || "#999"}15`,
-          border: "#33333315",
-        };
-        borderWidth = 1;
-        font = {
-          color: "#00000015",
-          size: 11,
-          bold: undefined,
-          strokeWidth: 1,
-          strokeColor: "#ffffff15",
-          vadjust: -20,
-        };
+        // マッチしていないし、接続もされていないノードは完全に非表示
+        hidden = true;
       }
     }
 
