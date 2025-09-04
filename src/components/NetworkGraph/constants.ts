@@ -3,11 +3,11 @@ export const NETWORK_OPTIONS = {
     enabled: true, // 物理シミュレーションの有効/無効
     forceAtlas2Based: {
       gravitationalConstant: -10, // ノード間の斥力の強さ（負の値で反発）
-      centralGravity: 0.01, // 中心への引力の強さ
-      springLength: 200, // エッジの理想的な長さ
+      centralGravity: 0.08, // 中心への引力の強さ
+      springLength: 150, // エッジの理想的な長さ
       springConstant: 0.01, // エッジのバネの強さ
       damping: 1, // 動きの減衰率（0-1、高いほど早く安定）
-      avoidOverlap: 2, // ノードの重なり回避の強さ
+      avoidOverlap: 1, // ノードの重なり回避の強さ
     },
     maxVelocity: 20, // ノードの最大速度
     minVelocity: 1, // 安定化判定の最小速度閾値

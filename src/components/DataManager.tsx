@@ -84,7 +84,11 @@ export const DataManager: React.FC<DataManagerProps> = ({
         有利不利のデータはカスタマイズできます。ダウンロードしたファイルを編集後、アップロードすることでブラウザに保存されます。
       </p>
 
-      <button onClick={() => setIsOpen(!isOpen)} className="toggle-button">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="toggle-button"
+      >
         {isOpen ? <ChevronUp /> : <ChevronDown />}
         データ管理メニュー
       </button>
