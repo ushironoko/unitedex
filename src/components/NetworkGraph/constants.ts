@@ -98,3 +98,18 @@ export const ISOLATED_NODES_CONFIG = {
   radius: 500, // 孤立ノードを配置する円の半径
   disablePhysics: true, // 孤立ノードの物理シミュレーション無効化
 } as const;
+
+export const ROLE_COLORS: Record<string, string> = {
+  タンク: "#4ECDC4",
+  サポート: "#F4D03F",
+  メイジ: "#FF6B6B",
+  アサシン: "#9B59B6",
+  ファイター: "#45B7D1",
+};
+
+export const EDGE_COLORS = {
+  advantage: "#4CAF50",
+  disadvantage: "#F44336",
+} as const;
+
+export const MY_POOL: string[] = [];
