@@ -146,7 +146,7 @@ export class GraphStateComputer {
       for (const edgeId of edges) {
         const edge = this.edgeIndex.get(edgeId);
         if (!edge) continue;
-        
+
         // マッチしたノードから直接つながるエッジを追加
         connectedEdgeIds.add(edgeId);
 
@@ -163,7 +163,7 @@ export class GraphStateComputer {
     if (!showDirectConnectionsOnly) {
       // 一次接続ノードのコピーを作成してイテレート（元のSetへの追加を避ける）
       const firstLevelConnected = new Set(connectedNodeIds);
-      
+
       // 二次接続ノードとエッジの収集
       for (const nodeId of firstLevelConnected) {
         // マッチしたノード自身はスキップ
@@ -175,23 +175,26 @@ export class GraphStateComputer {
         for (const edgeId of edges) {
           const edge = this.edgeIndex.get(edgeId);
           if (!edge) continue;
-          
+
           const otherNode = edge.from === nodeId ? edge.to : edge.from;
 
           // まだ含まれていないノードを二次接続として追加
-          if (!matchingNodeIds.has(otherNode) && !firstLevelConnected.has(otherNode)) {
+          if (
+            !matchingNodeIds.has(otherNode) &&
+            !firstLevelConnected.has(otherNode)
+          ) {
             connectedNodeIds.add(otherNode);
             connectedEdgeIds.add(edgeId);
           }
         }
       }
-      
+
       // 表示されるノード間のエッジをすべて収集
       const visibleNodes = new Set([...matchingNodeIds, ...connectedNodeIds]);
       for (const [edgeId, edge] of this.edgeIndex) {
         // すでに追加済みのエッジはスキップ
         if (connectedEdgeIds.has(edgeId)) continue;
-        
+
         // 両端が表示ノードに含まれるエッジを追加
         if (visibleNodes.has(edge.from) && visibleNodes.has(edge.to)) {
           connectedEdgeIds.add(edgeId);

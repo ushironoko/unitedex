@@ -78,8 +78,8 @@ export const pokemonMatchupData: PokemonData = {
       role: "タンク",
     },
     {
-      id: "machamp_地獄車",
-      label: "カイリキー (地獄車)",
+      id: "machamp_じごくぐるま",
+      label: "カイリキー (じごくぐるま)",
       role: "ファイター",
     },
     {
@@ -856,7 +856,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "alolan_ninetales_ふぶき",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -1062,6 +1062,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "alolan_raichu_エレキボール",
       to: "blastoise_こうそくスピン",
+      type: "disadvantage",
+    },
+    {
+      from: "alolan_raichu_エレキボール",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -1307,6 +1312,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "inteleon_ねらいうち",
       to: "gyarados_飛び跳ねる",
+      type: "disadvantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -1640,32 +1650,32 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "miraidon_チャージビーム",
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "miraidon_イナズマドライブ",
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "galarian_rapidash_マジカルシャイン",
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "buzzwole_ばかぢから",
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "darkrai_悪だくみ",
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "zoroark_だましうち",
       type: "advantage",
     },
@@ -1680,22 +1690,22 @@ export const pokemonMatchupData: PokemonData = {
       type: "advantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "gengar_たたりめ",
       type: "disadvantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "blaziken",
       type: "disadvantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "leafeon_はっぱカッター",
       type: "disadvantage",
     },
     {
-      from: "machamp_地獄車",
+      from: "machamp_じごくぐるま",
       to: "scyther_剣の舞",
       type: "disadvantage",
     },
@@ -1766,7 +1776,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "blastoise_こうそくスピン",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -1941,7 +1951,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "galarian_rapidash_マジカルシャイン",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -2625,6 +2635,11 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
+      from: "decidueye_かげぬい",
+      to: "machamp_じごくぐるま",
+      type: "disadvantage",
+    },
+    {
       from: "duraludon_ラスターカノン",
       to: "armarouge_ほのおのうず",
       type: "advantage",
@@ -2966,7 +2981,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "suicune_うずしお",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -3176,6 +3191,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "zoroark_だましうち",
+      to: "machamp_じごくぐるま",
+      type: "disadvantage",
+    },
+    {
+      from: "zoroark_だましうち",
       to: "galarian_rapidash_マジカルシャイン",
       type: "disadvantage",
     },
@@ -3371,7 +3391,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "darkrai_悪だくみ",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -3701,7 +3721,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "sylveon_マジカルフレイム",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "advantage",
     },
     {
@@ -4016,7 +4036,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "pikachu_10_万ボルト",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -4131,6 +4151,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "clefable_重力",
+      to: "machamp_じごくぐるま",
+      type: "disadvantage",
+    },
+    {
+      from: "clefable_重力",
       to: "psyduck",
       type: "disadvantage",
     },
@@ -4162,6 +4187,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "clefable_このゆびとまれ",
       to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "clefable_このゆびとまれ",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -4446,11 +4476,6 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "venusaur_はなびらのまい",
-      to: "absol_ふいうち",
-      type: "disadvantage",
-    },
-    {
-      from: "venusaur_はなびらのまい",
       to: "talonflame_ブレイブバード",
       type: "disadvantage",
     },
@@ -4582,6 +4607,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "venusaur_はなびらのまい",
       to: "charizard_大文字",
+      type: "disadvantage",
+    },
+    {
+      from: "venusaur_はなびらのまい",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -4725,6 +4755,11 @@ export const pokemonMatchupData: PokemonData = {
       type: "disadvantage",
     },
     {
+      from: "venusaur_ソーラービーム",
+      to: "machamp_じごくぐるま",
+      type: "disadvantage",
+    },
+    {
       from: "umbreon_イカサマ",
       to: "alcremie",
       type: "advantage",
@@ -4861,7 +4896,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "meowscarada_トリックフラワー",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "advantage",
     },
     {
@@ -4946,7 +4981,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "buzzwole_ばかぢから",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -5516,12 +5551,12 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "miraidon_チャージビーム",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
       from: "miraidon_イナズマドライブ",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -5871,7 +5906,7 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "lucario_グロウパンチ_インファイト",
-      to: "machamp_地獄車",
+      to: "machamp_じごくぐるま",
       type: "advantage",
     },
     {

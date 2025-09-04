@@ -3,10 +3,12 @@ import AdvantageList from "./components/AdvantageList";
 import ControlPanel from "./components/ControlPanel";
 import { DataManager } from "./components/DataManager";
 import NetworkGraph from "./components/NetworkGraph";
+import HelpModal from "./components/HelpModal";
 import { usePokemonData } from "./hooks/usePokemonData";
 import "./styles/App.css";
 import type { Role } from "./types";
 import { ROLE_COLORS } from "./utils/constants";
+import { HelpCircle } from "lucide-react";
 
 function App() {
   const {
@@ -26,6 +28,7 @@ function App() {
   );
   const [showDirectConnectionsOnly, setShowDirectConnectionsOnly] =
     useState(true);
+  const [isHelpModalOpen, setIsHelpModalOpen] = useState(false);
 
   // Handle search - デバウンス処理を追加
   useEffect(() => {
@@ -49,8 +52,21 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="subtitle">ユナグラフ</p>
-        <h1 className="title">Unite Graph</h1>
+        <div className="header-content">
+          <div className="header-title">
+            <p className="subtitle">ユナグラフ</p>
+            <h1 className="title">Unite Graph</h1>
+          </div>
+          <button
+            type="button"
+            className="help-button"
+            onClick={() => setIsHelpModalOpen(true)}
+            aria-label="使い方を見る"
+          >
+            <HelpCircle size={24} />
+            <span>使い方</span>
+          </button>
+        </div>
       </header>
 
       <main className="main">
@@ -116,6 +132,11 @@ function App() {
           uploadCustomData={uploadCustomData}
           resetToDefault={resetToDefault}
           downloadDefaultData={downloadDefaultData}
+        />
+
+        <HelpModal
+          isOpen={isHelpModalOpen}
+          onClose={() => setIsHelpModalOpen(false)}
         />
       </main>
     </div>
