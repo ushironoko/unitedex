@@ -4,4 +4,4 @@ node_modules
 .claude
 .envrc
 gistdex.db
-dist
+dist/
