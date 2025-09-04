@@ -6,6 +6,8 @@ import {
   RotateCcw,
   CheckCircle,
   AlertCircle,
+  ChevronUp,
+  ChevronDown,
 } from "lucide-react";
 import type { PokemonData, CustomDataError } from "../types";
 
@@ -23,9 +25,14 @@ export const DataManager: React.FC<DataManagerProps> = ({
   downloadDefaultData,
 }) => {
   const [uploading, setUploading] = useState(false);
-  const [error, setError] = useState<CustomDataError | null>(null);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<CustomDataError | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
 
   const handleFileUpload = async (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -44,23 +51,21 @@ export const DataManager: React.FC<DataManagerProps> = ({
       setSuccess(true);
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : "ファイルの読み込みに失敗しました";
-      const details = errorMessage.split("\n").filter((line) => line.trim());
-      setError({
-        message: details[0] || "エラーが発生しました",
-        details: details.length > 1 ? details.slice(1) : undefined,
-      });
+      if (err && typeof err === "object" && "message" in err) {
+        const customError = err as CustomDataError;
+        setError(customError);
+      } else {
+        setError({
+          message: "データのアップロードに失敗しました",
+          details: ["ファイルの形式が正しくない可能性があります"],
+        });
+      }
     } finally {
       setUploading(false);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
+      if (event.target) {
+        event.target.value = "";
       }
     }
-  };
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
   };
 
   return (
@@ -75,50 +80,61 @@ export const DataManager: React.FC<DataManagerProps> = ({
         )}
       </div>
 
-      <div className="data-manager-actions">
-        <button
-          type="button"
-          onClick={downloadDefaultData}
-          className="data-manager-button download-button"
-          title="デフォルトデータをダウンロード"
-        >
-          <Download size={18} />
-          <span>デフォルトデータをダウンロード</span>
-        </button>
+      <p className="data-manager-description">
+        有利不利のデータはカスタマイズできます。ダウンロードしたファイルを編集後、アップロードすることでブラウザに保存されます。
+      </p>
 
-        <button
-          type="button"
-          onClick={handleUploadClick}
-          disabled={uploading}
-          className="data-manager-button upload-button"
-          title="カスタムデータをアップロード"
-        >
-          <Upload size={18} />
-          <span>
-            {uploading ? "アップロード中..." : "カスタムデータをアップロード"}
-          </span>
-        </button>
+      <button onClick={() => setIsOpen(!isOpen)} className="toggle-button">
+        {isOpen ? <ChevronUp /> : <ChevronDown />}
+        データ管理メニュー
+      </button>
 
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept=".json,application/json"
-          onChange={handleFileUpload}
-          style={{ display: "none" }}
-        />
-
-        {isCustomData && (
+      {isOpen && (
+        <div className="data-manager-actions">
           <button
             type="button"
-            onClick={resetToDefault}
-            className="data-manager-button reset-button"
-            title="デフォルトに戻す"
+            onClick={downloadDefaultData}
+            className="data-manager-button download-button"
+            title="デフォルトデータをダウンロード"
           >
-            <RotateCcw size={18} />
-            <span>デフォルトに戻す</span>
+            <Download size={18} />
+            <span>デフォルトデータをダウンロード</span>
           </button>
-        )}
-      </div>
+
+          <button
+            type="button"
+            onClick={handleUploadClick}
+            disabled={uploading}
+            className="data-manager-button upload-button"
+            title="カスタムデータをアップロード"
+          >
+            <Upload size={18} />
+            <span>
+              {uploading ? "アップロード中..." : "カスタムデータをアップロード"}
+            </span>
+          </button>
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".json,application/json"
+            onChange={handleFileUpload}
+            style={{ display: "none" }}
+          />
+
+          {isCustomData && (
+            <button
+              type="button"
+              onClick={resetToDefault}
+              className="data-manager-button reset-button"
+              title="デフォルトに戻す"
+            >
+              <RotateCcw size={18} />
+              <span>デフォルトに戻す</span>
+            </button>
+          )}
+        </div>
+      )}
 
       {success && (
         <div className="data-manager-message success-message">
@@ -157,7 +173,7 @@ export const DataManager: React.FC<DataManagerProps> = ({
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
 
         .data-manager-header h3 {
@@ -175,10 +191,38 @@ export const DataManager: React.FC<DataManagerProps> = ({
           font-weight: 500;
         }
 
+        .data-manager-description {
+          font-size: 14px;
+          color: #666;
+          margin-bottom: 12px;
+          line-height: 1.5;
+        }
+
+        .toggle-button {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          background: white;
+          color: #374151;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .toggle-button:hover {
+          background: #f9fafb;
+          border-color: #9ca3af;
+        }
+
         .data-manager-actions {
           display: flex;
           gap: 12px;
           flex-wrap: wrap;
+          margin-top: 12px;
         }
 
         .data-manager-button {
