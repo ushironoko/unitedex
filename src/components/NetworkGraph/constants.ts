@@ -9,7 +9,7 @@ export const NETWORK_OPTIONS = {
       damping: 1, // 動きの減衰率（0-1、高いほど早く安定）
       avoidOverlap: 2, // ノードの重なり回避の強さ
     },
-    maxVelocity: 50, // ノードの最大速度
+    maxVelocity: 20, // ノードの最大速度
     minVelocity: 1, // 安定化判定の最小速度閾値
     solver: "forceAtlas2Based" as const, // 使用する物理エンジンのアルゴリズム
     stabilization: {
