@@ -100,11 +100,11 @@ export const ISOLATED_NODES_CONFIG = {
 } as const;
 
 export const ROLE_COLORS: Record<string, string> = {
-  タンク: "#4ECDC4",
+  タンク: "#2ca45aff",
   サポート: "#F4D03F",
   メイジ: "#FF6B6B",
-  アサシン: "#9B59B6",
-  ファイター: "#45B7D1",
+  アサシン: "#3486c9ff",
+  ファイター: "#a945d1ff",
 };
 
 export const EDGE_COLORS = {
