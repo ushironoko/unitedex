@@ -2,11 +2,11 @@ export const NETWORK_OPTIONS = {
   physics: {
     enabled: true, // 物理シミュレーションの有効/無効
     forceAtlas2Based: {
-      gravitationalConstant: -10, // ノード間の斥力の強さ（負の値で反発）
-      centralGravity: 0.08, // 中心への引力の強さ
-      springLength: 150, // エッジの理想的な長さ
-      springConstant: 0.01, // エッジのバネの強さ
-      damping: 1, // 動きの減衰率（0-1、高いほど早く安定）
+      gravitationalConstant: -50, // ノード間の斥力の強さ（負の値で反発）- より強い反発力で分散
+      centralGravity: 0.01, // 中心への引力の強さ - 弱めて分散を促進
+      springLength: 200, // エッジの理想的な長さ - より長くして距離を確保
+      springConstant: 0.02, // エッジのバネの強さ - やや強めてエッジ接続を維持
+      damping: 0.4, // 動きの減衰率（0-1、高いほど早く安定）- 自然な動きのため減少
       avoidOverlap: 1, // ノードの重なり回避の強さ
     },
     maxVelocity: 20, // ノードの最大速度
@@ -14,8 +14,8 @@ export const NETWORK_OPTIONS = {
     solver: "forceAtlas2Based" as const, // 使用する物理エンジンのアルゴリズム
     stabilization: {
       enabled: true, // 初期配置時の安定化処理の有効/無効
-      iterations: 5, // 安定化のための最大反復回数
-      updateInterval: 50, // 安定化進捗更新の間隔（ミリ秒）
+      iterations: 200, // 安定化のための最大反復回数 - より長く計算して適切な配置を実現
+      updateInterval: 25, // 安定化進捗更新の間隔（ミリ秒）- より頻繁に更新
       onlyDynamicEdges: false, // 動的エッジのみを安定化対象にするか
       fit: true, // 安定化後に全ノードが見えるようにフィットするか
     },

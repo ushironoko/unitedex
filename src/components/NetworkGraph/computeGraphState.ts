@@ -2,8 +2,8 @@ import type { PokemonData, Role } from "../../types";
 import { ROLE_COLORS, EDGE_COLORS, MY_POOL } from "../../utils/constants";
 
 interface NodeState {
-  x: number;
-  y: number;
+  x?: number;
+  y?: number;
   id: string;
   label: string;
   hidden: boolean;
@@ -83,6 +83,7 @@ export function computeGraphState(
   edgeFilter: "all" | "advantage" | "disadvantage",
   roleFilter: Role[],
   showDirectConnectionsOnly: boolean,
+  isInitialRender = false,
 ): GraphState {
   // 1. 検索によるマッチングノードの特定
   const matchingNodeIds = new Set<string>();
@@ -220,7 +221,7 @@ export function computeGraphState(
     const spacing = 300; // ノード間の間隔を広げる
     const jitter = 100; // ランダムなズレを大きくする
 
-    const nodeState: NodeState & { x?: number; y?: number } = {
+    const nodeState: NodeState = {
       id: node.id,
       label: node.label,
       hidden,
@@ -232,15 +233,20 @@ export function computeGraphState(
         ...font,
         bold: font.bold || undefined,
       },
-      // 初期位置（グリッド配置 + ランダムな揺らぎ）
-      x:
-        col * spacing -
-        (gridSize * spacing) / 2 +
-        (Math.random() - 0.5) * jitter,
-      y:
-        row * spacing -
-        (gridSize * spacing) / 2 +
-        (Math.random() - 0.5) * jitter,
+      // 初回レンダリング時は座標を設定しない（物理エンジンに任せる）
+      // 2回目以降は座標を設定して位置を維持
+      ...(isInitialRender
+        ? {}
+        : {
+            x:
+              col * spacing -
+              (gridSize * spacing) / 2 +
+              (Math.random() - 0.5) * jitter,
+            y:
+              row * spacing -
+              (gridSize * spacing) / 2 +
+              (Math.random() - 0.5) * jitter,
+          }),
     };
 
     return nodeState;

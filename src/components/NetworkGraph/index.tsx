@@ -32,6 +32,7 @@ const NetworkGraph: React.FC<NetworkGraphProps> = memo(
           edgeFilter,
           roleFilter,
           showDirectConnectionsOnly,
+          isInitialRender.current,
         ),
       [
         data,
