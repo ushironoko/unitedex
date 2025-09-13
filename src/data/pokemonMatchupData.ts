@@ -148,6 +148,11 @@ export const pokemonMatchupData: PokemonData = {
       role: "メイジ",
     },
     {
+      id: "armarouge_アーマーキャノン",
+      label: "グレンアルマ (アーマーキャノン)",
+      role: "メイジ",
+    },
+    {
       id: "greninja_水手裏剣",
       label: "ゲッコウガ (水手裏剣)",
       role: "メイジ",
@@ -285,6 +290,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       id: "blaziken",
       label: "バシャーモ",
+      role: "ファイター",
+    },
+    {
+      id: "パーモット",
+      label: "パーモット",
       role: "ファイター",
     },
     {
@@ -486,6 +496,11 @@ export const pokemonMatchupData: PokemonData = {
       id: "lucario_グロウパンチ_インファイト",
       label: "ルカリオ (グロウパンチ+インファイト)",
       role: "ファイター",
+    },
+    {
+      id: "eldegoss",
+      label: "ワタシラガ",
+      role: "サポート",
     },
   ],
   edges: [
@@ -1157,6 +1172,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "inteleon_ねらいうち",
       to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "inteleon_ねらいうち",
+      to: "armarouge_アーマーキャノン",
       type: "advantage",
     },
     {
@@ -2120,6 +2140,81 @@ export const pokemonMatchupData: PokemonData = {
       type: "advantage",
     },
     {
+      from: "armarouge_アーマーキャノン",
+      to: "delphox_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "delphox_ニトロチャージ",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "duraludon_ラスターカノン",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "espeon_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gardevoir_サイコショック",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gardevoir_みらいよち",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "glaceon_つららばり",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "latios",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "alolan_ninetales_ふぶき",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "pikachu_ボルテッカー",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "pikachu_10_万ボルト",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "alolan_raichu_エレキボール",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "alolan_raichu_アシストパワー",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "sylveon_ハイパーボイス",
+      type: "advantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "suicune_うずしお",
+      type: "advantage",
+    },
+    {
       from: "armarouge_ほのおのうず",
       to: "scyther_剣の舞",
       type: "disadvantage",
@@ -2147,6 +2242,136 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "armarouge_ほのおのうず",
       to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gengar_ゆめくい",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gengar_たたりめ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "absol_サイコカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "absol_ふいうち",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "talonflame_ブレイブバード",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "talonflame_そらをとぶ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "zoroark_だましうち",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "dodrio_トライアタック",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "darkrai_悪だくみ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "leafeon_はっぱカッター",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "lucario_神速",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "galarian_rapidash_マジカルシャイン",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "scyther_剣の舞",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "zeraora",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "meowscarada_トリックフラワー",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "mimikyu_トリックルーム",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "mimikyu_かげうち",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "miraidon_イナズマドライブ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "greninja_水手裏剣",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "greninja_なみのり",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "aegislash_聖なる剣",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "ceruledge_ゴーストダイブ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "ceruledge_ニトロチャージ",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gyarados_滝登り",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "gyarados_飛び跳ねる",
+      type: "disadvantage",
+    },
+    {
+      from: "armarouge_アーマーキャノン",
+      to: "machamp_じごくぐるま",
       type: "disadvantage",
     },
     {
@@ -2441,6 +2666,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "decidueye_かげぬい",
+      to: "armarouge_アーマーキャノン",
+      type: "advantage",
+    },
+    {
+      from: "decidueye_かげぬい",
       to: "delphox_ほのおのうず",
       type: "advantage",
     },
@@ -2642,6 +2872,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "duraludon_ラスターカノン",
       to: "armarouge_ほのおのうず",
+      type: "advantage",
+    },
+    {
+      from: "duraludon_ラスターカノン",
+      to: "armarouge_アーマーキャノン",
       type: "advantage",
     },
     {
@@ -4386,6 +4621,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "venusaur_ソーラービーム",
+      to: "armarouge_アーマーキャノン",
+      type: "advantage",
+    },
+    {
+      from: "venusaur_ソーラービーム",
       to: "delphox_ほのおのうず",
       type: "advantage",
     },
@@ -5271,6 +5511,11 @@ export const pokemonMatchupData: PokemonData = {
     },
     {
       from: "mew",
+      to: "armarouge_アーマーキャノン",
+      type: "advantage",
+    },
+    {
+      from: "mew",
       to: "delphox_ほのおのうず",
       type: "advantage",
     },
@@ -5442,6 +5687,11 @@ export const pokemonMatchupData: PokemonData = {
     {
       from: "mew",
       to: "clefable_このゆびとまれ",
+      type: "disadvantage",
+    },
+    {
+      from: "mew",
+      to: "eldegoss",
       type: "disadvantage",
     },
     {
