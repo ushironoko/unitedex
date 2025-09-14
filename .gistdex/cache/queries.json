@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "query": "ポケモン間 有利 不利 カウンター 相性",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T11:58:14.948Z",
+      "resultsCount": 15,
+      "resultSummary": "ギャラドス.md (1.020), ギルガルド.md (1.020), グレイシア.md (1.020)"
+    },
+    {
+      "query": "チーム編成 アーリー構成 レイト構成 集団戦 シナジー 2タンク 2メイジ 2アサシン",
+      "strategy": "semantic",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T11:58:46.024Z",
+      "resultsCount": 12,
+      "resultSummary": "インテレオン.md (1.000), カメックス.md (1.000), ガブリアス.md (1.000)"
+    },
+    {
+      "query": "レジエレキ レジロック レジスチル レジアイス レックウザ オブジェクト チルタリス",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T11:59:16.540Z",
+      "resultsCount": 10,
+      "resultSummary": "over_power.md (0.700), over_power.md (0.700), オーロット.md (0.700)"
+    },
+    {
+      "query": "もちもの 学習装置 ビルド おすすめ 持ち物 効果",
+      "strategy": "semantic",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T11:59:22.679Z",
+      "resultsCount": 10,
+      "resultSummary": "カメックス.md (1.200), キュワワー.md (1.200), コダック.md (1.200)"
+    },
+    {
+      "query": "OP オーバーパワー 環境 強ポケモン tier ランク メタ",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T11:59:52.792Z",
+      "resultsCount": 12,
+      "resultSummary": "over_power.md (0.986), キュワワー.md (0.986), ゲンガー.md (0.700)"
+    },
+    {
+      "query": "ドラフトピック BAN PICK 戦略 カウンターピック シナジーピック プラン",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T12:02:33.896Z",
+      "resultsCount": 15,
+      "resultSummary": "アマージョ.md (0.843), カメックス.md (0.843), キュワワー.md (0.843)"
+    },
+    {
+      "query": "ホウオウ ステータス HP 攻撃 防御 技 ビルド もちもの 性能 ユナイト技",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-14T12:11:49.367Z",
+      "resultsCount": 15,
+      "resultSummary": "items.md (1.350), items.md (1.220), ホウオウ.md (1.220)"
+    }
+  ]
+}
