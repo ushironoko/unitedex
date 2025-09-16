@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "queries": [
+    {
+      "query": "ミライドン ステータス ロール 技構成 強み 弱み カウンター",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-16T08:28:25.116Z",
+      "resultsCount": 10,
+      "resultSummary": "ミライドン.md (1.129), アブソル.md (0.986), アローラライチュウ.md (0.986)"
+    },
+    {
+      "query": "ギルガルド ステータス ロール 技構成 強み 弱み カウンター",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-16T08:28:32.382Z",
+      "resultsCount": 10,
+      "resultSummary": "ギルガルド.md (1.129), ウーラオス.md (0.986), ウーラオス.md (0.986)"
+    },
+    {
+      "query": "キュワワー ステータス ロール 技構成 強み 弱み カウンター サポート 学習装置",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-16T08:28:39.427Z",
+      "resultsCount": 10,
+      "resultSummary": "キュワワー.md (1.233), ゾロアーク.md (0.833), ゾロアーク.md (0.833)"
+    },
+    {
+      "query": "スイクン ステータス ロール 技構成 強み 弱み カウンター タンク 学習装置",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-16T08:28:47.287Z",
+      "resultsCount": 10,
+      "resultSummary": "スイクン.md (1.100), タンク.md (1.100), オーロット.md (0.967)"
+    },
+    {
+      "query": "フシギバナ ステータス ロール 技構成 強み 弱み カウンター タンク ファイター",
+      "strategy": "hybrid",
+      "useSection": true,
+      "useFull": false,
+      "timestamp": "2025-09-16T08:29:02.757Z",
+      "resultsCount": 10,
+      "resultSummary": "オーロット.md (1.100), サーナイト.md (1.100), フシギバナ.md (1.100)"
+    }
+  ]
+}
